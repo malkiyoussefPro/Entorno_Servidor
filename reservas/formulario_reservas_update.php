@@ -1,6 +1,6 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/header.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
 
@@ -23,6 +23,6 @@
 
   <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/footer.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
   
 ?>
