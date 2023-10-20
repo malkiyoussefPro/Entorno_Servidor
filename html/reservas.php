@@ -4,13 +4,10 @@
 
 ?>
 
-  <h1>habitaciones</h1>
+  <h1>reservas</h1>
 
   <?php
 
   include('footer.php');
 
 ?>
-
-</body>
-</html>

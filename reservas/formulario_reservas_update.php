@@ -5,13 +5,13 @@
 ?>
 
   <div class="container mt-5">
-  <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario actualizar Habitacion</h2>
-  <form class="myFormHabitacion" action="" method="POST">
+  <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario actualizar Reserva</h2>
+  <form class="myFormReserva" action="" method="POST">
     <div class="container mt-2 ms-2" >
       <div class="form-row" >
         <div class="form-group col-md-6 ">
-          <label for="inputHabitacion" style ="color: #040212">Id Habitacion</label>
-          <input type="email" class="form-control" id="inputHabitacion" placeholder="id habitacion">
+          <label for="inputReserva" style ="color: #040212">Id reserva</label>
+          <input type="email" class="form-control" id="inputReserva" placeholder="Id reserva">
         </div>
       </div>
       <div style="display: flex; justify-content: center;">
@@ -24,5 +24,5 @@
   <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/footer.php');
-
+  
 ?>

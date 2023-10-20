@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <input type="confirmaión_Password" class="form-control" id="confirmacion" placeholder="confirmaión Password">
         </div>
         <div style="display: flex; justify-content: center;">
-          <button type="submit" class="btn btn-primary mt-2" style="background-color: #000000; border-color: #f98c3d; color: #505050; font-weight: bold;">Registrarse</button>
+          <button type="submit" class="btn btn-primary mt-2" style="background-color: #000000; border-color: #feffe2; color: #505050; font-weight: bold;">Registrarse</button>
         </div>
       </div>
     </form>

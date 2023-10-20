@@ -4,7 +4,7 @@
 
 ?>
 
-  <h1>reservas</h1>
+  <h1>habitaciones</h1>
 
   <?php
 
@@ -12,5 +12,3 @@
 
 ?>
 
-</body>
-</html>
