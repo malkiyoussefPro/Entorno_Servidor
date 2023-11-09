@@ -1,0 +1,49 @@
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    a.nav-link{
+        color : white !important;
+    }
+    a.nav-link:hover{
+        color:orange !important;
+    }
+
+    body {
+        background-image: url(../dwes/html/imagenes/couv-1.jpg);
+        background-repeat: no-repeat;
+    }
+h1{
+    margin: 25px 10px;
+}
+
+
+.formHeader{
+    width: 400px;
+    text-align: center !important;
+    
+}
+.formHeader div:hover{
+    background-color:rgb(170, 132, 60) ;
+    border-color: rgb(170, 132, 60) ;
+}
+.formHeader a{
+    text-decoration: none;
+    font-size: 22px;
+    letter-spacing: 2px;
+  
+}
+.formRegister{
+    width: 600px;
+}
+
+footer {
+    
+    background-color: rgb(164, 144, 55);
+
+}
+
+    

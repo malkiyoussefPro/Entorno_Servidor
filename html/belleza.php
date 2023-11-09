@@ -3,7 +3,7 @@ include('header.php');
 ?>
 <h1>Habitaciones</h1>
 
-<form action="" method="">
+<form action="" style="border: 2px solid black; ">
 <div class="container-fluid bg-gray">
   <h1>Hotel Oasis</h1>
   <p>

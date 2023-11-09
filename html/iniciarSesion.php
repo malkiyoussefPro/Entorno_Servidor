@@ -52,26 +52,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
 
 
-<div class="container mt-5">
-  <h2 style="color: #000000; text-align: center; margin-top: 25px;">Iniciar Sesion</h2>
-  <form class="myFormIniciarSesion">
-    <div class="container mt-2 ms-2" >
-      <div class="form-row" >
-        <div class="form-group col-md-6 ">
-          <label for="inputEmail4" style ="color: #040212">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+  <div class="container mt-5">
+    <center>
+    <h2 style="color: #000000; text-align: center; margin-top: 25px;">Iniciar Sesion</h2>
+    <form action="" method="">
+        <div class="container mt-2 ms-2" >
+          <div class="form-row" >
+            <div class="form-group col-md-6 ">
+              <label for="inputEmail4" style ="color: #040212">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6 mb-3">
+              <label for="inputPassword4" style="color: #040212" >Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <button type="submit" class="btn btn-primary mt-2 mb-3" style="background-color: #000000; border-color: #feffe2; justify-content: center;color: #505050 ;  font-weight: bold;">Iniciar Sesion</button>
+          </div>
         </div>
-        <div class="form-group col-md-6 mb-3">
-          <label for="inputPassword4" style="color: #040212" >Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-        </div>
-      </div>
-      <div style="display: flex; justify-content: center;">
-        <button type="submit" class="btn btn-primary mt-2 mb-3" style="background-color: #000000; border-color: #feffe2; justify-content: center;color: #505050 ;  font-weight: bold;">Iniciar Sesion</button>
-      </div>
-    </div>
-  </form>
-</div>
+      </form>
+    </center>
+  </div>
 
 <?php 
 

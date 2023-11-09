@@ -1,26 +1,22 @@
 <?php
 
+/*
 $host = 'localhost';
 $user = 'root';
 $pass = '';
 $nombreDB = 'hotel_42';
 
+*/
 // Connección de la base de datos
-$connect = mysqli_connect($host, $user, $pass, $nombreDB);
-
+//$connect = mysqli_connect($host, $user, $pass, $nombreDB);
+$pdo = new PDO('mysql:host = localhost; dbname = hotel_42', 'root', '');
 //Verificacion de la base de datos
-if (!$connect) {
+/*
+if (!$pdo) {
     echo "Error connecting";
-} 
-// Consulta de la table clientes en la base de datos
- $sql = 'SELECT * FROM clientes';
-
- $resltado = mysqli_query($connect, $sql);
-
- $clientes = mysqli_fetch_all($resltado, MYSQLI_ASSOC);
-
- print_r($clientes);
-
-
+} else{
+    echo "Connection exists in database";
+}
+*/
 ?>
 
