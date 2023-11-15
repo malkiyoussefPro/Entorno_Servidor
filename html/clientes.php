@@ -1,23 +1,21 @@
 
-
 <?php
 
   include('header.php');
 
 ?>
 
-
-
   <div class="container mt-5">
-    <h2 style="color: #e10000; text-align: center;">Registro Clientes</h2>
+    <center>
+    <h2>Registro Clientes</h2>
     <form class="myForm">
       <div class="container">
         <div class="form-group">
-          <label for="inputEmail4" style="color: #040212">Email</label>
+          <label for="inputEmail4">Email</label>
           <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
         <div class="form-group">
-          <label for="inputPassword4" style="color: #040212">Password</label>
+          <label for="inputPassword4">Password</label>
           <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
         </div>
         <div class="form-group">
@@ -26,15 +24,16 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCity" style="color: #040212">Ciudad</label>
+            <label for="inputCity" >Ciudad</label>
             <input type="text" class="form-control" id="inputCity" placeholder="Mao, Islas Baleares">
           </div>
           <div class="form-group col-md-4">
-            <label for="inputState" style="color: #040212">País</label>
+            <label for="inputState">País</label>
             <select id="inputState" class="form-control">
               <option selected>Seleccionar...</option>
-              <option>España</option>
               <option>Marruecos</option>
+              <option>España</option>
+              
             </select>
           </div>
           <div class="form-group col-md-2">
@@ -47,6 +46,7 @@
         </div>
       </div>
     </form>
+    </center>
   </div>
 
 

@@ -14,7 +14,7 @@
 
     body {
         background-image: url(../dwes/html/imagenes/couv-1.jpg);
-        background-repeat: no-repeat;
+        background-repeat:repeat;
     }
 h1{
     margin: 25px 10px;
@@ -46,4 +46,15 @@ footer {
 
 }
 
-    
+#carouselExampleControls{
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+}
+
+#btn{
+    width: 40px;
+    height: 60px;
+    background-color: blue;
+}
