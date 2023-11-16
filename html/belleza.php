@@ -1,9 +1,10 @@
 <?php
 include('header.php');
 ?>
-<h1>Habitaciones</h1>
+<link rel="stylesheet" href="../css/belleza.css">
+<h1>Espacio Belleza</h1>
 
-<form action="" style="border: 2px solid black; ">
+<form action="" method="">
 <div class="container-fluid bg-gray">
   <h1>Hotel Oasis</h1>
   <p>
@@ -25,9 +26,7 @@ include('header.php');
   
 
 
-<div class="container-fluid bg-light">
-  <img src="../html/imagenes/les-hebergements-10-1-.jpg" alt="" class="img-fluid">
-</div>
+
 
 <?php
 include('footer.php');

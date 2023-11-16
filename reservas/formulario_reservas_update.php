@@ -1,8 +1,11 @@
+
+
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header_dashbord.php');
 
 ?>
+
 
   <div class="container mt-5">
   <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario actualizar Reserva</h2>
@@ -23,6 +26,6 @@
 
   <?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
   
 ?>

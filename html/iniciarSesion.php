@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div class="container mt-5">
     <center>
     <h2 style="color: #000000; text-align: center; margin-top: 25px;">Iniciar Sesion</h2>
-    <form action="" method="">
+    <form action="/student042/dwes/db_login.php" method="POST">
         <div class="container mt-2 ms-2" >
           <div class="form-row" >
             <div class="form-group col-md-6 ">

@@ -2,7 +2,8 @@
 <?php
 include('header.php');
 ?>
-<h1>Habitaciones</h1>
+<link rel="stylesheet" href="/css/eventos.css">
+<h1>Eventos </h1>
 
 <form action="" method="">
 <div class="container-fluid bg-gray">
@@ -23,12 +24,6 @@ include('header.php');
 </form>
 
 
-  
-
-
-<div class="container-fluid bg-light">
-  <img src="../html/imagenes/les-hebergements-10-1-.jpg" alt="" class="img-fluid">
-</div>
 
 <?php
 include('footer.php');
