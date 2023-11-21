@@ -13,7 +13,7 @@
 
     ?>
     <center>
-      <form class="formRegister" action="" method="">
+      <form class="formRegister" action="" method="POST">
         <div class="container mt-5">
         
           <h2 style="color: #000000; text-align: center; margin-top: 25px;">FORMULARIO DE REGISTRO</h2>

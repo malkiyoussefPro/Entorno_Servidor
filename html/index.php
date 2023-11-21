@@ -2,9 +2,10 @@
     
         <?php
         include('header.php');
+       
 
         ?>
-       
+        <link rel="stylesheet" href="../css/style1.css">
             <center>
             <h1>Bienvenidos al Hotel Oasis</h1>
             <div class="container">

@@ -1,0 +1,40 @@
+
+La gestión de reservas de habitaciones en el nivel de llegada y salida implica más etapas importantes. Voici quelques sugerencias para colocar un sistema eficaz:
+
+-> Sistema de Reservas :
+
+    Utilice un sistema de reserva centralizado, que se basa en una lógica específica, un sitio web o una aplicación.
+    Asegúrese de que el sistema permita la reserva en línea y ofrezca una vista del conjunto de habitaciones disponibles.
+-> Confirmación de Reserva :
+
+    Envíe una confirmación de reserva a los clientes con toda la información necesaria, incluidas las fechas de llegada y de salida, las tarifas, los servicios incluidos, etc.
+-> Recepción y registro a la llegada:
+
+    Al llegar, asegúrese de realizar un proceso de registro eficaz para registrar los clientes.
+    Verifique la identidad de los clientes y confirme los detalles de la reserva.
+-> Gestión de claves o tarjetas de acceso:
+
+    Ayez un système sûr pour la remise des clés ou des cartes d'accès.
+    Asegúrese de que las llaves o tarjetas se desactiven automáticamente en la fecha de salida anterior.
+-> Suivi des Départs :
+
+    Ayez un proceso de verificación au salida para asegurar que los clientes abandonen la habitación en la fecha anterior.
+-> Gestión de prolongaciones de séjour:
+
+    Si un cliente desea prolongar su estancia, asegúrese de poder conseguirlo fácilmente, ajustando la reserva en el sistema.
+-> Gestión de anulaciones:
+
+    Définissez una política de anulación clara y asegurez-vous de gérer les anulaciones de manière professional.
+-> Comunicación con el personal:
+
+Asegúrese de que el personal esté bien informado de las reservas en curso, de salida y de llegada.
+-> Facturación y pago:
+
+Ayez un proceso de facturación claro y eficaz en el momento de la salida.
+Proponga opciones adicionales de pago para obtener más productos.
+Sistema de Gestión Hotelera Intégré (PMS):
+
+Considere la utilización de un sistema de gestión hotelera integrada (PMS) que centralice la gestión de reservas, llegadas, salidas, facturación, etc.
+Formación del personal:
+
+Asegúrese de que el personal esté formado para utilizar eficazmente el sistema de gestión de reservas.

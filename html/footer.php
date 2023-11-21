@@ -1,4 +1,4 @@
-
+     <link rel="stylesheet" href="./css/footer.css">
        <footer>
         <div class="container-fluid">
             <div class="row my-2 d-flex justify-content-around">

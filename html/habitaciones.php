@@ -388,7 +388,7 @@ include('header.php');
 
 </div>
   
-
+</form>
 <?php
 include('footer.php');
 ?>

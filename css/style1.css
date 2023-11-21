@@ -13,7 +13,7 @@
     }
 
     body {
-        background-image: url(../imagenes/couv-1.jpg);
+        background-image: url(../html/imagenes/couv-1.jpg);
         background-repeat:no-repeat;
     }
 h1{
@@ -40,11 +40,7 @@ h1{
     width: 600px;
 }
 
-footer {
-    
-    background-color: rgb(164, 144, 55);
 
-}
 
 #carouselExampleControls{
   

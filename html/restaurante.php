@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 ?>
-<link rel="stylesheet" href="./css/belleza.css">
+<link rel="stylesheet" href="./css/resto.css">
 
 <form action="" method="">
 <div class="container-fluid bg-gray">

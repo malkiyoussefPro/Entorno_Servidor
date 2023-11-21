@@ -30,15 +30,21 @@
             <a class="nav-link" href="habitaciones.php" >Habitaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="reservas.php">Reservas</a>
+            <a class="nav-link" href="restaurante.php">Restaurante</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="belleza.php">Belleza</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="eventos.php">Evento</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="iniciarSesion.php">Iniciar Sesion</a>
+            <a class="nav-link" href="iniciarSesion.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registrarse.php ">Registrarse</a>
+            <a class="nav-link" href="index.php ">Log Out</a>
           </li>
         </ul>
       </div>

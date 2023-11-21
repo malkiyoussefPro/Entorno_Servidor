@@ -2,43 +2,43 @@
   "menus" 
     "desayuno" [
       {
-        "designation": "Opción 1 Desayuno",
+        "designation": "Desayuno Light",
         "precio":  49.90
       },
       {
-        "designation": "Opción 2 Desayuno",
+        "designation": " Desayuno Time Two",
         "precio": 59.90
       },
       {
-        "designation": "Opción 3 Desayuno",
+        "designation": "Desayuno Oasis",
         "precio": 69.99
       }
     ],
     "comida" [
       {
-        "designation": "Opción 1 Comida",
+        "designation": "Comida Light",
         "precio": 79.90
       },
       {
-        "designation": "Opción 2 Comida",
+        "designation": "Comida Time Two",
         "precio": 89.90
       },
       {
-        "designation": "Opción 3 Comida",
+        "designation": "Comida Oasis",
         "precio": 99.90
       }
     ],
     "cena" [
       {
-        "designation": "Opción 1 Cena",
+        "designation": "Cena Light",
         "precio": 109.90
       },
       {
-        "designation": "Opción 2 Cena",
+        "designation": "Cena Time Two",
         "precio": 119.90
       },
       {
-        "designation": "Opción 3 Cena",
+        "designation": "Cena Oasis",
         "precio": 129.90
       }
     ]

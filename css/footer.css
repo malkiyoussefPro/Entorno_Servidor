@@ -1,0 +1,11 @@
+footer {
+    
+    background-color: rgb(164, 144, 55);
+    position: fixed;
+    bottom: 20px;
+    
+
+}
+.row .col ul li a{
+    text-decoration: none;
+}

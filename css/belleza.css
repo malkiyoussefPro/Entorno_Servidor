@@ -3,13 +3,15 @@
 
 
 *{
- margin: 0;
- padding: 0;
  box-sizing: border-box;
 }
 
   
 h1{
     font-family: 'Lato' sans-serif;
-    color: brown;
-   }
+    color: black;
+
+}
+body{
+    background-color: blanchedalmond;
+}
