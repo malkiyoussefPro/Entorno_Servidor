@@ -1,6 +1,13 @@
 <?php
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
+
+<?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+  
+?>
+
 <link rel="stylesheet" href="../css/resto.css">
 
 <form action="" method="POST">

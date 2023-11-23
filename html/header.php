@@ -1,3 +1,8 @@
+<?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+?>
+
 <?php 
   
   $_SESSION['login'] = false;

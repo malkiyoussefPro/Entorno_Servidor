@@ -1,7 +1,13 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header_dashbord.php');
+  //universal
 
+?>
+<?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+  
 ?>
 
   <div class="container mt-5">
@@ -11,11 +17,11 @@
       <div class="form-row" >
         <div class="form-group col-md-6 ">
           <label for="inputReserva" style ="color: #040212">Id reserva</label>
-          <input type="email" class="form-control" id="inputReserva" placeholder="Id reserva">
+          <input type="number" name="id_reserva" class="form-control" id="inputReserva" placeholder="Id reserva">
         </div>
       </div>
       <div style="display: flex; justify-content: center;">
-        <button type="submit" class="btn btn-primary mt-2 mb-3" style="background-color: #000000; border-color: #feffe2; justify-content: center;color: #505050 ; font-weight: bold;">Actualizar</button>
+        <button type="submit" name="actualizar" class="btn btn-primary mt-2 mb-3" style="background-color: #000000; border-color: #feffe2; justify-content: center;color: #505050 ; font-weight: bold;">Actualizar</button>
       </div>
     </div>
   </form>
@@ -23,6 +29,5 @@
 
   <?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
-  
-?>
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+  ?>

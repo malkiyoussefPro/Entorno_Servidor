@@ -1,6 +1,12 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header_dashbord.php');
+  //universal
+
+?>
+<?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
 
 ?>
 
@@ -10,11 +16,9 @@
       <div class="container">
 
         <div class="form-row">
-
-
         <div class="form-group col-md-4">
             <label for="inputHabitacion" style="color: #040212">Tipo Habitacion</label>
-            <select id="inputHabitacion" class="form-control">
+            <select name="tipo_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Single</option>
               <option>Double</option>
@@ -26,17 +30,18 @@
         
           <div class="form-group col-md-4">
             <label for="inputHabitacion" style="color: #040212">Disponibilidad habitacion</label>
-            <select id="inputHabitacion" class="form-control">
+            <select name="disponibilidad_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>disponible</option>
               <option>ocupada</option>
+              <option>bloquada</option>
               </option>
             </select>
           </div>
 
           <div class="form-group col-md-4">
             <label for="inputHabitacion" style="color: #040212">Estado habitacion</label>
-            <select id="inputHabitacion" class="form-control">
+            <select name="estado_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>En proceso de limpieza</option>
               <option>En proceso de mantenimiento</option>
@@ -46,24 +51,23 @@
 
           <div class="form-group col-md-4">
             <label for="inputHabitacion" style="color: #040212">Ubicacion Habitacion</label>
-            <select id="inputHabitacion" class="form-control">
+            <select name="vista_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Vista mar</option>
               <option>Vista jardin</option>
-              <option>Vista parking</option>
-              <option>Vista picina</option>
+              <option>Vista piina</option>
               </option>
             </select>
           </div>
 
           <div class="form-group col-md-2">
             <label for="inputZip" style="color: #040212">precio</label>
-            <input type="text" class="form-control" id="inputZip" placeholder="Código Postal">
+            <input type="number" name="precio_habitacion" class="form-control" id="inputZip" placeholder="precio habitacion">
           </div>
          
         </div>
         <div style="display: flex; justify-content: center;">
-          <button type="submit" class="btn btn-primary mt-2" style="background-color: #000000; border-color: #f98c3d; color: #505050; font-weight: bold;">Insertar</button>
+          <button type="submit" name="insertar" class="btn btn-primary m-2">Insertar</button>
         </div>
       </div>
     </form>
@@ -72,6 +76,6 @@
 
   <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header_dashbord.php');
 
-?>
+  ?>

@@ -1,14 +1,14 @@
      <link rel="stylesheet" href="../css/footer.css">
        <footer>
         <div class="container-fluid">
-            <div class="row my-2">
+            <div class="row ">
                 <div class="col">
                     <p id="txt-footer">Nuestros servisios</p>
                     <ul>
-                        <li><a href="habitaciones.php">Reservar su Estancia</a></li>
-                        <li><a href="restaurante.php">Reservar su Mesa</a></li>
-                        <li><a href="belleza.php">Reservar su Belleza</a></li>
-                        <li><a href="eventos.php">Reservar su Evento</a></li>
+                        <li><a href="habitaciones.php" class="link-hover">Reservar su Estancia</a></li>
+                        <li><a href="restaurante.php" class="link-hover">Reservar su Mesa</a></li>
+                        <li><a href="belleza.php" class="link-hover">Reservar su Belleza</a></li>
+                        <li><a href="eventos.php" class="link-hover"">Reservar su Evento</a></li>
                     </ul>
                 </div>
                 <div class="col">

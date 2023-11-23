@@ -1,5 +1,9 @@
 
-
+<?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

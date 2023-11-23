@@ -2,6 +2,10 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
+<?php
+            
+            include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+ ?>
         <link rel="stylesheet" href="../css/header.css">
             <center>
             <h1>Bienvenidos al Hotel Oasis</h1>
@@ -30,12 +34,10 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
                     </center>
             </div>
         
+        
+
         <?php
-            include('../connection/connection.php');
+
+        include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
         ?>
-
-<?php
-
-    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
-?>

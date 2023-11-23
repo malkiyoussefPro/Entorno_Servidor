@@ -2,11 +2,16 @@
 <?php
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
-    <?php
+<?php
+            
+            include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+?>
+
+<?php
 
     include'error.php';
 
-    ?>
+?>
     <center>
       <form class="formRegister" action="" method="POST">
         <div class="container mt-5">
