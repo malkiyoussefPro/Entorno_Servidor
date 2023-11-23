@@ -3,7 +3,8 @@
       "Spa" [
         {
           "designation": "Spa Light",
-          "precio":  49.90
+          "precio":  49.90,
+
         },
         {
           "designation": " Spa Time Two",

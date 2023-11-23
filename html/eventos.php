@@ -1,14 +1,12 @@
-
 <?php
-include('header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
-<link rel="stylesheet" href="/css/eventos.css">
+<link rel="stylesheet" href="../css/eventos.css">
 
 <form action="" method="">
-<div class="container-fluid bg-gray">
- 
-  <h1>Eventos</h1>
+<div class="container">
 <div class="row d-flex justify-content-around m-2">
+<h1>Eventos</h1>
 <div class="col-3">
 <div class="card" style="width: 18rem;">
   <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
@@ -263,6 +261,8 @@ include('header.php');
 </form>
 
 <?php
-include('footer.php');
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
 ?>
 

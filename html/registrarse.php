@@ -1,12 +1,7 @@
 
 <?php
-
-  include('header.php');
-
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
-
-  <?php
- ?>
     <?php
 
     include'error.php';
@@ -38,8 +33,10 @@
         </div>
       </form>
     </center>
-  <?php
 
-  include('footer.php');
+
+<?php
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>

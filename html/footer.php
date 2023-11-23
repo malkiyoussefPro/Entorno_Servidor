@@ -1,12 +1,12 @@
-     <link rel="stylesheet" href="./css/footer.css">
+     <link rel="stylesheet" href="../css/footer.css">
        <footer>
         <div class="container-fluid">
-            <div class="row my-2 d-flex justify-content-around">
+            <div class="row my-2">
                 <div class="col">
                     <p id="txt-footer">Nuestros servisios</p>
                     <ul>
                         <li><a href="habitaciones.php">Reservar su Estancia</a></li>
-                        <li><a href="resto.php">Reservar su Mesa</a></li>
+                        <li><a href="restaurante.php">Reservar su Mesa</a></li>
                         <li><a href="belleza.php">Reservar su Belleza</a></li>
                         <li><a href="eventos.php">Reservar su Evento</a></li>
                     </ul>

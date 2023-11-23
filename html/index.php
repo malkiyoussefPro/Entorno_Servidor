@@ -1,11 +1,8 @@
 
-    
-        <?php
-        include('header.php');
-       
-
-        ?>
-        <link rel="stylesheet" href="../css/style1.css">
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+?>
+        <link rel="stylesheet" href="../css/header.css">
             <center>
             <h1>Bienvenidos al Hotel Oasis</h1>
             <div class="container">
@@ -14,7 +11,7 @@
                             <a href="habitaciones.php"><div class="alert alert-light" role="alert">
                             Reservar su Estancia
                             </div></a>
-                            <a href="resto.php">
+                            <a href="restaurante.php">
                             <div class="alert alert-light" role="alert">
                             Reservar su Mesa
                             </div>
@@ -37,6 +34,8 @@
             include('../connection/connection.php');
         ?>
 
-        <?php
-        include('footer.php');
-        ?>
+<?php
+
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
+?>

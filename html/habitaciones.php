@@ -1,5 +1,5 @@
 <?php
-include('header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
 
 <link rel="stylesheet" href="../css/style1.css">
@@ -389,7 +389,10 @@ include('header.php');
 </div>
   
 </form>
+
 <?php
-include('footer.php');
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
 ?>
 

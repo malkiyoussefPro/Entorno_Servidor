@@ -6,3 +6,10 @@ h1{
 .navbar{
     background-color: rgb(164, 144, 55);
 }
+#btn{
+    width: 100px;
+    height:45px;
+    background-color:orange;
+    border: 0;
+    border-radius: 5px;
+}

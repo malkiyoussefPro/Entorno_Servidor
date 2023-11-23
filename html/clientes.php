@@ -1,8 +1,6 @@
 
 <?php
-
-  include('header.php');
-
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
 
   <div class="container mt-5">
@@ -50,9 +48,9 @@
   </div>
 
 
-<?php
+  <?php
 
-  include('footer.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
-?>
+  ?>
 

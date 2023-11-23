@@ -3,7 +3,8 @@
       "Deportes" [
         {
           "designation": "Golf",
-          "precio":  49.90
+          "precio":  49.90,
+          
         },
         {
           "designation": "Tennis",

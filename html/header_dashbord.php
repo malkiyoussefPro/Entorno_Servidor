@@ -106,14 +106,51 @@
             <li><a class="dropdown-item" href="#">Buscar Restaurante</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Personal
+          </a>
+          <ul class="dropdown-menu active" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="">Añadir Personal </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Modificar Personal</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Borrar Personal</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Buscar Personal</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Factura
+          </a>
+          <ul class="dropdown-menu active" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="">Añadir Factura </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Modificar Factura</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Borrar Factura</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Buscar Factura</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 <center><h1>DASHBORD HOTEL OASIS</h1></center>
+  <div class="card-body">
+
+   <a  href="index.php" class="btn border-dark"> Visitar Pagina Web </a> 
+   
+  </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<?php
+            include('../connection/connection.php');
+        ?>
+
 
 </body>
 </html>

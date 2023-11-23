@@ -1,9 +1,6 @@
 <?php
-
-  include('header.php');
-
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
-
 <?php
 
 $email = '';
@@ -68,16 +65,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
           <div style="display: flex; justify-content: center;">
-            <button type="submit" class="btn btn-primary mt-2 mb-3" style="background-color: #000000; border-color: #feffe2; justify-content: center;color: #505050 ;  font-weight: bold;">Iniciar Sesion</button>
+            <button type="submit" class="btn btn-primary mt-2 mb-3">Iniciar Sesion</button>
+            <a href="registrarse.php">Registrarse Aqui</a>
+
           </div>
         </div>
+       
       </form>
     </center>
   </div>
 
-<?php 
+  <?php
 
-  include('footer.php'); 
-
-?>
+    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+    
+  ?>
 
