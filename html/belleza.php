@@ -5,7 +5,7 @@
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
 ?>
-<link rel="stylesheet" href="../css/belleza.css">
+<link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <form action="" method="">
 <div class="container-fluid bg-gray">
@@ -135,13 +135,8 @@
 </div>
 </div>
 
-
-<h1>Habitaciones Suite</h1>
-
 <div class="row d-flex justify-content-around m-2">
-
-
-
+<h1>Habitaciones Suite</h1>
 <div class="col-3">
 <div class="card" style="width: 18rem;">
   <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">

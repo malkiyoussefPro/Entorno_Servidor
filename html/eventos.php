@@ -5,7 +5,7 @@
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
 ?>
-<link rel="stylesheet" href="../css/eventos.css">
+<link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <form action="" method="POST">
 <div class="container">
@@ -134,11 +134,11 @@
 </div>
 
 
-<h1>Habitaciones Suite</h1>
+
 
 <div class="row d-flex justify-content-around m-2">
 
-
+<h1>Habitaciones Suite</h1>
 
 <div class="col-3">
 <div class="card" style="width: 18rem;">

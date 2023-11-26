@@ -1,6 +1,6 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
 
 ?>
 
@@ -9,50 +9,91 @@
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
   
 ?>
+<style>
+  h2{
+    color: #040212;
+     text-align: center;
+     
+  }
+  label{
+    color: #040212;
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+  }
 
-  <div class="container mt-5">
-    <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario actualizar usuario</h2>
-    <form class="myFormusuario" action="" method="POST">
+  form{
+    border: 2px solid wheat;
+    border-radius: 10px;
+    width: 500px;
+    height: 910px;
+    background-color: wheat;
+    margin: 15px;
+    padding: 15px;
+  }
+  .form-control{
+    width: 350px;
+    margin: 5px;
+    padding: 5px;
+  }
+  #btn{
+     background-color: #000000;
+      border-color: white;
+      color: white; 
+      
+    }
+    #btn:hover{
+      background-color: gray;
+      color: #000000;
+  
+  }
+</style>
+
+<div class="d-flex justify-content-center">
+
+<form class="myFormUsuario" action="/student042/dwes/Usuarios/action/db_usuario_update_call.php" method="POST">
+
+      <h2>Formulario actualizar Usuario</h2>
       <div class="container">
         
         <div class="form-group">
-          <label for="inputusuario" style="color: #040212">Nombre usuario</label>
-          <input type="text" name="nombre_usuario" class="form-control" id="inputusuario" placeholder="nombre">
+          <label for="inputUsuario">Nombre Usuario</label>
+          <input type="text" name="nombre_Usuario" class="form-control" id="inputUsuario" placeholder="nombre">
         </div>
 
         <div class="form-group">
-          <label for="inputFecha" style="color: #040212">Fecha nacimiento</label>
-          <input type="date" name="fecha_usuario" class="form-control" id="inputFecha" placeholder="fecha">
+          <label for="inputFecha">Fecha nacimiento</label>
+          <input type="date" name="fecha_Usuario" class="form-control" id="inputFecha" placeholder="fecha">
         </div>
 
         <div class="form-group">
-          <label for="inputTelefono" style="color: #040212">telefono</label>
-          <input type="text" name="telefono_usuario" class="form-control" id="inputTelefono" placeholder="fecha">
+          <label for="inputTelefono">telefono</label>
+          <input type="text" name="telefono_Usuario" class="form-control" id="inputTelefono" placeholder="fecha">
         </div>
 
 
         <div class="form-group">
-          <label for="inputEmail4" style="color: #040212">Email</label>
-          <input type="email" name="email_usuario" class="form-control" id="inputEmail4" placeholder="Email">
+          <label for="inputEmail4">Email</label>
+          <input type="email" name="email_Usuario" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
        
         <div class="form-group">
-          <label for="inputAddress" style="color: #040212">Dirección</label>
+          <label for="inputAddress">Dirección</label>
           <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
 
         <div class="form-group col-md-2">
-            <label for="inputZip" style="color: #040212">Código Postal</label>
-            <input type="text" name="codigoPostal_usuario" class="form-control" id="inputZip" placeholder="Código Postal">
+            <label for="inputZip">Código Postal</label>
+            <input type="text" name="codigoPostal_Usuario" class="form-control" id="inputZip" placeholder="Código Postal">
           </div>
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCity" style="color: #040212">Ciudad</label>
-            <input type="text" name="ciudad_usuario" class="form-control" id="inputCity" placeholder="Mao, Islas Baleares">
+            <label for="inputCity">Ciudad</label>
+            <input type="text" name="ciudad_Usuario" class="form-control" id="inputCity" placeholder="Mao, Islas Baleares">
           </div>
           <div class="form-group col-md-4">
-            <label for="inputState" style="color: #040212">País</label>
+            <label for="inputState">País</label>
             <select id="inputState" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Marruecos</option>
@@ -67,16 +108,16 @@
           </div>
        
         </div>
-        <div style="display: flex; justify-content: center;">
-          <button type="submit" name="actualizar" class="btn btn-primary mt-2" style="background-color: #000000; border-color: #feffe2; color: #505050; font-weight: bold;">Actualizar</button>
+        <div class="d-flex justify-content-center">
+          <button type="submit" id="btn" class="btn mt-2">Actualizar</button>
         </div>
       </div>
     </form>
-
+    
   </div>
 
-  <?php
+<?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header_dashbord.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
 
 ?>
 <?php
@@ -9,23 +9,66 @@
 
 ?>
 
-  <div class="container mt-5">
-  <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario añadir restaurante</h2>
-  <form class="myFormCliente" action="" method="POST">
-    <div class="container mt-2 ms-2" >
-      <div class="form-row" >
-      <div class="form-group col-md-6 ">
-          <label for="inputRestaurante" style ="color: #040212">Id restaurante</label>
-          <input type="number" class="form-control" name="id_restaurante" placeholder="Id restaurante">
-        </div>
-      </div>
-      <div style="display: flex; justify-content: center;">
-        <button type="submit" name="añadir" class="btn btn-primary mt-2 mb-3">Añadir</button>
-      </div>
-    </div>
-  </form>
-</div>
+<style>
 
-  <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-  ?>
+h2{
+      color: #000000;
+       text-align: center; 
+       margin-top: 25px;
+    }
+
+    label{
+    color: #040212;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .myFormRestaurante{
+    border: 2px solid wheat;
+    border-radius: 5px;
+    width: 500px;
+    height: 250px;
+    background-color: wheat;
+    margin-bottom: 15px;
+  }
+  #btn{
+     background-color: #000000;
+      border-color: white;
+      color: white; 
+      
+    }
+    #btn:hover{
+      background-color: gray;
+      color: #000000;
+  
+  }
+</style>
+
+<div class="d-flex justify-content-center">
+      <form class="myFormRestaurante" action="/student042/dwes/Restaurante/action/db_restaurante_delete_call.php" method="POST">
+        <h2 >Formulario insertar Restaurante</h2>
+        <div class="container mt-2 ms-2" >
+          <div class="form-row" >
+            <div class="form-group col-md-6 ">
+              <label for="inputRestaurante">Id Restaurante</label>
+              <input type="number" class="form-control" name="id_Restaurante" placeholder="Id Restaurante">
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" name="insertar" id="btn" class="btn  mt-2 mb-3">Insertar</button>
+          </div>
+        </div>
+      </form>
+      
+  </div>
+
+<?php
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
+?>
+
+
+?>

@@ -9,74 +9,74 @@
 
 <?php
 
-$email = '';
-$errors = [];
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = mysqli_real_escape_string($mysql, $_POST['email']);
-    $password = mysqli_real_escape_string($mysql, $_POST['password']);
+  include ($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/error.php');
 
-    if(empty($email)){
-       array_push($errors, 'email vacia');
+?>
+<style>
+  h2{
+    color: #040212;
+     text-align: center;
+      margin-top: 25px;
+  }
+  label{
+    color: #040212;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  span{
+    margin-left: 5px;
+    padding: 5px;
+  }
+  a{
+    text-decoration: none;
+    color:rgb(188, 163, 41);
+    font-size: 18px;
+    font-weight: bold;
+  }
+  form{
+    border: 2px solid wheat;
+    border-radius: 5px;
+    width: 450px;
+    height: 300px;
+    background-color: wheat;
+  }
+  .btn{
+     background-color: #000000;
+      border-color: white;
+      color: white; 
+      font-weight: bold;
     }
- 
-     if(empty($password)){
-        array_push($errors, 'contraseña vacia');
-    }
-
-    
-        if(!count($errors)){
-            // Imprime el email por consola
-                echo $email;
-
-           // Ejecuta la consulta SQL
-                $usuario = $mysql -> query ("SELECT id_usuario, nombre_usuario, email_usuario, contraseña_usuario, role_usuario, fecha_creacion_cuenta FROM usuario WHERE email_usuario = '$email' limit 1");
-          
-            if($users -> num_rows){
-                array_push($errors, " El email no existe");
-            }else{
-                $usuarioExiste = $usuario -> fetch_assoc();
-
-                if (password_verify($password, $usuarioExiste['passwordUsers'])){
-                    session_start();
-                    $_SESSION['logg_in'] = true;
-                    $_SESSION['nombre_usuario'] = $usuarioExiste['nameUsers'];
-                    $_SESSION['role_usuario'] = $usuarioExiste['roleUsers'];
-                    $_SESSION['success_msg'] = "Bienvenido ".$name;
-                    header('Location: index.php');
-                }
-            }  
-        }
-    
-    }
-    ?>
-   <?php
-
-        include 'error.php';
-    ?>
+    .btn:hover{
+      background-color: goldenrod;
+  }
+  
+</style>
 
 
   <div class="container mt-5">
     <center>
-    <h2 style="color: #000000; text-align: center; margin-top: 25px;">Iniciar Sesion</h2>
+    
     <form action="/student042/dwes/db_login.php" method="POST">
-        <div class="container mt-2 ms-2" >
+       
+    <h2>Iniciar Sesion</h2>
+    <div class="container m-2" >
           <div class="form-row" >
-            <div class="form-group col-md-6 ">
-              <label for="inputEmail4" style ="color: #040212">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <div class="form-group m-2">
+              <label for="inputEmail4">Email</label>
+              <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
             </div>
-            <div class="form-group col-md-6 mb-3">
-              <label for="inputPassword4" style="color: #040212" >Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            <div class="form-group m-2">
+              <label for="inputPassword4" >Password</label>
+              <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
             </div>
           </div>
-          <div style="display: flex; justify-content: center;">
-            <button type="submit" class="btn btn-primary mt-2 mb-3">Iniciar Sesion</button>
-            <a href="registrarse.php">Registrarse Aqui</a>
-
+          <div>
+            <button type="submit" name="iniciar" class="btn m-2">Iniciar Sesion </button> 
+              <span>
+                  <a href="/student042/dwes/html/registrarse.php">Registrarse Aqui</a>
+              </span>
           </div>
         </div>
-       
       </form>
     </center>
   </div>

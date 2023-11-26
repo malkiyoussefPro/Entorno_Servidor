@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
   
 ?>
-  <link rel="stylesheet" href="../css/reservas.css">
+  <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 
   <div class="container">

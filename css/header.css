@@ -22,9 +22,18 @@
         background-repeat: no-repeat;
         
     }
-h1{
-    margin: 25px 10px;
-}
+
+    
+       h1{
+        font-family: 'Lato' sans-serif;
+        color: rgb(188, 163, 41);
+        background-color: rgb(255, 255, 255);
+        width: 45px;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid rgb(164, 144, 55);
+       }
 
 
 .formHeader{
@@ -34,7 +43,7 @@ h1{
 }
 .formHeader div:hover{
     background-color:rgb(170, 132, 60) ;
-    border-color: rgb(170, 132, 60) ;
+    border-color: 0 ;
 }
 .formHeader a{
     text-decoration: none;
@@ -47,9 +56,8 @@ h1{
 }
 
 
-
 #carouselExampleControls{
-  
+    
     border: 2px solid black;
 }
 
