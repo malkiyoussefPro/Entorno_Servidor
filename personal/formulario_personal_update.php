@@ -51,7 +51,8 @@
 
 <div class="d-flex justify-content-center">
 
-    <form class="myFormpersonal" action="" method="POST">
+<form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_select_call.php" method="POST">
+
       <h2>Formulario actualizar personal</h2>
       <div class="container">
         

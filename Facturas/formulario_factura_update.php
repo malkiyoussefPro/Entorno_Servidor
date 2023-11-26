@@ -20,12 +20,11 @@ h2{
     label{
     color: #040212;
     font-size: 18px;
-    font-weight: bold;
     margin: 5px;
     padding: 5px;
   }
 
-  .myFormBelleza{
+  .myFormfactura{
     border: 2px solid wheat;
     border-radius: 5px;
     width: 500px;
@@ -47,13 +46,13 @@ h2{
 </style>
 
 <div class="d-flex justify-content-center">
-      <form class="myFormBelleza" action="/student042/dwes/Belleza/action/db_belleza_delete_call.php" method="POST">
-        <h2 >Formulario actualizar Belleza</h2>
+      <form class="myFormfactura" action="/student042/dwes/Facturas/action/db_factura_delete_call.php" method="POST">
+        <h2 >Formulario actualizar factura</h2>
         <div class="container mt-2 ms-2" >
           <div class="form-row" >
             <div class="form-group col-md-6 ">
-              <label for="inputBelleza">Id Belleza</label>
-              <input type="number" class="form-control" name="id_Belleza" placeholder="Id Belleza">
+              <label for="inputfactura">Id factura</label>
+              <input type="number" class="form-control" name="id_factura" placeholder="Id factura">
             </div>
           </div>
           <div class="d-flex justify-content-center">

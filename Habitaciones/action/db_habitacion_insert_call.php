@@ -52,15 +52,52 @@ if(isset($_POST['insertar'])){
 
 ?>
 
-  <h1>Hola desde formulario insertar formulario</h1>
-  <div class="container mt-5">
-    <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario insertar habitacion</h2>
-    <form class="myFormHabitacion" action="" method="POST">
+<style>
+
+h2{
+      color: #000000;
+       text-align: center; 
+       margin-top: 25px;
+    }
+
+    label{
+    color: #040212;
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .myFormHabitacion{
+    border: 2px solid wheat;
+    border-radius: 5px;
+    width: 600px;
+    height: 700px;
+    background-color: wheat;
+    margin-bottom: 15px;
+  }
+  #btn{
+     background-color: #000000;
+      border-color: white;
+      color: white; 
+      
+    }
+    #btn:hover{
+      background-color: gray;
+      color: #000000;
+  
+  }
+</style>
+
+<div class="d-flex justify-content-center">
+<form class="myFormHabitacion" action="" method="POST">
+
+    <h2>Formulario insertar habitacion</h2>
+   
       <div class="container">
 
         <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="inputHabitacion" style="color: #040212">Tipo Habitacion</label>
+            <label for="inputHabitacion">Tipo Habitacion</label>
             <select name="tipo_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Single</option>
@@ -70,7 +107,7 @@ if(isset($_POST['insertar'])){
           </div>
         
           <div class="form-group col-md-4">
-            <label for="inputHabitacion" style="color: #040212">Disponibilidad habitacion</label>
+            <label for="inputHabitacion">Disponibilidad habitacion</label>
             <select name="disponibilidad_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>disponible</option>
@@ -81,7 +118,7 @@ if(isset($_POST['insertar'])){
           </div>
 
           <div class="form-group col-md-4">
-            <label for="inputHabitacion" style="color: #040212">Estado habitacion</label>
+            <label for="inputHabitacion">Estado habitacion</label>
             <select name="estado_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>En proceso de limpieza</option>
@@ -91,7 +128,7 @@ if(isset($_POST['insertar'])){
           </div>
 
           <div class="form-group col-md-4">
-            <label for="inputHabitacion" style="color: #040212">Ubicacion Habitacion</label>
+            <label for="inputHabitacion">Ubicacion Habitacion</label>
             <select name="vista_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Vista mar</option>
@@ -101,7 +138,7 @@ if(isset($_POST['insertar'])){
           </div>
 
           <div class="form-group col-md-2">
-            <label for="inputZip" style="color: #040212">precio</label>
+            <label for="inputZip">precio</label>
             <input type="number" name="precio_habitacion" class="form-control" id="inputZip" placeholder="precio habitacion">
           </div>
         </div>
@@ -110,8 +147,8 @@ if(isset($_POST['insertar'])){
         <input class="form-control" type="file" id="formFile">
         </div>
 
-        <div style="display: flex; justify-content: center;">
-          <button type="submit" name="insertar" class="btn btn-primary m-2">Insertar</button>
+        <div class="d-flex justify-content-center">
+          <button type="submit" name="insertar" id="btn" class="btn  m-2">Insertar</button>
         </div>
       </div>
     </form>

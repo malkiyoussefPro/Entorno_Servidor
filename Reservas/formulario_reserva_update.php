@@ -6,29 +6,66 @@
 <?php
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
-  
+
 ?>
 
+<style>
 
-  <div class="container mt-5">
-  <h2 style="color: #000000; text-align: center; margin-top: 25px;">Formulario actualizar Reserva</h2>
-  <form class="myFormReserva" action="" method="POST">
-  <div class="container mt-2 ms-2" >
-    <div class="form-row" >
-        <div class="form-group col-md-6 ">
-          <label for="inputReserva" style ="color: #040212">Id reserva</label>
-          <input type="number" name="id_reserva" class="form-control" id="inputReserva" placeholder="Id reserva">
+h2{
+      color: #000000;
+       text-align: center; 
+       margin-top: 25px;
+    }
+
+    label{
+    color: #040212;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .myFormreserva{
+    border: 2px solid wheat;
+    border-radius: 5px;
+    width: 500px;
+    height: 250px;
+    background-color: wheat;
+    margin-bottom: 15px;
+  }
+  #btn{
+     background-color: #000000;
+      border-color: white;
+      color: white; 
+      
+    }
+    #btn:hover{
+      background-color: gray;
+      color: #000000;
+  
+  }
+</style>
+
+<div class="d-flex justify-content-center">
+      <form class="myFormreserva" action="/student042/dwes/Reservas/action/db_reserva_delete_call.php" method="POST">
+        <h2 >Formulario actualizar reserva</h2>
+        <div class="container mt-2 ms-2" >
+          <div class="form-row" >
+            <div class="form-group col-md-6 ">
+              <label for="inputreserva">Id reserva</label>
+              <input type="number" class="form-control" name="id_reserva" placeholder="Id reserva">
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" name="actualizar" id="btn" class="btn  mt-2 mb-3">Actualizar</button>
+          </div>
         </div>
-      </div>
-      <div style="display: flex; justify-content: center;">
-        <button type="submit" name="actualizar" class="btn btn-primary mt-2 mb-3" style="background-color: #000000; border-color: #feffe2; justify-content: center;color: #505050 ; font-weight: bold;">Actualizar</button>
-      </div>
-    </div>
-  </form>
-</div>
+      </form>
+      
+  </div>
 
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-  
+
 ?>

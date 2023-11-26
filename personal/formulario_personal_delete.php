@@ -50,7 +50,7 @@
 
 </style>
 <div class="d-flex justify-content-center">
-    <form class="myFormpersonal" action="/student042/dwes/personals/action/db_personal_insert_call.php" method="POST">
+    <form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_delete_call.php" method="POST">
 
     <h2>Formulario suprimir personal</h2>
 

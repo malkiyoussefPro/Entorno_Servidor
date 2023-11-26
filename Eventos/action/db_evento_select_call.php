@@ -20,11 +20,9 @@ h2{
     label{
     color: #040212;
     font-size: 18px;
-    font-weight: bold;
     margin: 5px;
     padding: 5px;
   }
-
   .myFormEvento{
     border: 2px solid wheat;
     border-radius: 5px;
