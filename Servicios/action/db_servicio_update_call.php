@@ -3,62 +3,98 @@
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
 
 ?>
+
 <?php
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
-
+  
 ?>
 <style>
-
 h2{
-      color: #000000;
-       text-align: center; 
-       margin-top: 25px;
-    }
-
+    color: #040212;
+     text-align: center;
+     
+  }
   label{
     color: #040212;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
   }
-
-  .myFormServicio{
-    border: 2px solid wheat;
-    border-radius: 5px;
+ 
+  form{
+    border: 2px solid #040212;
+    border-radius: 10px;
     width: 500px;
-    height: 250px;
-    background-color: wheat;
-    margin-bottom: 15px;
+    height: auto;
+    background-color: lightgrey;
+    margin: 15px;
+    padding: 15px;
+  }
+  .form-control{
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #040212;
   }
   #btn{
      background-color: #000000;
       border-color: white;
       color: white; 
-      font-weight: bold;
-      margin-top: 15px;
+      
     }
     #btn:hover{
-      background-color: goldenrod;
+      background-color: gray;
+      color: #000000;
+  
   }
 </style>
 
-  <div class="container mt-5">
-    <center>
-      <form class="myFormServicio" action="" method="POST">
-      <h2>Formulario actualizar Servicio</h2>
-      <div class="container mt-2 ms-2" >
-        <div class="form-row" >
-        <div class="form-group col-md-6 ">
-            <label for="inputServicio">Id Servicio</label>
-            <input type="number" class="form-control" name="id_Servicio" placeholder="Id Servicio">
-          </div>
+<div class="d-flex justify-content-center">
+
+  <form class="myFormservicio " action="/student042/dwes/Servicios/action/db_servicio_insert_call.php" method="POST">
+
+      <h2>Formulario insertar servicio </h2>
+      <div class="container">
+        
+        <div class="form-group">
+          <label for="inputservicio ">Description servicio </label>
+          <input type="text" name="nombre_servicio " class="form-control" id="inputservicio " placeholder="nombre">
         </div>
-        <div>
-          <button type="submit" name="actualizar" id="btn" class="btn mt-2 mb-3">Actualizar</button>
+        <div class="form-group">
+          <label for="inputEmail4">Email servicio </label>
+          <input type="email" name="email_servicio " class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+       
+        <div class="mb-3">
+        <label for="formFile" class="form-label">Imagen servicio</label>
+        <input class="form-control" type="file" id="formFile" name="imagen_servicio">
+        </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Departamento servicio </label>
+            <select id="inputState" class="form-control" name="role_servicio ">
+              <option selected>Seleccionar...</option>
+              <option>Restaurante</option>
+              <option>Evento</option>
+              <option>Belleza</option>
+            </select>
+          </div>
+        <div class="form-group">
+          <label for="inputFecha">Fecha creación servicio</label>
+          <input type="date" name="fecha_creacion_servicio" class="form-control" id="inputFecha" placeholder="fecha">
+        </div>
+        <div class="form-group">
+          <label for="inputservicio ">precio </label>
+          <input type="number" name="precio_servicio " class="form-control" id="inputservicio " placeholder="nombre">
+        </div>
+       
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" id="btn" class="btn mt-2">Actualizar</button>
         </div>
       </div>
-      </form>
-    </center>
+    </form>
+    
   </div>
 
 <?php

@@ -3,38 +3,39 @@
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
 
 ?>
-
 <?php
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
-  
+
 ?>
+
 <style>
-  h2{
+h2{
     color: #040212;
      text-align: center;
      
   }
   label{
     color: #040212;
-    font-size: 18px;
+    font-size: 15px;
     margin: 5px;
     padding: 5px;
   }
-
+ 
   form{
-    border: 2px solid wheat;
+    border: 2px solid #040212;
     border-radius: 10px;
     width: 500px;
-    height: 910px;
-    background-color: wheat;
+    height: auto;
+    background-color: lightgrey;
     margin: 15px;
     padding: 15px;
   }
   .form-control{
-    width: 350px;
+    width: auto;
     margin: 5px;
     padding: 5px;
+    border: 1px solid #040212;
   }
   #btn{
      background-color: #000000;
@@ -47,6 +48,7 @@
       color: #000000;
   
   }
+
 </style>
 
 <div class="d-flex justify-content-center">

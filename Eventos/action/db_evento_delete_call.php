@@ -10,26 +10,32 @@
 ?>
 
 <style>
-
 h2{
-      color: #000000;
-       text-align: center; 
-       margin-top: 25px;
-    }
-    label{
     color: #040212;
-    font-size: 18px;
+     text-align: center;
+     
+  }
+  label{
+    color: #040212;
+    font-size: 15px;
     margin: 5px;
     padding: 5px;
   }
-
-  .myFormEvento{
-    border: 2px solid wheat;
-    border-radius: 5px;
+ 
+  form{
+    border: 2px solid #040212;
+    border-radius: 10px;
     width: 500px;
-    height: 250px;
-    background-color: wheat;
-    margin-bottom: 15px;
+    height: auto;
+    background-color: lightgrey;
+    margin: 15px;
+    padding: 15px;
+  }
+  .form-control{
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #040212;
   }
   #btn{
      background-color: #000000;
@@ -42,8 +48,8 @@ h2{
       color: #000000;
   
   }
-</style>
 
+</style>
 <div class="d-flex justify-content-center">
       <form class="myFormEvento" action="" method="POST">
         <h2 >Formulario suprimir Evento</h2>

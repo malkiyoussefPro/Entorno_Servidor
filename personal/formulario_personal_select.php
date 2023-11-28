@@ -7,67 +7,63 @@
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
 
+
 ?>
 
-<style>
-  h2{
-    color: #040212;
-     text-align: center;
-     
-  }
-  label{
-    color: #040212;
-    font-size: 18px;
-    margin: 5px;
-    padding: 5px;
-  }
 
-  form{
-    border: 2px solid wheat;
-    border-radius: 10px;
-    width: 500px;
-    height: 250px;
-    background-color: wheat;
-    margin: 15px;
-    padding: 15px;
-  }
-  .form-control{
-    width: 350px;
-    margin: 5px;
-    padding: 5px;
-  }
-  #btn{
-     background-color: #000000;
-      border-color: white;
-      color: white; 
-      
-    }
-    #btn:hover{
-      background-color: gray;
-      color: #000000;
-  
-  }
-</style>
-<div class="d-flex justify-content-center">
-    <form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_select_call.php" method="POST">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Fecha Nacimiento</th>
+      <th scope="col">Puesto</th>
+      <th scope="col">Domicilio </th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fecha Integracion</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Aff_ SS </th>
+      <th scope="col">Curriculum</th>
+      <th scope="col">Fecha Despedida</th>
+      <th scope="col ">Operaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>      
+        <a href="action/db_personal_insert_call.php" name="insertar" id="btn" class="btn btn-success btn-sm  m-1"> Insertar </a>  
+      </td>
+      <td>      
+        <a href="action/db_personal_select_call.php" name="buscar" id="btn" class="btn btn-primary btn-sm m-1"> Buscar</a>  
+      </td>
+      <td>      
+        <a href="action/db_personal_update_call.php" name="actulizar" id="btn" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
+      </td>
+      <td>      
+        <a href="action/db_personal_delete_call.php" name="suprimir" id="btn" class="btn btn-danger btn-sm  m-1"> Suprimir </a>  
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-    <h2>Formulario buscar personal</h2>
 
-    <div class="container mt-2 ms-2" >
-      <div class="form-row" >
-        <div class="form-group col-md-6 ">
-          <label for="inputpersonal" style ="color: #040212">Id personal</label>
-          <input type="number" name="id_personal" class="form-control" id="inputpersonal" placeholder="Id personal">
-        </div>
-      </div>
-      <div class="d-flex justify-content-center m-2">
-        <button type="submit" name="buscar" id="btn" class="btn mt-2 mb-3">Buscar</button>
-      </div>
-    </div>
-  </form>
-</div>
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-  
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
 ?>
+

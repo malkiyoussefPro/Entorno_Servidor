@@ -22,7 +22,7 @@ if(isset($_POST['insertar'])){
   $estado = $_POST['estado_habitacion'];
   $vista = $_POST['vista_habitacion'];
   $precio = $_POST['precio_habitacion'];
-  $imagen = "/student042/dwes/html/tu/imagenes.jpg";
+  $imagen = "/student042/dwes/html/imagenes.jpg";
 
   if(!empty($tipo) && !empty($disponibilidad) && !empty($estado) && !empty($vista) && !empty($precio)){
     $q_insert = $pdo -> prepare('INSERT INTO habitaciones VALUES
@@ -34,7 +34,7 @@ if(isset($_POST['insertar'])){
          Añadido de  una habitacion excitoso!
       </div>
     <?php
-      header('Location:/student042/dwes/Habitaciones/formulario_habitacion_insert.php');
+      header('Location:/student042/dwes/html/dashbord.php');
   }else{
     ?>
      <div class="alert alert-danger" role="alert">
@@ -53,27 +53,32 @@ if(isset($_POST['insertar'])){
 ?>
 
 <style>
-
 h2{
-      color: #000000;
-       text-align: center; 
-       margin-top: 25px;
-    }
-
-    label{
     color: #040212;
-    font-size: 18px;
+     text-align: center;
+     
+  }
+  label{
+    color: #040212;
+    font-size: 15px;
     margin: 5px;
     padding: 5px;
   }
-
-  .myFormHabitacion{
-    border: 2px solid wheat;
-    border-radius: 5px;
-    width: 600px;
-    height: 700px;
-    background-color: wheat;
-    margin-bottom: 15px;
+ 
+  form{
+    border: 2px solid #040212;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+    background-color: lightgrey;
+    margin: 15px;
+    padding: 15px;
+  }
+  .form-control{
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #040212;
   }
   #btn{
      background-color: #000000;
@@ -86,6 +91,7 @@ h2{
       color: #000000;
   
   }
+
 </style>
 
 <div class="d-flex justify-content-center">
@@ -160,3 +166,5 @@ h2{
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
+
+

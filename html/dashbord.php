@@ -47,13 +47,13 @@
           Personal
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_personal_insert.php">Añadir personal </a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_insert.php">Añadir Personal </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_personal_update.php">Modificar personal</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_update.php">Modificar Personal</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_personal_delete.php">Borrar personal</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_delete.php">Borrar Personal</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_personal_select.php">Buscar personal</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_select.php">Buscar Personal</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -142,16 +142,30 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Servicios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_insert.php">Añadir Servicio</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_update.php">Modificar Servicio</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_delete.php">Borrar Servicio</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_ervicio_select.php">Buscar Servicio</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Facturas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_facturas_insert.php">Añadir Factura</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_insert.php">Añadir Factura</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_facturas_update.php">Modificar Factura</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_update.php">Modificar Factura</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_facturas_delete.php">Borrar Factura</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_delete.php">Borrar Factura</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_facturas_select.php">Buscar Factura</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_select.php">Buscar Factura</a></li>
           </ul>
         </li>
       </ul>
@@ -161,13 +175,12 @@
 </header>
 
 <center><h1>DASHBORD HOTEL OASIS</h1></center>
-  <div class="card-body">
+  <div>
 
-   <a  href="/student042/dwes/index.php" class="btn border-dark"> Visitar Pagina Web </a> 
+   <a href="/student042/dwes/index.php" class="btn border-dark"> Visitar Pagina Web </a> 
    
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-</body>
-</html>
+
+

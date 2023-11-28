@@ -17,10 +17,11 @@ h2{
        margin-top: 25px;
     }
 
-  label{
+    label{
     color: #040212;
     font-size: 18px;
-    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
   }
 
   .myFormRestaurante{

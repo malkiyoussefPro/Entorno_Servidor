@@ -16,11 +16,9 @@ h2{
        text-align: center; 
        margin-top: 25px;
     }
-
     label{
     color: #040212;
     font-size: 18px;
-    font-weight: bold;
     margin: 5px;
     padding: 5px;
   }

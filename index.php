@@ -8,7 +8,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
  ?>
         <link rel="stylesheet" href="/student042/dwes/css/header.css">
             <center>
-            <h1>Bienvenidos al Hotel Oasis</h1>
+            <h2>Bienvenidos al Hotel Oasis</h2>
             <div class="container">
                     
                          <form class="formHeader" method="POST">

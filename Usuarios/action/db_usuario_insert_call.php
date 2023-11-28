@@ -10,31 +10,32 @@
   
 ?>
 <style>
-  h2{
+h2{
     color: #040212;
      text-align: center;
      
   }
   label{
     color: #040212;
-    font-size: 18px;
+    font-size: 15px;
     margin: 5px;
     padding: 5px;
   }
-
+ 
   form{
-    border: 2px solid wheat;
+    border: 2px solid #040212;
     border-radius: 10px;
     width: 500px;
-    height: 910px;
-    background-color: wheat;
+    height: auto;
+    background-color: lightgrey;
     margin: 15px;
     padding: 15px;
   }
   .form-control{
-    width: 350px;
+    width: auto;
     margin: 5px;
     padding: 5px;
+    border: 1px solid #040212;
   }
   #btn{
      background-color: #000000;
@@ -51,7 +52,8 @@
 
 <div class="d-flex justify-content-center">
 
-    <form class="myFormUsuario" action="" method="POST">
+  <form class="myFormUsuario" action="/student042/dwes/Usuarios/action/db_usuario_insert_call.php" method="POST">
+
       <h2>Formulario insertar Usuario</h2>
       <div class="container">
         
@@ -59,52 +61,28 @@
           <label for="inputUsuario">Nombre Usuario</label>
           <input type="text" name="nombre_Usuario" class="form-control" id="inputUsuario" placeholder="nombre">
         </div>
-
         <div class="form-group">
-          <label for="inputFecha">Fecha nacimiento</label>
-          <input type="date" name="fecha_Usuario" class="form-control" id="inputFecha" placeholder="fecha">
-        </div>
-
-        <div class="form-group">
-          <label for="inputTelefono">telefono</label>
-          <input type="text" name="telefono_Usuario" class="form-control" id="inputTelefono" placeholder="fecha">
-        </div>
-
-
-        <div class="form-group">
-          <label for="inputEmail4">Email</label>
+          <label for="inputEmail4">Email Usuario</label>
           <input type="email" name="email_Usuario" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
        
         <div class="form-group">
-          <label for="inputAddress">Dirección</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <label for="inputAddress">Contraseña</label>
+          <input type="password" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
-
-        <div class="form-group col-md-2">
-            <label for="inputZip">Código Postal</label>
-            <input type="text" name="codigoPostal_Usuario" class="form-control" id="inputZip" placeholder="Código Postal">
-          </div>
-
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">Ciudad</label>
-            <input type="text" name="ciudad_Usuario" class="form-control" id="inputCity" placeholder="Mao, Islas Baleares">
-          </div>
           <div class="form-group col-md-4">
-            <label for="inputState">País</label>
-            <select id="inputState" class="form-control">
+            <label for="inputState">Role Usuario</label>
+            <select id="inputState" class="form-control" name="role_usuario">
               <option selected>Seleccionar...</option>
-              <option>Marruecos</option>
-              <option>España</option>
-              <option>Irak</option>
-              <option>Palestina</option>
-              <option>Arabia Saudia</option>
-              <option>Senegal</option>
-              <option>Andonesia</option>
-              <option>Malisia</option>
+              <option>Cliente</option>
+              <option>Personal</option>
+              <option>Invitado</option>
             </select>
           </div>
+          <div class="form-group">
+          <label for="inputFecha">Fecha creacion cuenta</label>
+          <input type="date" name="fecha_creacion" class="form-control" id="inputFecha" placeholder="fecha">
+        </div>
        
         </div>
         <div class="d-flex justify-content-center">
