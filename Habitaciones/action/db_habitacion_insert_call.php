@@ -5,94 +5,11 @@
 ?>
 <?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
-
-
-?>
-<?php
- 
-if ($pdo){
-  $nombreDB = 'hotel_42';
-  $pdo->exec("USE $nombreDB");
-  
-if(isset($_POST['insertar'])){
-  echo'salam';
-  $tipo = $_POST['tipo_habitacion'];
-  $disponibilidad = $_POST['disponibilidad_habitacion'];
-  $estado = $_POST['estado_habitacion'];
-  $vista = $_POST['vista_habitacion'];
-  $precio = $_POST['precio_habitacion'];
-  $imagen = "/student042/dwes/html/imagenes.jpg";
-
-  if(!empty($tipo) && !empty($disponibilidad) && !empty($estado) && !empty($vista) && !empty($precio)){
-    $q_insert = $pdo -> prepare('INSERT INTO habitaciones VALUES
-    (null,?,?,?,?,?,?)');
-    $q_insert -> execute([$tipo, $disponibilidad, $estado, $vista, $precio,$imagen]);
-
-    ?>
-      <div class="alert alert-success" role="alert">
-         Añadido de  una habitacion excitoso!
-      </div>
-    <?php
-      header('Location:/student042/dwes/html/dashbord.php');
-  }else{
-    ?>
-     <div class="alert alert-danger" role="alert">
-           Todos los campos son obligatorios !
-      </div>
-    <?php
-}
-}
-
-
-
- }else{
-  echo ' Error en el estabelicimiento a la base de datos';
- }
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 
-<style>
-h2{
-    color: #040212;
-     text-align: center;
-     
-  }
-  label{
-    color: #040212;
-    font-size: 15px;
-    margin: 5px;
-    padding: 5px;
-  }
- 
-  form{
-    border: 2px solid #040212;
-    border-radius: 10px;
-    width: 500px;
-    height: auto;
-    background-color: lightgrey;
-    margin: 15px;
-    padding: 15px;
-  }
-  .form-control{
-    width: auto;
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid #040212;
-  }
-  #btn{
-     background-color: #000000;
-      border-color: white;
-      color: white; 
-      
-    }
-    #btn:hover{
-      background-color: gray;
-      color: #000000;
-  
-  }
-
-</style>
+<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">
 <form class="myFormHabitacion" action="" method="POST">

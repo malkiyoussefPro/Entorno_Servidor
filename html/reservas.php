@@ -1,11 +1,13 @@
-<?php
-include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
-?>
 
 <?php
+
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+
+?>
+<?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
-  
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+    
 ?>
   <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
@@ -16,7 +18,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
     <h1>Reservas</h1>
       <div class="col">
       <label for="startDate">Llegada</label>
-        <input id="startDate" class="form-control" type="date" />
+        <input id="startDate"  class="form-control" type="date" />
       </div>
       <div class="col">
       <label for="startDate">Salida</label>

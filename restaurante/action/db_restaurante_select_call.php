@@ -5,45 +5,11 @@
 ?>
 <?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/connection/connection.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 
-<style>
-
-h2{
-      color: #000000;
-       text-align: center; 
-       margin-top: 25px;
-    }
-
-    label{
-    color: #040212;
-    font-size: 18px;
-    margin: 5px;
-    padding: 5px;
-  }
-
-  .myFormRestaurante{
-    border: 2px solid wheat;
-    border-radius: 5px;
-    width: 500px;
-    height: 250px;
-    background-color: wheat;
-    margin-bottom: 15px;
-  }
-  #btn{
-     background-color: #000000;
-      border-color: white;
-      color: white; 
-      
-    }
-    #btn:hover{
-      background-color: gray;
-      color: #000000;
-  
-  }
-</style>
+<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">
       <form class="myFormRestaurante" action="" method="POST">
