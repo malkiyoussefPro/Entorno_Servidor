@@ -32,13 +32,13 @@
           Usuarios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Usuarios/action/db_usuario_insert_call.php">Añadir Usuario </a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_usuario_insert.php">Añadir Usuario </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/action/db_usuario_update_call.php">Modificar Usuario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_usuario_update.php">Modificar Usuario</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/action/db_usuario_delete_call.php">Borrar Usuario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_usuario_delete.php">Borrar Usuario</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/action/db_usuario_select_call.php">Buscar Usuario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_usuario_select.php">Buscar Usuario</a></li>
           </ul>
           
         </li>
@@ -47,13 +47,13 @@
           Personal
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Personal/action/db_personal_insert_call.php">Añadir Personal </a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_insert.php">Añadir Personal </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Personal/action/db_personal_update_call.php">Modificar Personal</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_update.php">Modificar Personal</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Personal/action/db_personal_delete_call.php">Borrar Personal</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_delete.php">Borrar Personal</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Personal/action/db_personal_select_call.php">Buscar Personal</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_select.php">Buscar Personal</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -61,13 +61,13 @@
           Clientes
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Clientes/action/db_cliente_insert_call.php">Añadir Cliente </a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Clientes/formulario_cliente_insert.php">Añadir Cliente </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Clientes/action/db_cliente_update_call.php">Modificar Cliente</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Clientes/formulario_cliente_update.php">Modificar Cliente</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Clientes/action/db_cliente_delete_call.php">Borrar Cliente</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Clientes/formulario_cliente_delete.php">Borrar Cliente</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Clientes/action/db_cliente_select_call.php">Buscar Cliente</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Clientes/formulario_cliente_select.php">Buscar Cliente</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -75,13 +75,13 @@
           Habitaciones
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/action/db_habitacion_insert_call.php">Añadir Habitacion </a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/formulario_habitacion_insert.php">Añadir Habitacion </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/action/db_habitacion_update_call.php">Modificar Habitacion</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/formulario_habitacion_update.php">Modificar Habitacion</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/action/db_habitacion_delete_call.php">Borrar Habitacion</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/formulario_habitacion_delete.php">Borrar Habitacion</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/action/db_habitacion_select_call.php">Buscar Habitacion</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/formulario_habitacion_select.php">Buscar Habitacion</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -89,13 +89,13 @@
           Reservas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Reservas/action/db_reserva_insert_call.php">Añadir Reserva </a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Reservas/formulario_reserva_insert.php">Añadir Reserva </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Reservas/action/db_reserva_update_call.php">Modificar Reserva</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Reservas/formulario_reserva_update.php">Modificar Reserva</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Reservas/action/db_reserva_delete_call.php">Borrar Reserva</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Reservas/formulario_reserva_delete.php">Borrar Reserva</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Reservas/action/db_reserva_select_call.php">Buscar Reserva</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Reservas/formulario_reserva_select.php">Buscar Reserva</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -103,13 +103,13 @@
           Belleza
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Belleza/action/db_belleza_insert_call.php">Añadir Belleza</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_insert.php">Añadir Belleza</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/action/db_belleza_update_call.php">Modificar Belleza</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_update.php">Modificar Belleza</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/action/db_belleza_delete_call.php">Borrar Belleza</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_delete.php">Borrar Belleza</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/action/db_belleza_select_call.php">Buscar Belleza</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_select.php">Buscar Belleza</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -117,13 +117,13 @@
           Eventos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Eventos/action/db_evento_insert_call.php">Añadir Evento</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_insert.php">Añadir Evento</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/action/db_evento_update_call.php">Modificar Evento</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_update.php">Modificar Evento</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/action/db_evento_delete_call.php">Borrar Evento</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_delete.php">Borrar Evento</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/action/db_evento_select_call.php">Buscar Evento</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_select.php">Buscar Evento</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -131,13 +131,13 @@
           Restaurante
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Restaurante/action/db_restaurante_insert_call.php">Añadir Restaurante</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_insert.php">Añadir Restaurante</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/action/db_restaurante_update_call.php">Modificar Restaurante</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_update.php">Modificar Restaurante</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/action/db_restaurante_delete_call.php">Borrar Restaurante</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_delete.php">Borrar Restaurante</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/action/db_restaurante_select_call.php">Buscar Restaurante</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_select.php">Buscar Restaurante</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -145,13 +145,13 @@
           Servicios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Servicios/action/db_servicio_insert_call.php">Añadir Servicio</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_insert.php">Añadir Servicio</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Servicios/action/db_servicio_update_call.php">Modificar Servicio</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_update.php">Modificar Servicio</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Servicios/action/db_servicio_delete_call.php">Borrar Servicio</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_delete.php">Borrar Servicio</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Servicios/action/db_servicio_select_call.php">Buscar Servicio</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_select.php">Buscar Servicio</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -159,13 +159,13 @@
           Facturas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Facturas/action/db_factura_insert_call.php">Añadir Factura</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_insert.php">Añadir Factura</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/action/db_factura_update_call.php">Modificar Factura</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_update.php">Modificar Factura</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/action/db_factura_delete_call.php">Borrar Factura</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_delete.php">Borrar Factura</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/action/db_factura_select_call.php">Buscar Factura</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_select.php">Buscar Factura</a></li>
           </ul>
         </li>
       </ul>

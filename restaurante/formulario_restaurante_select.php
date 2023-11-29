@@ -9,60 +9,39 @@
 
 ?>
 
-<style>
-
-h2{
-      color: #000000;
-       text-align: center; 
-       margin-top: 25px;
-    }
-
-    label{
-    color: #040212;
-    font-size: 18px;
-    margin: 5px;
-    padding: 5px;
-  }
-
-  .myFormRestaurante{
-    border: 2px solid wheat;
-    border-radius: 5px;
-    width: 500px;
-    height: 250px;
-    background-color: wheat;
-    margin-bottom: 15px;
-  }
-  #btn{
-     background-color: #000000;
-      border-color: white;
-      color: white; 
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Id servicio </th>
+      <th scope="col">Imagen servicio</th>
+      <th scope="col">Precio </th>
+      <th scope="col " class= d-flex justify-content-center>Operaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       
-    }
-    #btn:hover{
-      background-color: gray;
-      color: #000000;
-  
-  }
-</style>
-
-<div class="d-flex justify-content-center">
-      <form class="myFormRestaurante" action="/student042/dwes/Restaurante/action/db_restaurante_delete_call.php" method="POST">
-        <h2 >Formulario buscar Restaurante</h2>
-        <div class="container mt-2 ms-2" >
-          <div class="form-row" >
-            <div class="form-group col-md-6 ">
-              <label for="inputRestaurante">Id Restaurante</label>
-              <input type="number" class="form-control" name="id_Restaurante" placeholder="Id Restaurante">
-            </div>
-          </div>
-          <div class="d-flex justify-content-center">
-            <button type="submit" name="buscar" id="btn" class="btn  mt-2 mb-3">Buscar</button>
-          </div>
-        </div>
-      </form>
-      
-  </div>
-
+      <td>      
+        <a href="action/db_restaurante_insert_call.php" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>  
+      </td>
+      <td>      
+        <a href="action/db_restaurante_select_call.php" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
+      </td>
+      <td>      
+        <a href="action/db_restaurante_update_call.php" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
+      </td>
+      <td>      
+        <a href="action/db_restaurante_delete_call.php" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm  m-1"> Suprimir </a>  
+      </td>
+    </tr>
+  </tbody>
+</table>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');

@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="submit" name="buscar" id="btn" class="btn  mt-2 mb-3">Buscar</button>
+            <button type="submit" name="buscar" id="btn_formulario" class="btn  mt-2 mb-3">Buscar</button>
           </div>
         </div>
       </form>
