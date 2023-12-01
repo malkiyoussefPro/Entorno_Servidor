@@ -1,6 +1,11 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
+  session_start();
+  
+?>
+<?php
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php

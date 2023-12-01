@@ -1,6 +1,11 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
+  session_start();
+  
+?>
+<?php
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
@@ -21,7 +26,10 @@
           <label for="inputCliente">Nombre cliente</label>
           <input type="text" name="nombre_cliente" class="form-control" id="inputCliente" placeholder="nombre">
         </div>
-
+        <div class="form-group">
+          <label for="inputCliente">Dni cliente</label>
+          <input type="text" name="dni_cliente" class="form-control" id="inputCliente" placeholder="nombre">
+        </div>
         <div class="form-group">
           <label for="inputFecha">Fecha nacimiento</label>
           <input type="date" name="fecha_cliente" class="form-control" id="inputFecha" placeholder="fecha">
@@ -40,7 +48,7 @@
        
         <div class="form-group">
           <label for="inputAddress">Dirección</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <input type="text" name="direccion_cliente" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
 
         <div class="form-group col-md-2">
@@ -70,7 +78,7 @@
        
         </div>
         <div class="d-flex justify-content-center">
-          <button type="submit" id="btn" class="btn mt-2">Actualizar</button>
+          <button type="submit" name="actualizar" id="btn" class="btn mt-2">Actualizar</button>
         </div>
       </div>
     </form>

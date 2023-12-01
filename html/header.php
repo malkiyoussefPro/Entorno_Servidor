@@ -7,7 +7,7 @@
 
 <?php 
   
-  $_SESSION['login'] = false;
+  session_start();
 
 ?>
 

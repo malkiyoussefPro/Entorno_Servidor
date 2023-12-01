@@ -1,20 +1,19 @@
 
+
 <?php
 
   session_start();
   
 ?>
-
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
     
-?> 
 ?>
 
 <?php
@@ -43,7 +42,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
           <div>
             <button type="submit" name="iniciar" class="btn m-2">Iniciar Sesion </button> 
               <span>
-                  <a href="/student042/dwes/html/registrarse.php">Registrarse Aqui</a>
+                  <a href="/student042/dwes/Personal/action/db_personal_insert_call.php">Registrarse Aqui</a>
               </span>
           </div>
         </div>

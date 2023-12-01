@@ -1,6 +1,6 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
@@ -8,6 +8,49 @@
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
+
+<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+
+ <?php
+if ($pdo){
+  $nombreDB = 'hotel_42';
+  $pdo->exec("USE $nombreDB");
+  
+if(isset($_POST['insertar'])){
+  echo'salam';
+  $tipo = $_POST['tipo_habitacion'];
+  $disponibilidad = $_POST['disponibilidad_habitacion'];
+  $estado = $_POST['estado_habitacion'];
+  $vista = $_POST['vista_habitacion'];
+  $precio = $_POST['precio_habitacion'];
+  $imagen = "/student042/dwes/html/tu/imagenes.jpg";
+
+  if(!empty($tipo) && !empty($disponibilidad) && !empty($estado) && !empty($vista) && !empty($precio)){
+    $q_insert = $pdo -> prepare('INSERT INTO habitaciones VALUES
+    (null,?,?,?,?,?,?)');
+    $q_insert -> execute([$tipo, $disponibilidad, $estado, $vista, $precio,$imagen]);
+
+    ?>
+      <div class="alert alert-success" role="alert">
+         Habitacion añadida de una  excitoso!
+      </div>
+    <?php
+      header('Location:/student042/dwes/dashboard.php');
+  }else{
+    ?>
+     <div class="alert alert-danger" role="alert">
+           Todos los campos son obligatorios !
+      </div>
+    <?php
+}
+}
+
+ }else{
+  echo ' Error en el estabelicimiento a la base de datos';
+ }
+
+?>
+
 
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 

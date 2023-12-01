@@ -1,6 +1,12 @@
 
 <?php
 
+  session_start();
+  
+?>
+
+<?php
+
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
@@ -9,7 +15,6 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
     
 ?>
-
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <form action="" method="POST">

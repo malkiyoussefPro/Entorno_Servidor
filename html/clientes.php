@@ -1,6 +1,12 @@
 
 <?php
 
+  //session_start();
+  
+?>
+
+<?php
+
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
@@ -37,7 +43,6 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
               <option selected>Seleccionar...</option>
               <option>Marruecos</option>
               <option>España</option>
-              
             </select>
           </div>
           <div class="form-group col-md-2">

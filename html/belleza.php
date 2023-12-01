@@ -1,6 +1,12 @@
 
 <?php
 
+  session_start();
+  
+?>
+
+<?php
+
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
@@ -11,7 +17,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
 
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
-
+ <h5>Bienvenido <?php echo $_SESSION ['name'] ?></h5>
 <form action="" method="">
 <div class="container-fluid bg-gray">
  

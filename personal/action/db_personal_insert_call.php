@@ -1,6 +1,11 @@
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashbord.php');
+ ob_start();
+  
+?>
+<?php
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
@@ -8,6 +13,51 @@
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
+<?php
+if ($pdo){
+  $nombreDB = 'hotel_42';
+  $pdo->exec("USE $nombreDB");
+   if (isset($_POST['insertar'])){
+    $id_usuario = $_POST['id_usuario'];
+    $nombre = $_POST['nombre_personal'];
+    $fecha_nacimiento = $_POST['fecha_nacimiento'];
+    $puesto = $_POST['puesto_personal'];
+    $domicilio = $_POST['domicilio_personal'];
+    $telefono = $_POST['telefono_personal'];
+    $email = $_POST['email_personal'];
+    $fecha_integracion = $_POST['fecha_integracion'];
+    $affiliación = $_POST['affiliación_personal'];
+    $imagen_Personal = $_POST['imagen_Personal'];
+    $curriculum = $_POST['curriculum'];
+    $fecha_despedida = $_POST['fecha_Despedida'];
+   
+   if(!empty($id_usuario) && !empty($nombre) && !empty( $fecha_nacimiento) && !empty($puesto) && !empty($domicilio) && !empty($telefono)
+    && !empty($email) && !empty($fecha_integracion) && !empty($affiliación)&& !empty($imagen_Personal) && !empty($curriculum)){
+      $q_insert = $pdo -> prepare('INSERT INTO  personal_hotel VALUES 
+      (null, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)');
+     
+      $q_insert -> execute([$id_usuario, $nombre, $fecha_nacimiento, $puesto, $domicilio, $telefono,
+       $email,$fecha_integracion, $affiliación, $imagen_Personal, $curriculum, $fecha_despedida]);
+
+      ?>
+      <div class="alert alert-success" role="alert">
+         Cliente añadido de una  excitoso!
+      </div>
+    <?php
+      header('Location:/student042/dwes/html/dashboard.php');
+  }else{
+    ?>
+     <div class="alert alert-danger" role="alert">
+           Todos los campos son obligatorios !
+      </div>
+    <?php
+}
+   }
+}else{
+  echo ' Error en el estabelicimiento a la base de datos';
+ }
+?>
+
 
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
@@ -16,6 +66,10 @@
     <form class="myFormpersonal" action="" method="POST">
       <h2>Formulario insertar personal</h2>
       <div class="container">
+      <div class="form-group">
+          <label for="inputpersonal">id Usuario</label>
+          <input type="text" name="id_usuario" class="form-control" id="inputpersonal" placeholder="nombre">
+        </div>
         
         <div class="form-group">
           <label for="inputpersonal">Nombre personal</label>
@@ -24,11 +78,11 @@
 
         <div class="form-group">
           <label for="inputFecha">Fecha nacimiento</label>
-          <input type="date" name="fecha_personal" class="form-control" id="inputFecha" placeholder="fecha">
+          <input type="date" name="fecha_nacimiento" class="form-control" id="inputFecha" placeholder="fecha">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group">
             <label for="inputState">Puesto</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" name="puesto_personal" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Director</option>
               <option>Admin</option>
@@ -58,12 +112,12 @@
             </select>
           </div>
         <div class="form-group">
-          <label for="inputAddress">Dirección</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <label for="inputAddress">Domicilio</label>
+          <input type="text" name="domicilio_personal" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
         <div class="form-group">
           <label for="inputTelefono">telefono</label>
-          <input type="text" name="telefono_personal" class="form-control" id="inputTelefono" placeholder="fecha">
+          <input type="text" name="telefono_personal" class="form-control" id="inputTelefono" placeholder="telefono">
         </div>
         <div class="form-group">
           <label for="inputEmail4">Email</label>
@@ -71,38 +125,31 @@
         </div>
         <div class="form-group">
           <label for="inputFecha">Fecha Integracion</label>
-          <input type="date" name="fecha_Integracion" class="form-control" id="inputFecha" placeholder="fecha">
+          <input type="date" name="fecha_integracion" class="form-control" id="inputFecha" placeholder="fecha">
         </div>
-        <div class="form-group col-md-2">
-            <label for="inputZip">Código Postal</label>
-            <input type="text" name="codigoPostal_personal" class="form-control" id="inputZip" placeholder="Código Postal">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group col-md-6">
+        
+          <div class="form-group ">
             <label for="inputCity">Affiliación SS</label>
             <input type="text" name="affiliación_personal" class="form-control" id="inputCity" placeholder="Mao, Islas Baleares">
           </div>
-          <div class="mb-3">
-        <label for="formFile" class="form-label">Imagen Personal</label>
-        <input class="form-control" type="file" id="formFile" name="imagen_Personal">
-        </div>
-        <div class="mb-3">
-        <label for="formFile" class="form-label">Curriculum</label>
-        <input class="form-control" type="file" id="formFile" name="curriculum">
-        </div>
-        <div class="form-group">
-          <label for="inputFecha">Fecha Despedida</label>
-          <input type="date" name="fecha_Despedida" class="form-control" id="inputFecha" placeholder="fecha">
-        </div>
-       
+          <div class="form-row">
+            <label for="formFile" class="form-label">Imagen Personal</label>
+            <input class="form-control" type="file" id="formFile" name="imagen_Personal">
+          </div>
+          <div class="form-row">
+            <label for="formFile" class="form-label">Curriculum</label>
+            <input class="form-control" type="file" id="formFile" name="curriculum">
+          </div>
+          <div class="form-group ">
+            <label for="inputFecha">Fecha Despedida</label>
+            <input type="date" name="fecha_Despedida" class="form-control" id="inputFecha" placeholder="fecha">
+          </div>
         </div>
         <div class="d-flex justify-content-center">
-          <button type="submit" id="btn" class="btn mt-2">Insertar</button>
+          <button type="submit" name="insertar" id="btn" class="btn mt-2">Insertar</button>
         </div>
       </div>
     </form>
-    
   </div>
 
 <?php

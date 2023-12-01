@@ -1,6 +1,12 @@
 
 <?php
 
+  session_start();
+  
+?>
+
+<?php
+
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
