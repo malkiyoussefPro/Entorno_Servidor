@@ -1,8 +1,8 @@
 
 <?php
-
-  session_start();
-  
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+    
 ?>
 
 <?php
@@ -10,265 +10,149 @@
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-    
-?>
 
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
- <h5>Bienvenido <?php echo $_SESSION ['name'] ?></h5>
 <form action="" method="">
-<div class="container-fluid bg-gray">
- 
-  
-<div class="row d-flex justify-content-around m-2">
-<h1>Habitaciones Simple</h1>
-<div class="col-3">
-<div class="card" style="width: 18rem;">
-  <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Habitación de lujo</h5>
-    <p class="card-text">Huespedes 2 personas</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary">Habitacón Red Blue</li>
-    <a href="popup_Habitacion_Simple.php"><li class="list-group-item">Detalle de la habitación</li></a>
-    <li class="list-group-item">Tarifa/Noche: 789 €</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"></a>
-    <button id="btn">Reservar</button>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg"class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
+    <div class="container-fluid bg-gray">
+        <div class="row d-flex justify-content-start m-2">
+        <h3>Desayuno </h3>
+        <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Desayuno simple</h5>
+            <p class="card-text">Huespedes 2 personas</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-primary">Habitacón Rason</li>
+            <a href=""><li class="list-group-item">Detalle de la Desayuno</li></a>
+            <li class="list-group-item">Tarifa/persona: 59 €</li>
+          </ul>
+        </div>
+        </div>
+        <div class="col" id="image">
+        <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
+        <div class="card-body" style="margin-left: 30px;">
+            <a href="#" class="card-link"></a>
+            <button id="btn">Reservar</button>
+          </div> 
+        </div>
+        <div class="col" id="text_habitacion">
 
+        <div class="modal-body">
+        <h5>Desayuno Simple</h5>
+        <div>
+            <ul>
+                <li>Un Zumo</li>
+                <li>huevos fritos</li>
+                <li>pan artisanal</li>
+                <li>cafe ou té</li>
+                <li>croissan</li>
+                <li>Miel y mantequilla </li>
+            </ul>
+        </div>
+        <h6> Desayuno simple</h6>
+          <hr>
+          <h5>Descrpción del desayuno</h5>
+          <p> Un desayuno simple al borde de la piscina con un ambiente que te da un  buena experiencia
+            </p>
+        </div>
+        </div>
+    </div>
 
+    <div class="row d-flex justify-content-start m-2">
+        <h3>comida</h3>
+        <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">comida simple</h5>
+            <p class="card-text">Huespedes 2 personas</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-primary">Habitacón Rason</li>
+            <a href=""><li class="list-group-item">Detalle de la Desayuno</li></a>
+            <li class="list-group-item">Tarifa/persona: 59 €</li>
+          </ul>
+        </div>
+        </div>
+        <div class="col" id="image">
+        <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
+        <div class="card-body" style="margin-left: 30px;">
+            <a href="#" class="card-link"></a>
+            <button id="btn">Reservar</button>
+          </div> 
+        </div>
+        <div class="col" id="text_habitacion">
 
-<div class="col-3">
-<div class="card" style="width: 18rem;">
-  <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Habitación de lujo</h5>
-    <p class="card-text">Huespedes 2 personas</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary">Habitacón Meditation</li>
-    <a href=""><li class="list-group-item">Detalle de la habitación</li></a>
-    <li class="list-group-item">Tarifa/Noche: 759 €</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"></a>
-    <button id="btn">Reservar</button>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
+        <div class="modal-body">
+        <h5>Desayuno Simple</h5>
+        <div>
+            <ul>
+                <li>Un Zumo</li>
+                <li>huevos fritos</li>
+                <li>pan artisanal</li>
+                <li>cafe ou té</li>
+                <li>croissan</li>
+                <li>Miel y mantequilla </li>
+            </ul>
+        </div>
+        <h6> Desayuno simple</h6>
+          <hr>
+          <h5>Descrpción de la comida</h5>
+          <p> Un desayuno simple al borde de la piscina con un ambiente que te da un  buena experiencia
+            </p>
+        </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg"class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
+    
+    <div class="row d-flex justify-content-start m-2">
+        <h3>comida</h3>
+        <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">comida simple</h5>
+            <p class="card-text">Huespedes 2 personas</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-primary">Habitacón Rason</li>
+            <a href=""><li class="list-group-item">Detalle de la Desayuno</li></a>
+            <li class="list-group-item">Tarifa/persona: 59 €</li>
+          </ul>
+        </div>
+        </div>
+        <div class="col" id="image">
+        <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
+        <div class="card-body" style="margin-left: 30px;">
+            <a href="#" class="card-link"></a>
+            <button id="btn">Reservar</button>
+          </div> 
+        </div>
+        <div class="col" id="text_habitacion">
 
-<div class="col-3">
-<div class="card" style="width: 18rem;">
-  <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Habitación de lujo</h5>
-    <p class="card-text">Huespedes 2 personas</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary">Habitacón Rason</li>
-    <a href=""><li class="list-group-item">Detalle de la habitación</li></a>
-    <li class="list-group-item">Tarifa/Noche: 779 €</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"></a>
-    <button id="btn">Reservar</button>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
+        <div class="modal-body">
+        <h5>Desayuno Simple</h5>
+        <div>
+            <ul>
+                <li>Un Zumo</li>
+                <li>huevos fritos</li>
+                <li>pan artisanal</li>
+                <li>cafe ou té</li>
+                <li>croissan</li>
+                <li>Miel y mantequilla </li>
+            </ul>
+        </div>
+        <h6> Desayuno simple</h6>
+          <hr>
+          <h5>Descrpción de la comida</h5>
+          <p> Un desayuno simple al borde de la piscina con un ambiente que te da un  buena experiencia
+            </p>
+        </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg"class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
 
-<div class="row d-flex justify-content-around m-2">
-<h1>Habitaciones Suite</h1>
-<div class="col-3">
-<div class="card" style="width: 18rem;">
-  <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Suite de lujo</h5>
-    <p class="card-text">Huespedes 6 personas</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary">Suite Sky Tours</li>
-    <a href=""><li class="list-group-item">Detalle del Suite</li></a>
-    <li class="list-group-item">Tarifa/Noche: 1189 €</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"></a>
-    <button id="btn">Reservar</button>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg"class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
-
-<div class="col-3">
-<div class="card" style="width: 18rem;">
-  <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Suite de lujo</h5>
-    <p class="card-text">Huespedes 6 personas</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary">Suite Jams Bond</li>
-    <a href=""><li class="list-group-item">Detalle del Suite</li></a>
-    <li class="list-group-item">Tarifa/Noche: 1289 €</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"></a>
-    <button id="btn">Reservar</button>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg"class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
-
-<div class="col-3">
-<div class="card" style="width: 18rem;">
-  <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Suite de lujo</h5>
-    <p class="card-text">Huespedes 6 personas</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary">Suite Oasis</li>
-    <a href=""><li class="list-group-item">Detalle <del></del> Suite</li></a>
-    <li class="list-group-item">Tarifa/Noche: 1389 €</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"></a>
-    <button id="btn">Reservar</button>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg"class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
-
-</div>
   
 </form>
 
@@ -277,5 +161,4 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
-
 

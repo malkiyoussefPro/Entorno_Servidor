@@ -1,8 +1,4 @@
-<?php
 
-  session_start();
-  
-?>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
@@ -14,28 +10,33 @@
 
 ?>
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+<?php
 
-<div class="d-flex justify-content-center">
-    <form class="myFormCliente" action="" method="POST">
+if (isset($_POST['suprimir'])) {
+  $idcliente = $_POST['id_cliente'];
 
-    <h2>Formulario suprimir cliente</h2>
+  if (empty($idcliente)) {
+      echo "El campo ID Servicio es obligatorio.";
+      exit;
+  }
 
-    <div class="container mt-2 ms-2" >
-      <div class="form-row" >
-        <div class="form-group col-md-6 ">
-          <label for="inputCliente">Id cliente</label>
-          <input type="number" name="id_cliente" class="form-control" id="inputCliente" placeholder="Id cliente">
-        </div>
-      </div>
-      <div class="d-flex justify-content-center m-2">
-        <button type="submit" name="suprimir" id="btn" class="btn mt-2 mb-3">Suprimir</button>
-      </div>
-    </div>
-  </form>
-</div>
+  // Realiza la eliminación del servicio
+  $q_delete = $pdo->prepare('DELETE FROM clientes WHERE id_cliente = ?');
+  $q_delete->execute([$idcliente]);
+
+  // Verifica si se eliminó algún registro
+  if ($q_delete->rowCount() > 0) {
+      echo "cliente eliminado con éxito.";
+  } else {
+      echo "No se encontró ningún cliente con el ID proporcionado o no se realizó la eliminación.";
+  }
+}
+
+?>
+
+
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-  
+
 ?>

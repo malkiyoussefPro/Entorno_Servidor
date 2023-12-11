@@ -1,8 +1,4 @@
-<?php
 
-  session_start();
-  
-?>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
@@ -14,55 +10,40 @@
 
 ?>
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+<?php
 
-<div class="d-flex justify-content-center">
-      <form class="myFormreserva" action="" method="POST">
-        <h2 >Formulario insertar reserva</h2>
-        <div class="container mt-2 ms-2" >
-          <div class="form-row" >
-            <div class="form-group col-md-6 ">
-              <label for="inputreserva">Id reserva</label>
-              <input type="number" class="form-control" name="id_reserva" placeholder="Id reserva">
-            </div>
-            <div class="form-group col-md-6 ">
-              <label for="inputreserva">Id cliente</label>
-              <input type="number" class="form-control" name="id_cliente" placeholder="Id cliente">
-            </div>
-            <div class="form-group col-md-6 ">
-              <label for="inputreserva">Id habitacion</label>
-              <input type="number" class="form-control" name="id_habitacion" placeholder="Id habitacion">
-            </div>
-            <div class="form-group col-md-6 ">
-            <label for="startDate">Fecha Entrada</label>
-              <input id="startDate" name="fecha_Entrada" class="form-control" type="date" />
-            </div>
-            <div class="form-group col-md-6 ">
-            <label for="startDate">Fecha Salida</label>
-              <input id="startDate" name="fecha_Salida" class="form-control" type="date" />
-            </div>
-            <div class="form-group col-md-6 ">
-            <label for="startDate">Fecha Reserva</label>
-              <input id="startDate" name="fecha_Entrada" class="form-control" type="date" />
-            </div>
-            <div class="form-group col-md-6 ">
-              <label for="inputreserva">Id pago</label>
-              <input type="number" class="form-control" name="id_pago" placeholder="Id habitacion">
-            </div>
-            <div class="form-group col-md-6 ">
-              <label for="inputreserva">Numero reserva</label>
-              <input type="number" class="form-control" name="numero_reserva" placeholder="Id habitacion">
-            </div>
 
-          </div>
+if(isset($_POST['actualizar'])){
+    // Recupera los datos del formulario
+    $idReserva = $_POST['id_reserva'];
+    $idCliente = $_POST['id_cliente'];
+    $idHabitacion = $_POST['id_habitacion'];
+    $fechaEntrada = $_POST['fecha_entrada'];
+    $fechaSalida = $_POST['fecha_salida'];
+    $fechaReserva = $_POST['fecha_reserva'];
+    $idPago = $_POST['id_pago'];
+    $numeroReserva = $_POST['numero_reserva'];
 
-          <div class="d-flex justify-content-center">
-            <button type="submit" name="insertar" id="btn" class="btn  mt-2 mb-3">Insertar</button>
-          </div>
-        </div>
-      </form>
-      
-  </div>
+    // Validaciones (puedes agregar más según tus necesidades)
+    if(empty($idCliente) || empty($idHabitacion) || empty($fechaEntrada) || empty($fechaSalida) || empty($fechaReserva) || empty($idPago) || empty($numeroReserva)){
+        echo "Todos los campos son obligatorios.";
+        exit;
+    }
+
+    // Actualiza el registro en la base de datos
+    $q_update = $pdo->prepare('UPDATE reservas_hotel SET id_cliente = ?, id_habitacion = ?, fecha_entrada = ?, fecha_salida = ?, fecha_reserva = ?, id_pago = ?, numero_reserva = ? WHERE id_reserva = ?');
+    $q_update->execute([$idCliente, $idHabitacion, $fechaEntrada, $fechaSalida, $fechaReserva, $idPago, $numeroReserva, $idReserva]);
+
+    // Verifica si se actualizó algún registro
+    if($q_update->rowCount() > 0){
+        echo "Reserva actualizada exitosamente.";
+    } else {
+        echo "No se encontró ninguna reserva con el ID proporcionado o no se realizaron cambios.";
+    }
+}
+
+?>
+
 
 <?php
 

@@ -1,16 +1,12 @@
 <?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-  session_start();
-  
 ?>
+
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 
@@ -18,7 +14,8 @@
 
 <div class="d-flex justify-content-center">
 
-    <form class="myFormpersonal" action="" method="POST">
+<form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_update_call.php" method="POST">
+
       <h2>Formulario insertar personal</h2>
       <div class="container">
         

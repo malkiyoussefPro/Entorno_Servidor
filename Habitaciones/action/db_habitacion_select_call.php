@@ -1,35 +1,81 @@
 <?php
-
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-<?php
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
+<?php
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
-<div class="d-flex justify-content-center">
-      <form class="myFormHabitacion" action="" method="POST">
-        <h2 >Formulario buscar Habitacion</h2>
-        <div class="container mt-2 ms-2" >
-          <div class="form-row" >
-            <div class="form-group col-md-6 ">
-              <label for="inputHabitacion">Id Habitacion</label>
-              <input type="number" class="form-control" name="id_Habitacion" placeholder="Id Habitacion">
-            </div>
-          </div>
-          <div class="d-flex justify-content-center">
-            <button type="submit" name="buscar" id="btn" class="btn  mt-2 mb-3">Buscar</button>
-          </div>
-        </div>
-      </form> 
-  </div>
+?>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Tipo Habitación</th>
+            <th scope="col">Disponibilidad Habitación</th>
+            <th scope="col">Estado Habitación</th>
+            <th scope="col">Ubicación Habitación</th>
+            <th scope="col">Precio Habitación</th>
+            <th scope="col">Imagen Habitación</th>
+            <th scope="col" class="d-flex justify-content-center">Operaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+              if (isset($_POST['buscar'])) {
+                $id_habitacion = $_POST['id_habitacion'];
+        
+              // Realizar la consulta para obtener la información del habitacion
+              $q_select = $pdo->prepare('SELECT * FROM habitaciones WHERE id_habitacion = ?');
+              $q_select->execute([$id_habitacion]);
+              $habitacion = $q_select->fetch(PDO::FETCH_ASSOC);
+        
+              if ($habitacion) {
+                ?>
+            <tr>
+                <td><?php echo $habitacion['id_habitacion']; ?></td>
+                <td><?php echo $habitacion['tipo_habitacion']; ?></td>
+                <td><?php echo $habitacion['disponibilidad_habitacion']; ?></td>
+                <td><?php echo $habitacion['estado_habitacion']; ?></td>
+                <td><?php echo $habitacion['ubicacion_habitacion']; ?></td>
+                <td><?php echo $habitacion['precio_habitacion']; ?></td>
+                <td><?php echo $habitacion['imagen_habitacion']; ?></td>
+      <td>     
+        <a href="/student042/dwes/Habitaciones/formulario_habitacion_insert.php" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>  
+      </td>
+      <td>      
+        <a href="/student042/dwes/Habitaciones/formulario_habitacion_select.php" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
+      </td>
+      <td>      
+        <a href="/student042/dwes/Habitaciones/formulario_habitacion_update.php" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
+      </td>
+      <td>      
+        <a href="/student042/dwes/Habitaciones/formulario_habitacion_delete.php" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm  m-1"> Suprimir </a>  
+      </td>
+    </tr>
+    <?php
+  } else {
+      ?>
+      <tr>
+          <td colspan="13">
+              <div class="alert alert-danger" role="alert">
+                  No se encontró habitacion con el ID <?php echo $id_habitacion; ?>.
+              </div>
+          </td>
+      </tr>
+      <?php
+  }
+}
+?>
+</tbody>
+</table>
 
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
+
+

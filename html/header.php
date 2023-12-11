@@ -1,15 +1,11 @@
 
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-    
-?>
-
 <?php 
-  
   session_start();
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +21,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
+
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="/student042/dwes/html/imagenes/logo Hotel.jpg" alt="" width="70" height="52">
@@ -51,12 +48,24 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/student042/dwes/html/iniciarSesion.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/student042/dwes/index.php ">Log Out</a>
-            </li>
+            <?php if(isset($_SESSION['name'])) { ?>
+              <!-- cuando el usuario ha iniciado sesión, se muestra mensaje de bienvenida y deshabilita enlace de inicio de sesión -->
+              <div style="color: orange;">
+                <?php echo 'Bienvenido: ' . $_SESSION['name']; ?>
+              </div>
+            <?php } else { ?>
+              <!-- cuando el usuario no ha iniciado sesión, se muestra enlace de inicio de sesión -->
+              <li class="nav-item">
+                <a class="nav-link" href="/student042/dwes/html/iniciarSesion.php">Login</a>
+              </li>
+            <?php } ?>
+
+            <?php if(isset($_SESSION['name'])) { ?>
+              <!-- cuando el usuario ha iniciado sesión, se muestra enlace de cierre de sesión -->
+              <li class="nav-item">
+                <a class="nav-link" href="/student042/dwes/connection/db_deconnection_index.php">Log Out</a>
+              </li>
+            <?php } ?>
           </ul>
         </div>
       </div>

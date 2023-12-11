@@ -1,54 +1,58 @@
 <?php
-
-  session_start();
-  
-?>
-<?php
-
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-<?php
             
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 
+<?php
 
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Description Servicio</th>
-      <th scope="col">Departamento Servicio</th>
-      <th scope="col">Imagen Servicio</th>
-      <th scope="col">Precio Servicio</th>
-      <th scope="col ">Operaciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>      
-        <a href="action/db_servicio_insert_call.php" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>  
-      </td>
-      <td>      
-        <a href="action/db_servicio_select_call.php" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
-      </td>
-      <td>      
-        <a href="action/db_servicio_update_call.php" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
-      </td>
-      <td>      
-        <a href="action/db_servicio_delete_call.php" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm  m-1"> Suprimir </a>  
-      </td>
-    </tr>
-  </tbody>
-</table>
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+
+?>
+<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+
+<div class="d-flex justify-content-center">
+
+  <form class="myFormservicio " action="/student042/dwes/Servicios/action/db_servicio_update_call.php" method="POST">
+
+      <h2>Formulario actualizar servicio </h2>
+      <div class="container">
+        
+        <div class="form-group">
+          <label for="inputservicio ">Description servicio </label>
+          <input type="text" name="nombre_servicio " class="form-control" id="inputservicio " placeholder="nombre">
+        </div>
+        <div class="mb-3">
+        <label for="formFile" class="form-label">Imagen servicio</label>
+        <input class="form-control" type="file" id="formFile" name="imagen_servicio">
+        </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Departamento servicio </label>
+            <select id="inputState" class="form-control" name="role_servicio ">
+              <option selected>Seleccionar...</option>
+              <option>Restaurante</option>
+              <option>Evento</option>
+              <option>Belleza</option>
+            </select>
+          </div>
+          <div class="form-group">
+          <label for="inputservicio ">precio </label>
+          <input type="number" name="precio_servicio " class="form-control" id="inputservicio " placeholder="precio">
+        </div>
+        <div class="form-group">
+          <label for="inputFecha">Fecha creación servicio</label>
+          <input type="date" name="fecha_creacion_servicio" class="form-control" id="inputFecha" placeholder="fecha">
+        </div>
+        
+       
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" name="actualizar" id="btn" class="btn mt-2">Actualizar</button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');

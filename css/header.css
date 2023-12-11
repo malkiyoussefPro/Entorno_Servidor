@@ -22,20 +22,22 @@
         background-repeat: no-repeat;
         
     }
-
-    
-       h1{
+       h3{
         font-family: 'Lato' sans-serif;
         color: rgb(188, 163, 41);
         background-color: rgb(255, 255, 255);
         width: 45px;
         padding: 15px;
+        margin: 15px;
         border-radius: 10px;
         text-align: center;
         border: 2px solid rgb(164, 144, 55);
        }
 
-
+#text_habitacion p{
+    border: 2px solid black;
+    color: white;
+}
 .formHeader{
     width: 400px;
     text-align: center !important;

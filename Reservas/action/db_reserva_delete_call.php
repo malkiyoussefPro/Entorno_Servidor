@@ -1,8 +1,4 @@
-<?php
 
-  session_start();
-  
-?>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
@@ -14,25 +10,35 @@
 
 ?>
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
-<div class="d-flex justify-content-center">
-      <form class="myFormreserva" action="" method="POST">
-        <h2 >Formulario suprimir reserva</h2>
-        <div class="container mt-2 ms-2" >
-          <div class="form-row" >
-            <div class="form-group col-md-6 ">
-              <label for="inputreserva">Id reserva</label>
-              <input type="number" class="form-control" name="id_reserva" placeholder="Id reserva">
-            </div>
-          </div>
-          <div class="d-flex justify-content-center">
-            <button type="submit" name="suprimir" id="btn" class="btn  mt-2 mb-3">Suprimir</button>
-          </div>
-        </div>
-      </form>
-      
-  </div>
+<?php
+
+
+if(isset($_POST['suprimir'])){
+    $idReserva = isset($_POST['id_reserva']) ? intval($_POST['id_reserva']) : 0;
+
+    // Validación: Asegúrate de que el ID de la reserva sea un número entero positivo
+    if($idReserva <= 0){
+        echo "El ID de reserva proporcionado no es válido.";
+        exit;
+    }
+
+    // Realiza la eliminación en la base de datos
+    $q_delete = $pdo->prepare('DELETE FROM reservas_hotel WHERE id_reserva = ?');
+    $q_delete->execute([$idReserva]);
+
+    // Verifica si se eliminó algún registro
+    if($q_delete->rowCount() > 0){
+        echo "Reserva eliminada exitosamente.";
+    } else {
+        echo "No se encontró ninguna reserva con el ID proporcionado.";
+    }
+} else {
+    echo "Acceso no autorizado.";
+}
+
+?>
+
 
 <?php
 

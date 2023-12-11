@@ -1,8 +1,12 @@
+
+
+
 <?php
-            
+       
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
     
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +15,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/student042/dwes/css/dashbord.css">
+    <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
 
     <title>Dashbord Hotel </title>
 </head>
@@ -27,7 +31,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Usuarios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -38,6 +42,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_usuario_delete.php">Borrar Usuario</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Usuarios/formulario_usuario_select.php">Buscar Usuario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Usuarios/operaciones.php">Operaciones </a></li>
           </ul>
           
         </li>
@@ -53,6 +59,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_delete.php">Borrar Personal</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Personal/formulario_personal_select.php">Buscar Personal</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Personal/operaciones.php">Operaciones </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -67,6 +75,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Clientes/formulario_cliente_delete.php">Borrar Cliente</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Clientes/formulario_cliente_select.php">Buscar Cliente</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Clientes/operaciones.php">Operaciones </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -81,6 +91,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/formulario_habitacion_delete.php">Borrar Habitacion</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/formulario_habitacion_select.php">Buscar Habitacion</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Habitaciones/operaciones.php">Operaciones </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -95,6 +107,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Reservas/formulario_reserva_delete.php">Borrar Reserva</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Reservas/formulario_reserva_select.php">Buscar Reserva</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Reservas/operaciones.php">Operaciones </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -109,6 +123,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_delete.php">Borrar Belleza</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_select.php">Buscar Belleza</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Belleza/operaciones.php">Operaciones </a></li>         
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -123,6 +139,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_delete.php">Borrar Evento</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_select.php">Buscar Evento</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Eventos/operaciones.php">Operaciones </a></li> 
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -137,6 +155,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_delete.php">Borrar Restaurante</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_select.php">Buscar Restaurante</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/operaciones.php">Operaciones </a></li> 
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -151,6 +171,8 @@
             <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_delete.php">Borrar Servicio</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Servicios/formulario_servicio_select.php">Buscar Servicio</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Servicios/operaciones.php">Operaciones </a></li> 
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -165,20 +187,30 @@
             <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_delete.php">Borrar Factura</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_select.php">Buscar Factura</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Facturas/operaciones.php">Operaciones </a></li> 
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Conneción
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/html/session_dashboard.php">Login</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Facturas/formulario_factura_update.php">Log Out</a></li>
-            <li><hr class="dropdown-divider"></li>
-        
+        <ul class="navbar-nav ml-auto">
+            <?php if(isset($_SESSION['name'])) { ?>
+              <!-- cuando el usuario ha iniciado sesión, se muestra mensaje de bienvenida y deshabilita enlace de inicio de sesión -->
+              <div style="color: orange;">
+                <?php echo 'Bienvenido: ' . $_SESSION['name']; ?>
+              </div>
+            <?php } else { ?>
+              <!-- cuando el usuario no ha iniciado sesión, se muestra enlace de inicio de sesión -->
+              <li class="nav-item">
+                <a class="nav-link" href="/student042/dwes/html/session_dashboard.php">Login</a>
+              </li>
+            <?php } ?>
+
+            <?php if(isset($_SESSION['name'])) { ?>
+              <!-- cuando el usuario ha iniciado sesión, se muestra enlace de cierre de sesión -->
+              <li class="nav-item">
+                <a class="nav-link" href="/student042/dwes/connection/db_deconnection_dashboard.php">Log Out</a>
+              </li>
+            <?php } ?>
           </ul>
-        </li>
       </ul>
     </div>
   </div>

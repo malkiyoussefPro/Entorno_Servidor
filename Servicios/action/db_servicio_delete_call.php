@@ -1,8 +1,4 @@
-<?php
 
-  session_start();
-  
-?>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
@@ -14,27 +10,31 @@
 
 ?>
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+<?php
 
-<div class="d-flex justify-content-center">
+if (isset($_POST['suprimir'])) {
+  $idServicio = $_POST['id_Servicio'];
 
-  <form class="myFormservicio " action="/student042/dwes/Servicios/action/db_servicio_delete_call.php" method="POST">
+  if (empty($idServicio)) {
+      echo "El campo ID Servicio es obligatorio.";
+      exit;
+  }
 
-        <h2>Formulario suprimir Servicio</h2>
-        <div class="container mt-2 ms-2" >
-          <div class="form-row" >
-          <div class="form-group col-md-6 ">
-              <label for="inputServicio">Id Servicio</label>
-              <input type="number" class="form-control" name="id_Servicio" placeholder="Id Servicio">
-            </div>
-          </div>
-          <div>
-            <button type="submit" name="suprimir" id="btn" class="btn mt-2 mb-3">Suprimir</button>
-          </div>
-        </div>
-    </form>
- 
-  </div>
+  // Realiza la eliminación del servicio
+  $q_delete = $pdo->prepare('DELETE FROM servicios WHERE id_servicio = ?');
+  $q_delete->execute([$idServicio]);
+
+  // Verifica si se eliminó algún registro
+  if ($q_delete->rowCount() > 0) {
+      echo "Servicio eliminado con éxito.";
+  } else {
+      echo "No se encontró ningún servicio con el ID proporcionado o no se realizó la eliminación.";
+  }
+}
+
+
+?>
+
 
 <?php
 

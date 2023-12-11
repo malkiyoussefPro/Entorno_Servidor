@@ -1,88 +1,73 @@
-
-<?php
-
-  session_start();
-  
-?>
-
 <?php
 
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-    
-?>
+if(isset($_POST['registrarse'])){
 
-<?php
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $contraseña = $_POST['password'];
+    $role = isset($_POST['role']) && !empty($_POST['role']) ? $_POST['role'] : 'cliente';
+    $fecha = date('Y-m-d');
 
-    include'error.php';
+    if(!empty($nombre) && !empty($email) && !empty($contraseña)){
 
-?>
-<style>
+        $q_insert = $pdo->prepare('INSERT INTO usuario VALUES (null, ?, ?, ?, ?, ?)');
+        $q_insert->execute([$nombre, $email, $contraseña, $role, $fecha]);
 
-  h2{
-    color: #040212;
-     text-align: center;
-      margin-top: 25px;
-  }
-  label{
-    color: #040212;
-    font-size: 18px;
-    font-weight: bold;
-  }
+        ?>
+        <div class="alert alert-success" role="alert">
+            Usuario añadido de manera exitosa!
+        </div>
+        <?php
 
-  form{
-    margin-top: 5px;
-    border: 2px solid white;
-    border-radius: 5px;
-    width: 550px;
-    height: 450px;
-    background-color: wheat;
-  }
-  input{
-    width: 90px;
-  }
-  .btn{
-     background-color: #000000;
-      border-color: white;
-      color: white; 
-      font-weight: bold;
+        header('Location:/student042/dwes/index.php');
+    } else {
+        ?>
+        <div class="alert alert-danger" role="alert">
+            Todos los campos son obligatorios !
+        </div>
+        <?php
     }
-    .btn:hover{
-      background-color: goldenrod;
-  }
- 
+}
 
-</style>
-    <center>
-      <form action="" method="POST">
-        <div class="container mt-5">
+?>
+
+<!-- Resto de tu código HTML -->
+
+  <link rel="stylesheet" href="/student042/dwes/css/iniciar_session.css">
+    <div class="d-flex justify-content-center">
+     <form action="" method="POST">
         
           <h2>FORMULARIO DE REGISTRO</h2>
           
             <div class="container">
+            <div class="form-group m-2">
+                <label for="inputNombre" >Nombre </label>
+                <input type="text" name="nombre" class="form-control" id="nombre" placeholder="nombre completo">
+              </div>
               <div class="form-group m-2">
                 <label for="inputEmail4">Email</label>
                 <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
               </div>
               <div class="form-group m-2">
+                <label for="inputRole">Role</label>
+                <input disabled type="text" name="role" class="form-control" id="inputRole" placeholder="role" value="cliente">
+              </div>
+
+              <div class="form-group m-2">
                 <label for="inputPassword4">Password</label>
                 <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
               </div>
-              <div class="form-group m-2">
-                <label for="confirmacion" >confirmaión Password</label>
-                <input type="password" name="confirmation" class="form-control" id="confirmacion" placeholder="confirmaión Password">
-              </div>
-              <div>
-                <button type="submit" class="btn  mt-2">Registrarse</button>
+           
+              <div class="d-flex justify-content-center">
+                <button type="submit" name="registrarse" class="btn  mt-2">Registrarse</button>
               </div>
             </div>
-        </div>
-      </form>
-    </center>
+          </form>
+    </div>
+  
 
 
 <?php

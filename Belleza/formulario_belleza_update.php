@@ -1,23 +1,19 @@
 <?php
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-  session_start();
-  
 ?>
+
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">
-      <form class="myFormBelleza" action="/student042/dwes/Belleza/action/db_belleza_delete_call.php" method="POST">
+      <form class="myFormBelleza" action="/student042/dwes/Belleza/action/db_belleza_update_call.php" method="POST">
         <h2 >Formulario actualizar Belleza</h2>
         <div class="container mt-2 ms-2" >
           <div class="form-row" >

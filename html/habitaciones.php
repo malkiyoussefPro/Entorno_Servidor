@@ -1,19 +1,14 @@
 
 <?php
-
-  session_start();
-  
+            
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+    
 ?>
 
 <?php
 
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
-?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-    
 ?>
 
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
@@ -22,7 +17,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
  
   
 <div class="row d-flex justify-content-around m-2">
-<h1>Habitaciones Simple</h1>
+<h3>Habitaciones Simple</h3>
 <div class="col-3">
 <div class="card" style="width: 18rem;">
   <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
@@ -149,7 +144,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 
 
-<h1>Habitaciones Double</h1>
+<h3>Habitaciones Double</h3>
 <div class="row d-flex justify-content-around m-2">
 <div class="col-3">
 <div class="card" style="width: 18rem;">
@@ -275,7 +270,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 </div>
 
-<h1>Habitaciones Suite</h1>
+<h3>Habitaciones Suite</h3>
 
 <div class="row d-flex justify-content-around m-2">
 

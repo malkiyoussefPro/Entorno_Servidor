@@ -1,54 +1,62 @@
 <?php
 
-  session_start();
+  ob_start();
   
+?>
+<?php
+
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+
 ?>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
-?>
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombre Usuario</th>
-      <th scope="col">Email usuario</th>
-      <th scope="col">Contraseña usuario</th>
-      <th scope="col">Role Usuario</th>
-      <th scope="col">Fecha creación cuenta</th>
-      <th scope="col ">Operaciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>      
-        <a href="action/db_usuario_insert_call.php" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>  
-      </td>
-      <td>      
-        <a href="action/db_usuario_select_call.php" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
-      </td>
-      <td>      
-        <a href="action/db_usuario_update_call.php" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
-      </td>
-      <td>      
-        <a href="action/db_usuario_delete_call.php" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm  m-1"> Suprimir </a>  
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="d-flex justify-content-center">
+
+  <form class="myFormUsuario" action="/student042/dwes/Usuarios/action/db_usuario_insert_call.php" method="POST">
+
+      <h2>Formulario insertar Usuario</h2>
+      <div class="container">
+
+        <div class="form-group">
+          <label for="inputUsuario">Nombre Usuario</label>
+          <input type="text" name="nombre_Usuario" class="form-control" id="inputUsuario" placeholder="nombre">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail4">Email Usuario</label>
+          <input type="email" name="email_Usuario" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+       
+        <div class="form-group">
+          <label for="inputAddress">Contraseña</label>
+          <input type="password" name="contraseña" class="form-control" id="inputAddress" placeholder="1k*_-.">
+        </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Role Usuario</label>
+            <select id="inputState" class="form-control" name="role_Usuario">
+              <option selected>Seleccionar...</option>
+              <option>Cliente</option>
+              <option>Personal</option>
+              <option>Invitado</option>
+            </select>
+          </div>
+          <div class="form-group">
+          <label for="inputFecha">Fecha creacion cuenta</label>
+          <input type="date" name="fecha_Creacion" class="form-control" id="inputFecha" placeholder="fecha">
+        </div>
+       
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" name="insertar" id="btn" class="btn mt-2">Insertar</button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
 <?php
 
   include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');

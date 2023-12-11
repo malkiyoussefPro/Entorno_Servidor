@@ -1,65 +1,44 @@
 <?php
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
-  session_start();
-  
-?>
-<?php
+if (isset($_GET['id_usuario'])) {
+    $idUsuario = $_GET['id_usuario'];
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+    $q_select = $pdo->prepare('SELECT * FROM usuario WHERE id_usuario = ?');
+    $q_select->execute([$idUsuario]);
+    $usuario = $q_select->fetch(PDO::FETCH_ASSOC);
 
-?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+    if (!$usuario) {
+        echo "Usuario no encontrado.";
+        exit;
+    }
+} else {
+    echo "ID de usuario no proporcionado.";
+    exit;
+}
 
-?>
+if (isset($_POST['actualizar'])) {
+    $nombreUsuario = $_POST['nombre_Usuario'];
+    $emailUsuario = $_POST['email_Usuario'];
+    $contraseña = $_POST['contraseña'];
+    $roleUsuario = $_POST['role_usuario'];
+    $fechaCreacion = $_POST['fecha_creacion'];
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+    if (empty($nombreUsuario) || empty($emailUsuario) || empty($roleUsuario) || empty($fechaCreacion)) {
+        echo "Todos los campos son obligatorios.";
+        exit;
+    }
 
-<div class="d-flex justify-content-center">
+    $q_update = $pdo->prepare('UPDATE usuario SET nombre_usuario = ?, email_usuario = ?, contraseña_usuario = ?, role_usuario = ?, fecha_creacion_cuenta = ? WHERE id_usuario = ?');
+    $q_update->execute([$nombreUsuario, $emailUsuario, $contraseña, $roleUsuario, $fechaCreacion, $idUsuario]);
 
-  <form class="myFormUsuario" action="/student042/dwes/Usuarios/action/db_usuario_update_call.php" method="POST">
+    if ($q_update->rowCount() > 0) {
+        echo "Usuario actualizado exitosamente.";
+    } else {
+        echo "No se encontró ningún usuario con el ID proporcionado o no se realizaron cambios.";
+    }
+}
 
-      <h2>Formulario actualizar Usuario</h2>
-      <div class="container">
-        
-        <div class="form-group">
-          <label for="inputUsuario">Nombre Usuario</label>
-          <input type="text" name="nombre_Usuario" class="form-control" id="inputUsuario" placeholder="nombre">
-        </div>
-        <div class="form-group">
-          <label for="inputEmail4">Email Usuario</label>
-          <input type="email" name="email_Usuario" class="form-control" id="inputEmail4" placeholder="Email">
-        </div>
-       
-        <div class="form-group">
-          <label for="inputAddress">Contraseña</label>
-          <input type="password" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">Role Usuario</label>
-            <select id="inputState" class="form-control" name="role_usuario">
-              <option selected>Seleccionar...</option>
-              <option>Cliente</option>
-              <option>Personal</option>
-            </select>
-          </div>
-          <div class="form-group">
-          <label for="inputFecha">Fecha creacion cuenta</label>
-          <input type="date" name="fecha_creacion" class="form-control" id="inputFecha" placeholder="fecha">
-        </div>
-       
-        </div>
-        <div class="d-flex justify-content-center">
-          <button type="submit" id="btn" class="btn mt-2">Insertar</button>
-        </div>
-      </div>
-    </form>
-    
-  </div>
-
-<?php
-
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
+include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 ?>

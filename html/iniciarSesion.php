@@ -1,21 +1,16 @@
-
 <?php
+    
+  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-  session_start();
-  
-?>
+?> 
+
 
 <?php
 
 include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
-<?php
-            
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-    
-?> 
-?>
+
 
 <?php
 
@@ -26,14 +21,14 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
   <div class="d-flex justify-content-center m-5">
     
-    <form action="/student042/dwes/connection/db_login.php" method="POST">
+    <form action="/student042/dwes/connection/perfil.php" method="POST">
        
     <h2>Iniciar Sesion</h2>
     <div class="container m-2" >
           <div class="form-row" >
             <div class="form-group m-2">
-              <label for="inputEmail4">Email</label>
-              <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <label for="inputEmail4">Nombre usuario </label>
+              <input type="text" name="nombre" class="form-control" id="inputEmail4" placeholder="nombre usuario">
             </div>
             <div class="form-group m-2">
               <label for="inputPassword4" >Password</label>
