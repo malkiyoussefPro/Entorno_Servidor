@@ -12,141 +12,153 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
 
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
-<form action="" method="">
-    <div class="container-fluid bg-gray">
-        <div class="row d-flex justify-content-start m-2">
-        <h3>Desayuno </h3>
+<form action="/student042/dwes/Reservas/formulario_reserva_insert.php" method="POST">
+
+    
+<div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
+        <p style="text-align:center; font-size:24px">Habitaciones Simple</p>
         <div class="col-3">
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Desayuno simple</h5>
+          <div class="card-body"  style="margin-top: 5px;">
+            <h4 class="card-title">Habitación clasica simple</h4>
+            <p class="card-text">Huespedes 2 personas</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-primary">Desayuno Rason</li>
-            <a href=""><li class="list-group-item">Detalle de la Desayuno</li></a>
-            <li class="list-group-item">Tarifa/persona: 59 €</li>
+            <li class="list-group-item bg-primary" style="border-radius: 5px;">Habitacón Rason</li>
+            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">779 €</span></li>
+            <div class="card-body" style="text-align :center">
+              <a href="#" class="card-link"></a>
+              <button id="btn">Reservar</button>
+            </div> 
           </ul>
         </div>
-        </div>
-        <div class="col" id="image">
+      </div>
+      <div class="col" id="image">
         <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
-        <div class="card-body" style="margin-left: 30px;">
-            <a href="#" class="card-link"></a>
-            <button id="btn">Reservar</button>
-          </div> 
-        </div>
-        <div class="col" id="text_habitacion">
-
-        <div class="modal-body">
-        <h5>Desayuno Simple</h5>
-        <div>
-            <ul>
-                <li>Un Zumo</li>
-                <li>huevos fritos</li>
-                <li>pan artisanal</li>
-                <li>cafe ou té</li>
-                <li>croissan</li>
-                <li>Miel y mantequilla </li>
-            </ul>
-        </div>
-        <h6> Desayuno simple</h6>
+      </div>
+      <div class="col" id="text_habitacion">
+          <h5>Habitacion Simple</h5>
           <hr>
-          <h5>Descrpción del desayuno</h5>
-          <p> Un desayuno simple al borde de la piscina con un ambiente que te da un  buena experiencia
-            </p>
-        </div>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-start m-2">
-        <h3>Comida</h3>
-        <div class="col-3">
-        <div class="card" style="width: 18rem;">
-          <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Comida simple</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-primary">Comida Rason</li>
-            <a href=""><li class="list-group-item">Detalle del Comida</li></a>
-            <li class="list-group-item">Tarifa/persona: 69 €</li>
-          </ul>
-        </div>
-        </div>
-        <div class="col" id="image">
-        <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
-        <div class="card-body" style="margin-left: 30px;">
-            <a href="#" class="card-link"></a>
-            <button id="btn">Reservar</button>
-          </div> 
-        </div>
-        <div class="col" id="text_habitacion">
-
-        <div class="modal-body">
-        <h5>Comida Simple</h5>
+        <h6>Huespedes 2 </h6>
+        <hr>
         <div>
-            <ul>
-                <li>Un Zumo</li>
-                <li>huevos fritos</li>
-                <li>pan artisanal</li>
-                <li>cafe ou té</li>
-                <li>croissan</li>
-                <li>Miel y mantequilla </li>
-            </ul>
-        </div>
-        <h6> Comida simple</h6>
+          <ul>
+            <li>Caja fuerte</li>
+            <li>Aire acondicionado</li>
+            <li>Acceso a Internet</li>
+                <li>Televisión con mando a distancia</li>
+                <li>Secador de pelo</li>
+                <li>Espejo de maquillaje iluminado</li>
+              </ul>
+            </div>
+            <hr>
+        <h6> Descrpción de la habitación</h6>
           <hr>
-          <h5>Descrpción de la comida</h5>
-          <p> Un Comida simple al borde de la piscina con un ambiente que te da un  buena experiencia
-            </p>
+          <p>  Habitaciones Clásicas en las plantas bajas, con vistas sobre la entrada principal.
+            Espaciosas, 28-40 m2, con una gran cama simple. Cuartos de baño en mármol,
+            con luz regulable al antojo del cliente y una espectacular ducha de estilo marroquí.
+          </p>
         </div>
-        </div>
+      
     </div>
     
-    <div class="row d-flex justify-content-start m-2">
-        <h3>Cena</h3>
-        <div class="col-3">
-        <div class="card" style="width: 18rem;">
-          <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
+    
+    <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
+    <p style="text-align:center; font-size:24px">Habitaciones doble</p>
+      <div class="col-3">
+        <div class="card">
+          <img src="imagenes/36_S.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Cena simple</h5>
+            <h4 class="card-title">Habitación doble</h4>
+            <p class="card-text">Huespedes 4 personas</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-primary">Cena Rason</li>
-            <a href=""><li class="list-group-item">Detalle de la Cena</li></a>
-            <li class="list-group-item">Tarifa/persona: 79 €</li>
+            <li class="list-group-item bg-primary" style="border-radius: 5px;">Habitacón True</li>
+            
+            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">979 €</span></li>
           </ul>
         </div>
-        </div>
-        <div class="col" id="image">
-        <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
+      </div>
+      <div class="col" id="image">
+        <img src="imagenes/36_S.jpg" class="img-thumbnail" alt="..." width="500px">
         <div class="card-body" style="margin-left: 30px;">
             <a href="#" class="card-link"></a>
             <button id="btn">Reservar</button>
           </div> 
         </div>
         <div class="col" id="text_habitacion">
+        <hr>
+        <h6>Huespedes 4 </h6>
+        <hr>
+        <div>
+          <ul>
+            <li>Caja fuerte</li>
+            <li>Aire acondicionado</li>
+            <li>Acceso a Internet</li>
+            <li>Televisión con mando a distancia</li>
+            <li>Secador de pelo</li>
+            <li>Espejo de maquillaje iluminado</li>
+            </ul>
+          </div>
+          <hr>
+        
+        <h6> Descrpción de la habitación</h6>
+          <hr>
+          <p>  Habitaciones Clásicas en las plantas bajas, con vistas sobre la entrada principal.
+            Espaciosas, 28-40 m2, con una gran cama simple. Cuartos de baño en mármol,
+            con luz regulable al antojo del cliente y una espectacular ducha de estilo marroquí.
+          </p>
+        </div>
+      
+    </div>
 
-        <div class="modal-body">
-        <h5>Cena Simple</h5>
+    <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
+    <p style="text-align:center; font-size:24px">Habitaciones lujo</p>
+      <div class="col-3">
+        <div class="card">
+          <img src="imagenes/33_S.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Habitación de lujo</h4>
+            <p class="card-text">Huespedes 6 personas</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-primary" style="border-radius: 5px;">Suite Royal</li>
+            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">1279 €</span></li>
+          </ul>
+        </div>
+      </div>
+        <div class="col" id="image">
+          <img src="imagenes/33_S.jpg" class="img-thumbnail" alt="..." width="500px">
+          <div class="card-body" style="margin-left: 30px;">
+            <a href="#" class="card-link"></a>
+            <button id="btn">Reservar</button>
+          </div> 
+        </div>
+        <div class="col" id="text_habitacion">
+          <hr>
+        <h6>Huespedes 6 </h6>
+        <hr>
         <div>
             <ul>
-                <li>Un Zumo</li>
-                <li>huevos fritos</li>
-                <li>pan artisanal</li>
-                <li>cafe ou té</li>
-                <li>croissan</li>
-                <li>Miel y mantequilla </li>
+                <li>Caja fuerte</li>
+                <li>Aire acondicionado</li>
+                <li>Acceso a Internet</li>
+                <li>Televisión con mando a distancia</li>
+                <li>Secador de pelo</li>
+                <li>Espejo de maquillaje iluminado</li>
             </ul>
         </div>
-        <h6> Cena simple</h6>
+        <hr>
+        
+        <h6> Descrpción de la habitación</h6>
           <hr>
-          <h5>Descrpción de la cena</h5>
-          <p> Un Cena simple al borde de la piscina con un ambiente que te da un  buena experiencia
-            </p>
+          <p>  Habitaciones Clásicas en las plantas bajas, con vistas sobre la entrada principal.
+            Espaciosas, 28-40 m2, con una gran cama simple. Cuartos de baño en mármol,
+            con luz regulable al antojo del cliente y una espectacular ducha de estilo marroquí.
+          </p>
         </div>
-        </div>
+      
     </div>
 
   </div>

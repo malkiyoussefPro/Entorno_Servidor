@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">
-<form class="myFormHabitacion" action="/student042/dwes/Habitaciones/action/db_habitacion_insert_call.php" method="POST">
+<form class="myFormHabitacion" action="/student042/dwes/Habitaciones/action/db_habitacion_insert_call.php" method="POST" enctype="multipart/form­data">
 
 
     <h2>Formulario insertar habitacion</h2>
@@ -64,14 +64,14 @@
 
           <div class="form-group col-md-2">
             <label for="inputZip">precio</label>
-            <input type="number" name="precio_habitacion" class="form-control" id="inputZip" placeholder="precio habitacion">
+            <input type="number" min="779" max="1279" name="precio_habitacion" class="form-control" id="inputZip" placeholder="precio habitacion">
           </div>
-        </div>
+       
         <div class="mb-3">
         <label for="formFile" class="form-label">Imagen Habitación</label>
         <input class="form-control" type="file" id="formFile" name="imagen_habitacion">
         </div>
-
+      </div>
         <div class="d-flex justify-content-center">
           <button type="submit" name="insertar" id="btn" class="btn  m-2">Insertar</button>
         </div>

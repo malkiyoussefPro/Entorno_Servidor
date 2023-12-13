@@ -15,7 +15,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 <div class="d-flex justify-content-center">
 
-  <form class="myFormservicio " action="/student042/dwes/Servicios/action/db_servicio_insert_call.php" method="POST">
+  <form class="myFormservicio " action="/student042/dwes/Servicios/action/db_servicio_insert_call.php" method="POST" enctype="multipart/form-data">
 
       <h2>Formulario insertar servicio </h2>
       <div class="container">

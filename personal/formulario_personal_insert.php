@@ -13,7 +13,7 @@
 
 <div class="d-flex justify-content-center">
 
-<form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_insert_call.php" method="POST">
+<form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_insert_call.php" method="POST" enctype="multipart/form-data">
       <h2>Formulario insertar personal</h2>
       <div class="container"> 
         <div class="form-group">
@@ -79,11 +79,11 @@
           </div>
           <div class="form-row">
             <label for="formFile" class="form-label">Imagen Personal</label>
-            <input class="form-control" type="file" id="formFile" name="imagen_Personal">
+            <input class="form-control" type="file" id="formFile1" name="imagen_Personal">
           </div>
           <div class="form-row">
             <label for="formFile" class="form-label">Curriculum</label>
-            <input class="form-control" type="file" id="formFile" name="curriculum">
+            <input class="form-control" type="file" id="formFile2" name="curriculum">
           </div>
           <div class="form-group ">
             <label for="inputFecha">Fecha Despedida</label>

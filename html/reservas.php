@@ -15,7 +15,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 <form action="" method="">
     <div class="container-fluid bg-gray">
         <div class="row d-flex justify-content-start m-2">
-        <h3>Habitaciones Simple</h3>
+        <p>Habitaciones Simple</p>
         <div class="col-3">
         <div class="card" style="width: 18rem;">
           <img src="imagenes/Deluxe_Koutoubia_S.jpg" class="card-img-top" alt="...">
@@ -63,7 +63,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         </div>
     </div>
     <div class="row d-flex justify-content-start m-2">
-        <h3>Habitaciones Doble</h3>
+        <p>Habitaciones Doble</p>
         <div class="col-3">
         <div class="card" style="width: 18rem;">
           <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
@@ -88,7 +88,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         <div class="col" id="text_habitacion">
 
         <div class="modal-body">
-        <h5>Habitacion doble</h5>
+        <p>Habitacion doble</p>
         <h6>Huespedes 4 </h6>
         <div>
             <ul>
@@ -111,7 +111,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         </div>
     </div>
     <div class="row d-flex justify-content-start m-2">
-        <h3>Habitaciones Lujo</h3>
+        <p>Habitaciones Lujo</p>
         <div class="col-3">
         <div class="card" style="width: 18rem;">
           <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="card-img-top" alt="...">
