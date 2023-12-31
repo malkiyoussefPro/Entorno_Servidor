@@ -1,18 +1,18 @@
 
 <?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
     
 ?>
 
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
 
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
-<form action="/student042/dwes/Reservas/formulario_reserva_insert.php" method="POST">
+<form action="/student042/dwes/html/rooms.php" method="POST">
 
     
 <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
@@ -167,7 +167,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
 

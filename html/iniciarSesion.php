@@ -1,20 +1,20 @@
 <?php
     
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?> 
 
 
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
 
 
 <?php
 
-  include ($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/error.php');
+  require_once ($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/error.php');
 
 ?>
 <link rel="stylesheet" href="/student042/dwes/css/iniciar_session.css">
@@ -47,7 +47,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
   <?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
     
   ?>
 

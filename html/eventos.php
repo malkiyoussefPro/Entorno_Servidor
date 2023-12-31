@@ -1,20 +1,20 @@
 
 <?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
     
 ?>
 
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
 
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <?php
-  $q_select = $pdo -> prepare('SELECT * FROM servicios');
+  $q_select = $pdo -> prepare('SELECT * FROM servicios where id_servicio =15');
   $q_select ->execute();
   if ($q_select->rowCount() > 0) {
 
@@ -88,7 +88,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
 

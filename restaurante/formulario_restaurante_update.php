@@ -1,19 +1,19 @@
 
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">
 
-  <form class="myFormservicio " action="/student042/dwes/Restaurante/action/db_restaurante_call.php" method="POST">
+  <form class="myFormservicio " action="/student042/dwes/Restaurante/action/db_restaurante_call.php" method="POST" enctype="multipart/form-data">
 
       <h2>Formulario insertar servicio </h2>
       <div class="container">
@@ -59,6 +59,6 @@
   </div>
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>

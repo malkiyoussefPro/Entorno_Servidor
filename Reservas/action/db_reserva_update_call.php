@@ -1,12 +1,12 @@
 
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
             
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
 
@@ -47,6 +47,6 @@ if(isset($_POST['actualizar'])){
 
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
