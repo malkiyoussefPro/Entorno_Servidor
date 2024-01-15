@@ -191,6 +191,22 @@
             <li><a class="dropdown-item" href="/student042/dwes/Facturas/operaciones.php">Operaciones </a></li> 
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Comentarios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_insert.php">Añadir Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_update.php">Modificar Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_delete.php">Borrar Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_select.php">Buscar Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentario/operaciones.php">Operaciones </a></li> 
+          </ul>
+        </li>
         <ul class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['name'])) { ?>
               <!-- cuando el usuario ha iniciado sesión, se muestra mensaje de bienvenida y deshabilita enlace de inicio de sesión -->

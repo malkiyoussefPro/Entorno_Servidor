@@ -1,8 +1,4 @@
-<?php
 
-  ob_start();
-  
-?>
 <?php
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
@@ -42,6 +38,7 @@
               <option>Cliente</option>
               <option>Personal</option>
               <option>Invitado</option>
+              <option>admin</option>
             </select>
           </div>
           <div class="form-group">
@@ -54,9 +51,9 @@
           <button type="submit" name="insertar" id="btn" class="btn mt-2">Insertar</button>
         </div>
       </div>
-    </form>
-    
-  </div>
+    </div>
+  </form>
+  
 <?php
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');

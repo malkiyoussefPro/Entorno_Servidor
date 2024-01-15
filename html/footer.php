@@ -29,6 +29,11 @@
                     <p><i class="fab fa-instagram-square"></i>Instagram</p>
                     <p><i class="fab fa-pinterest-square"></i>Pinterest</p>
                 </div>
+                <div class="col">
+                    <h5>Comentarios</h5>
+                    
+                    <a href="\student042\dwes\html\comentarios.php">Para mejorar nuestros servios, Su opinion nos importa, Deja su comentario</a>
+                </div>
             </div>
             <div><h6>Todos los derechos reservados 2023-2024</h6></div>  
         </div>  

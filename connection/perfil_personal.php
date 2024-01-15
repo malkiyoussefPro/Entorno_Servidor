@@ -11,10 +11,9 @@ if(isset($_POST['iniciar'])){
         $var = $q_select->fetch();
 
         if($var){
-            session_start();
+            
             $_SESSION['name'] = $nombre;
             $_SESSION['email'] = $email;
-            // $_SESSION['role_usuario'] = $var['role_usuario'];
 
             header('Location: /student042/dwes/html/dashboard.php');
             exit;
