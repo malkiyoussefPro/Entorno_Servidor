@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashbord Hotel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
@@ -31,7 +31,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="/student042/dwes/Usuarios/ajax_get_form_usuario_select.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Usuarios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -177,6 +177,22 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Comentarios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_insert.php">Añadir Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_update.php">Modificar Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_delete.php">Borrar Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_select.php">Buscar Comentario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/operaciones.php">Operaciones </a></li> 
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Facturas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -223,6 +239,10 @@
    <a href="/student042/dwes/index.php" class="btn border-dark"> Visitar Pagina Web </a> 
    
   </div>
+  <div id="resultados">
+
+  </div>
+  <button type="button">Buscar</button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 

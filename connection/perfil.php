@@ -13,7 +13,7 @@
     if(!empty($nombre) && !empty($password)){
 
       $q_select = $pdo -> prepare('SELECT * FROM usuario
-                                 where nombre_usuario = ? AND contraseña_usuario = ?');
+                                 where nombre_usuario = ? AND contrasena_usuario = ?');
       $q_select -> execute([$nombre,$password]);
       $var = $q_select -> fetch();
 

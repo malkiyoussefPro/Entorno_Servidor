@@ -14,12 +14,12 @@ if(isset($_POST['iniciar'])){
             session_start();
             $_SESSION['name'] = $nombre;
             $_SESSION['email'] = $email;
-            // $_SESSION['role_usuario'] = $var['role_usuario'];
+            $_SESSION['role_usuario'] = $var['role_usuario'];
 
             header('Location: /student042/dwes/html/dashboard.php');
             exit;
         } else {
-            header('Location: /student042/dwes/index.php');
+            header('Location: /student042/dwes/html/dashboard.php');
             exit;
         }
     } else {

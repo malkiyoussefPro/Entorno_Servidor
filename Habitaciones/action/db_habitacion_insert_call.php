@@ -1,14 +1,9 @@
-
 <?php
             
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
-<?php
 
- ob_start();
-  
-?>
 <?php
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
@@ -36,7 +31,7 @@
 
       ?>
       <div class="alert alert-success" role="alert">
-         Personal añadido de una  excitoso!
+         Habitacion añadida de una  excitoso!
       </div>
     <?php
       header('Location:/student042/dwes/html/dashboard.php');
@@ -57,11 +52,3 @@
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
-
-
-
-
-
-
-
-

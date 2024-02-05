@@ -12,11 +12,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 ?>
 
 
-<?php
-
-  require_once ($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/error.php');
-
-?>
 <link rel="stylesheet" href="/student042/dwes/css/iniciar_session.css">
 
   <div class="d-flex justify-content-center m-5">

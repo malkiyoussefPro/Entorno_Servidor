@@ -3,5 +3,35 @@
         "activityBar.background": "#4D1B38",
         "titleBar.activeBackground": "#6C264E",
         "titleBar.activeForeground": "#FDF8FB"
-    }
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "gestion hotel",
+            "database": "hotel_42",
+            "username": "root",
+            "password": ""
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "hotel 42",
+            "database": "hotel_42",
+            "username": "root",
+            "password": ""
+        }
+    ]
 }

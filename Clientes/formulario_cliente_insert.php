@@ -20,10 +20,6 @@
 
       <h2>Formulario insertar cliente</h2>
       <div class="container">
-      <div class="form-group">
-          <label  for="inputCliente" >Id Usuario</label>
-          <input  name="id_usuario" class="form-control" id="inputCliente" placeholder="id usuario">
-        </div>
         <div class="form-group">
           <label for="inputCliente">Civilidad cliente</label>
           <select id="inputState" name="civilidad_cliente" class="form-control">

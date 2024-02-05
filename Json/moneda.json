@@ -1,0 +1,8 @@
+
+
+[
+    {"cc": "MAD", "symbol": "MAD", "name": "Morroccan Dirham"},
+    {"cc": "EUR", "symbol": "\u20ac", "name": " European Euro"},
+    {"cc": "USD", "symbol": "\u062f", "name": "United States Dollar"}
+
+]

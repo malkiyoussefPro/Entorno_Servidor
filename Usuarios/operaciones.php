@@ -29,7 +29,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
         <td><?php echo $usuario['id_usuario']; ?></td>
         <td><?php echo $usuario['nombre_usuario']; ?></td>
         <td><?php echo $usuario['email_usuario']; ?></td>
-        <td><?php echo $usuario['contraseña_usuario']; ?></td>
+        <td><?php echo $usuario['contrasena_usuario']; ?></td>
         <td><?php echo $usuario['role_usuario']; ?></td>
         <td><?php echo $usuario['fecha_creacion_cuenta']; ?></td>
         <td>     

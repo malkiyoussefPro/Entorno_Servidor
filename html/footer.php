@@ -29,8 +29,16 @@
                     <p><i class="fab fa-instagram-square"></i>Instagram</p>
                     <p><i class="fab fa-pinterest-square"></i>Pinterest</p>
                 </div>
+                <div class="col" >
+                    <h5>Su comentario nos mejora</h5>
+                    <a href="/student042/dwes/html/comentarios.php">
+                      
+                        <button type="button" class="btn btn-dark">Dejar comentario</button>
+                    </a>
+                </div>
+                <div class="row"><h6>Todos los derechos reservados 2023-2024</h6></div> 
             </div>
-            <div><h6>Todos los derechos reservados 2023-2024</h6></div>  
+             
         </div>  
         </footer>
 

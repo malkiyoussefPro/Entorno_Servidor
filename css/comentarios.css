@@ -1,0 +1,67 @@
+
+      
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+   
+    box-sizing: border-box;
+}
+
+h2{
+    color: #040212;
+     text-align: center;
+      margin-top: 25px;
+  }
+
+  span{
+    margin-left: 5px;
+    padding: 5px;
+  }
+  a{
+    text-decoration: none;
+    color:rgb(188, 163, 41);
+    font-size: 18px;
+    font-weight: bold;
+  }
+ 
+  .btn{
+     background-color: #000000;
+      border-color: white;
+      color: white; 
+      font-weight: bold;
+    }
+    .btn:hover{
+      background-color: goldenrod;
+  }
+
+
+
+
+
+  h2{
+    color: #040212;
+     text-align: center;
+     
+  }
+  label{
+    color: #040212;
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+  }
+ 
+  form{
+    border: 2px solid #040212;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+    background-color: lightgrey;
+    margin: 15px;
+    padding: 15px;
+  }
+  .form-control{
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #040212;
+  }

@@ -3,3 +3,5 @@
     -> terminer la phase des extras 
     -> attaquer la phase des tickets 
     -> reviser tout ce qui est factures
+    -> Ajouter des commentaires
+    -> Faire des recherche a l'aide de ajax
