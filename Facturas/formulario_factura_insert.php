@@ -1,8 +1,4 @@
-<?php
 
-  session_start();
-  
-?>
 <?php
             
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');

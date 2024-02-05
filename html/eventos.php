@@ -14,6 +14,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <?php
+
+try{
   $q_select = $pdo -> prepare('SELECT * FROM servicios where id_servicio =15');
   $q_select ->execute();
   if ($q_select->rowCount() > 0) {
@@ -27,10 +29,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
     else {
         echo "No se encontraron resultados";
     }
+  } catch (PDOException $e) {
+    echo "Error en la consulta SQL: " . $e->getMessage();
+}
   
 ?>
 
-<form action="/student042/dwes/Reservas/formulario_reserva_insert.php" method="POST">
+<form action="" method="POST">
 
     
 <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">

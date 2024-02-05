@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
@@ -42,3 +43,24 @@ if (isset($_POST['actualizar'])) {
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 ?>
+=======
+
+<?php
+
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+
+?>
+<?php
+            
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+
+?>
+
+
+
+<?php
+
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
+?>
+>>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
