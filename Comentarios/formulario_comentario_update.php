@@ -2,19 +2,15 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-=======
+
+?>
 
 <?php
           
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
-<?php
 
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
 
 <<<<<<< HEAD
 <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
@@ -75,7 +71,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
-=======
+
 
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 <div class="d-flex justify-content-center">
@@ -138,4 +134,4 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
+

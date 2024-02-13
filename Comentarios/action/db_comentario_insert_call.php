@@ -1,16 +1,14 @@
-<<<<<<< HEAD
 
 <?php
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 ?>
-=======
+
 <?php
 ob_start();
 ?>
 
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
 <?php
             
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
@@ -37,12 +35,8 @@ ob_start();
           </div>
         <?php
           header('Location:/student042/dwes/html/dashboard.php');
-=======
+      }
 
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
 <?php
@@ -67,8 +61,7 @@ ob_start();
         <?php
           header('Location:/student042/dwes/html/dashboard.php');
         }
-        
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
+
       }else{
         ?>
          <div class="alert alert-danger" role="alert">
@@ -76,11 +69,10 @@ ob_start();
           </div>
         <?php
     }
-<<<<<<< HEAD
+
        }
-=======
-       
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
+
+
 
 ?>
 
@@ -88,8 +80,4 @@ ob_start();
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503

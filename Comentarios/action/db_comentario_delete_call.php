@@ -1,7 +1,6 @@
 
 <?php
 
-<<<<<<< HEAD
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 ?>
@@ -66,10 +65,7 @@
     </div>
   </form>
 </div>
-=======
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
-?>
 <?php
             
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
@@ -101,14 +97,8 @@ if (isset($_POST['suprimir'])) {
 
 ?>
 
-
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
 <?php
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503

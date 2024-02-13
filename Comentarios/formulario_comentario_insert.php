@@ -1,17 +1,16 @@
 
 <?php
-<<<<<<< HEAD
+
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-=======
+
           
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
+
 
 ?>
 <?php
 
-<<<<<<< HEAD
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>

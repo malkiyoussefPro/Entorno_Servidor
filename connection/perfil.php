@@ -13,16 +13,13 @@
 <?php
 
 
-<<<<<<< HEAD
       $q_select = $pdo -> prepare('SELECT * FROM usuario
                                  where nombre_usuario = ? AND contrasena_usuario = ?');
       $q_select -> execute([$nombre,$password]);
       $var = $q_select -> fetch();
-=======
 if (isset($_POST['iniciar'])) {
     $nombre = htmlspecialchars($_POST['nombre']);
     $password = htmlspecialchars($_POST['password']);
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
 
     if (!empty($nombre) && !empty($password)) {
         $q_select = $pdo->prepare('SELECT * FROM usuario WHERE nombre_usuario = ? AND contrasena_usuario = ?');

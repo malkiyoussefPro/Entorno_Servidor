@@ -11,14 +11,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
     <thead>
         <tr>
             <th scope="col">ID</th>
-<<<<<<< HEAD
             <th scope="col">Nombre Usuario</th>
             <th scope="col">Email usuario</th>
             <th scope="col">Contraseña usuario</th>
             <th scope="col">Role Usuario</th>
             <th scope="col">Fecha creación cuenta</th>
             <th scope="col">Operaciones</th>
-=======
+
             <th scope="col">Estado comentario</th>
             <th scope="col">Id Cliente</th>
             <th scope="col">Numero reserva</th>
@@ -26,12 +25,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
             <th scope="col">Comentario</th>
             <th scope="col">Comentario</th>
             <th scope="col" class="d-flex justify-content-center">Operaciones</th>
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
+
         </tr>
     </thead>
     <tbody>
 
-<<<<<<< HEAD
         <?php
 
         if(isset($_POST['buscar'])){
@@ -68,7 +66,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
         ?>
 
     </tbody>
-=======
+
     <?php
 
     if (isset($_POST['buscar'])) {
@@ -107,7 +105,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
     ?>
 
   </tbody>
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503
+
 </table>
 
 <?php
