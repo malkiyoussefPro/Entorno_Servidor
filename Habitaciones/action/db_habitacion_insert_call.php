@@ -1,11 +1,5 @@
 <?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-
-?>
-
-
-<?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 if (isset($_POST['insertar'])){
   $tipo = $_POST['tipo_habitacion'];
@@ -15,7 +9,6 @@ if (isset($_POST['insertar'])){
   $precio = $_POST['precio_habitacion'];
   $imagen = $_FILES['imagen_habitacion']['name'];
   $temporal = $_FILES['imagen_habitacion']['tmp_name'];
-  var_dump($_FILES);
   $carpeta = $_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/imagenes';
   $ruta = $carpeta . '/' . $imagen;
   move_uploaded_file($temporal, $carpeta.'/'.$imagen);
@@ -33,3 +26,6 @@ if (isset($_POST['insertar'])){
 }
 ?>
 
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+?>

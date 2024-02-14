@@ -2,81 +2,126 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
-
 // Obtener el ID del usuario de la sesión
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
+// Definir una variable para almacenar el mensaje de error
+$error_message = '';
 
 // Verificar si se ha enviado el formulario de disponibilidad
 if (isset($_POST['disponibilidad'])) {
     // Obtener las fechas proporcionadas por el usuario
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
+    $startDate = isset($_POST['startDate']) ? $_POST['startDate'] : '';
+    $endDate = isset($_POST['endDate']) ? $_POST['endDate'] : '';
+    $nombrePersona = isset($_POST['nombre_persona']) ? $_POST['nombre_persona'] : '';
 
-    // Obtener el número de personas proporcionado por el usuario
-    $nombrePersona = $_POST['nombre_persona'];
-
- 
-    // Verificar el número de personas y ajustar el tipo de habitación según corresponda
-    if ($nombrePersona >= 1 && $nombrePersona <= 2) {
-      $tipoHabitacion = 'single';
-  } elseif ($nombrePersona >= 3 && $nombrePersona <= 4) {
-      $tipoHabitacion = 'double';
-  } elseif ($nombrePersona >= 5 && $nombrePersona <= 6) {
-      $tipoHabitacion = 'suite';
-  } else {
-      // Mostrar un mensaje de error si el número de personas es mayor que 6
-      echo '<div class="alert alert-danger" role="alert">El número máximo de personas es 6.</div>';
-      exit(); // Detener la ejecución del script
-  }
-
-    // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
-    $q_select = $pdo->prepare("
-        SELECT *
-        FROM habitaciones
-        WHERE tipo_habitacion = :tipo
-        AND disponibilidad_habitacion = 'disponible'
-        AND estado_habitacion = 'Esta lista'
-        AND id_habitacion NOT IN (
-            SELECT id_habitacion
-            FROM reservas_hotel
-            WHERE ('$startDate' BETWEEN fecha_entrada AND fecha_salida)
-            OR ('$endDate' BETWEEN fecha_entrada AND fecha_salida)
-        )
-    ");
-    $q_select->bindParam(':tipo', $tipoHabitacion);
-    $q_select->execute();
-
-    // Fetch all data
-    $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
-
-    if ($habitaciones_disponibles) {
-        echo 'Hay ' . count($habitaciones_disponibles) . ' habitaciones disponibles';
-
-        // Mostrar la información de las habitaciones disponibles
-        foreach ($habitaciones_disponibles as $habitacion) {
-            echo '<div class="habitacion">';
-            echo '<h2>Tipo: ' . $habitacion['tipo_habitacion'] . '</h2>';
-            echo '<p>Precio: ' . $habitacion['precio_habitacion'] . '</p>';
-            // Verifica si la ruta de la imagen está vacía antes de mostrarla
-            if (!empty($habitacion['imagen_habitacion'])) {
-                echo '<img src="' . $habitacion['imagen_habitacion'] . '" alt="Imagen de la habitación">';
-            } else {
-                echo '<p>Imagen no disponible</p>';
-            }
-            echo '<p>Vista de la habitación: ' . $habitacion['ubicacion_habitacion'] . '</p>';
-            echo '</div>';
-        }
+    // Verificar si algún campo está vacío
+    if (empty($startDate) || empty($endDate) || empty($nombrePersona)) {
+        // Establecer el mensaje de error
+        $error_message = '<div class="alert alert-danger" role="alert">Todos los campos son obligatorios.</div>';
     } else {
-        echo 'No hay habitaciones disponibles en las fechas y para el número de personas proporcionadas';
+        // Verificar si la fecha de llegada es anterior a la fecha actual o igual a la fecha actual
+        if (strtotime($startDate) < strtotime(date('Y-m-d'))) {
+            // Establecer el mensaje de error
+            $error_message = '<div class="alert alert-danger" role="alert">La fecha de llegada debe ser igual o posterior a la fecha actual.</div>';
+        } elseif ($startDate > $endDate) {
+            // Verificar si la fecha de llegada es superior a la fecha de salida
+            // Establecer el mensaje de error
+            $error_message = '<div class="alert alert-danger" role="alert">La fecha de llegada no puede ser posterior a la fecha de salida.</div>';
+        } else {
+            // Verificar si el número de personas es válido
+            if (!is_numeric($nombrePersona) || $nombrePersona < 1) {
+                // Establecer el mensaje de error
+                $error_message = '<div class="alert alert-danger" role="alert">El número de personas debe ser un valor numérico mayor o igual a 1.</div>';
+            } else {
+                // Verificar el número de personas y ajustar el tipo de habitación según corresponda
+                if ($nombrePersona >= 1 && $nombrePersona <= 2) {
+                    $tipoHabitacion = 'single';
+                } elseif ($nombrePersona >= 3 && $nombrePersona <= 4) {
+                    $tipoHabitacion = 'double';
+                } elseif ($nombrePersona >= 5 && $nombrePersona <= 6) {
+                    $tipoHabitacion = 'suite';
+                } else {
+                    // Mostrar un mensaje de error si el número de personas es mayor que 6
+                    $error_message = '<div class="alert alert-danger" role="alert">El número máximo de personas es 6.</div>';
+                }
+
+                // Si no hay errores, proceder con la búsqueda de habitaciones disponibles
+                if (empty($error_message)) {
+                    // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
+                    $q_select = $pdo->prepare("
+                        SELECT *
+                        FROM habitaciones
+                        WHERE tipo_habitacion = :tipo
+                        AND disponibilidad_habitacion = 'disponible'
+                        AND estado_habitacion = 'Esta lista'
+                        AND id_habitacion NOT IN (
+                            SELECT id_habitacion
+                            FROM reservas_hotel
+                            WHERE ('$startDate' BETWEEN fecha_entrada AND fecha_salida)
+                            OR ('$endDate' BETWEEN fecha_entrada AND fecha_salida)
+                        )
+                    ");
+                    $q_select->bindParam(':tipo', $tipoHabitacion);
+                    $q_select->execute();
+
+                    // Fetch all data
+                    $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
+                }
+            }
+        }
     }
 }
 ?>
 
-
-
-
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
+<style>
+    /* Estilos para el contenedor de las habitaciones */
+    .habitacion {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+
+    /* Estilos para el título del tipo de habitación */
+    .habitacion h2 {
+        margin-top: 0;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Estilos para el precio de la habitación */
+    .habitacion p {
+        margin: 0;
+        font-size: 16px;
+        color: #666;
+    }
+
+    /* Estilos para la imagen de la habitación */
+    .habitacion img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    /* Estilos para el texto cuando no hay imagen disponible */
+    .habitacion p:empty {
+        color: #999;
+        font-style: italic;
+    }
+
+    /* Estilos para la vista de la habitación */
+    .habitacion .vista {
+        font-style: italic;
+        color: #888;
+    }
+
+</style>
+
+<?php echo $error_message; ?>
 <div class="container m-5" style="border: 2px solid black; background : white ;border-radius: 10px;">
     <div class="row d-flex justify-content-around m-2">
         <h1 style="text-align: center;">Reservas</h1>
@@ -103,4 +148,22 @@ if (isset($_POST['disponibilidad'])) {
             <a href="#" type="button" class="btn btn-warning" name="reservar" id="reservar">Reservar</a>
         </div>
     </div>
+
 </div>
+
+<?php if (!empty($habitaciones_disponibles)) : ?>
+    <div class="row">
+        <?php foreach ($habitaciones_disponibles as $habitacion) : ?>
+            <div class="habitacion">
+                <h2>Tipo: <?php echo $habitacion['tipo_habitacion']; ?></h2>
+                <p>Precio: <?php echo $habitacion['precio_habitacion']; ?></p>
+                <?php if (!empty($habitacion['imagen_habitacion'])) : ?>
+                    <img src="<?php echo $habitacion['imagen_habitacion']; ?>" alt="Imagen de la habitación">
+                <?php else : ?>
+                    <p>Imagen no disponible</p>
+                <?php endif; ?>
+                <p>Vista de la habitación: <?php echo $habitacion['ubicacion_habitacion']; ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>

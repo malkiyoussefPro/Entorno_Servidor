@@ -26,7 +26,7 @@
             <select name="tipo_habitacion" id="inputHabitacion" class="form-control">
               <option selected>Seleccionar...</option>
               <option>Single</option>
-              <option>Double</option>
+              <option>doble</option>
               <option>Suite</option>
             </select>
           </div>
