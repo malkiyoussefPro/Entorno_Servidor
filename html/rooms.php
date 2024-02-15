@@ -13,10 +13,10 @@ if (isset($_POST['disponibilidad'])) {
     // Obtener las fechas proporcionadas por el usuario
     $startDate = isset($_POST['startDate']) ? $_POST['startDate'] : '';
     $endDate = isset($_POST['endDate']) ? $_POST['endDate'] : '';
-    $nombrePersona = isset($_POST['nombre_persona']) ? $_POST['nombre_persona'] : '';
+    $tipoHabitacion = isset($_POST['tipo_habitacion']) ? $_POST['tipo_habitacion'] : '';
 
     // Verificar si algún campo está vacío
-    if (empty($startDate) || empty($endDate) || empty($nombrePersona)) {
+    if (empty($startDate) || empty($endDate) || empty($tipoHabitacion)) {
         // Establecer el mensaje de error
         $error_message = '<div class="alert alert-danger" role="alert">Todos los campos son obligatorios.</div>';
     } else {
@@ -29,46 +29,26 @@ if (isset($_POST['disponibilidad'])) {
             // Establecer el mensaje de error
             $error_message = '<div class="alert alert-danger" role="alert">La fecha de llegada no puede ser posterior a la fecha de salida.</div>';
         } else {
-            // Verificar si el número de personas es válido
-            if (!is_numeric($nombrePersona) || $nombrePersona < 1) {
-                // Establecer el mensaje de error
-                $error_message = '<div class="alert alert-danger" role="alert">El número de personas debe ser un valor numérico mayor o igual a 1.</div>';
-            } else {
-                // Verificar el número de personas y ajustar el tipo de habitación según corresponda
-                if ($nombrePersona >= 1 && $nombrePersona <= 2) {
-                    $tipoHabitacion = 'single';
-                } elseif ($nombrePersona >= 3 && $nombrePersona <= 4) {
-                    $tipoHabitacion = 'double';
-                } elseif ($nombrePersona >= 5 && $nombrePersona <= 6) {
-                    $tipoHabitacion = 'suite';
-                } else {
-                    // Mostrar un mensaje de error si el número de personas es mayor que 6
-                    $error_message = '<div class="alert alert-danger" role="alert">El número máximo de personas es 6.</div>';
-                }
+            // Si no hay errores, proceder con la búsqueda de habitaciones disponibles
+            // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
+            $q_select = $pdo->prepare("
+                SELECT *
+                FROM habitaciones
+                WHERE tipo_habitacion = :tipo
+                AND disponibilidad_habitacion = 'disponible'
+                AND estado_habitacion = 'Esta lista'
+                AND id_habitacion NOT IN (
+                    SELECT id_habitacion
+                    FROM reservas_hotel
+                    WHERE ('$startDate' BETWEEN fecha_entrada AND fecha_salida)
+                    OR ('$endDate' BETWEEN fecha_entrada AND fecha_salida)
+                )
+            ");
+            $q_select->bindParam(':tipo', $tipoHabitacion);
+            $q_select->execute();
 
-                // Si no hay errores, proceder con la búsqueda de habitaciones disponibles
-                if (empty($error_message)) {
-                    // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
-                    $q_select = $pdo->prepare("
-                        SELECT *
-                        FROM habitaciones
-                        WHERE tipo_habitacion = :tipo
-                        AND disponibilidad_habitacion = 'disponible'
-                        AND estado_habitacion = 'Esta lista'
-                        AND id_habitacion NOT IN (
-                            SELECT id_habitacion
-                            FROM reservas_hotel
-                            WHERE ('$startDate' BETWEEN fecha_entrada AND fecha_salida)
-                            OR ('$endDate' BETWEEN fecha_entrada AND fecha_salida)
-                        )
-                    ");
-                    $q_select->bindParam(':tipo', $tipoHabitacion);
-                    $q_select->execute();
-
-                    // Fetch all data
-                    $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
-                }
-            }
+            // Fetch all data
+            $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 }
@@ -136,8 +116,12 @@ if (isset($_POST['disponibilidad'])) {
                     <input id="endDate" class="form-control" type="date" name="endDate" />
                 </div>
                 <div class="col-2">
-                    <label for="inputNombrePersona">Nombre de persona</label>
-                    <input type="number" name="nombre_persona" class="form-control" id="inputNombrePersona" placeholder="Nombre persona">
+                    <label for="inputTipoHabitacion">Tipo de habitación</label>
+                    <select name="tipo_habitacion" id="inputTipoHabitacion" class="form-control">
+                        <option value="single">Single</option>
+                        <option value="doble">Doble</option>
+                        <option value="suite">Suite</option>
+                    </select>
                 </div>
                 <div class="card-body col-2">
                     <button type="submit" class="btn btn-warning" id="disponibilidad" name="disponibilidad">Ver disponibilidad</button>
