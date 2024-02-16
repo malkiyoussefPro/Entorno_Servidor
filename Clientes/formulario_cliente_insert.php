@@ -20,15 +20,20 @@
 
       <h2>Formulario insertar cliente</h2>
       <div class="container">
-        <div class="form-group">
-          <label for="inputCliente">Civilidad cliente</label>
-          <select id="inputState" name="civilidad_cliente" class="form-control">
-              <option selected>Seleccionar...</option>
-              <option>Srta</option>
-              <option>Sra</option>
-              <option>Sr</option>
-            </select>
-        </div>
+        <label for="inputCliente">Civilidad cliente</label>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" value="Sr." id="civilidadSr" name="civilidadChecked">
+          <label class="form-check-label" for="civilidadSr">Sr.</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" value="Sra." id="civilidadSra" name="civilidadChecked">
+          <label class="form-check-label" for="civilidadSra">Sra.</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" value="Srta." id="civilidadSrta" name="civilidadChecked">
+          <label class="form-check-label" for="civilidadSrta">Srta.</label>
+      </div>
+
         <div class="form-group">
           <label for="inputCliente">Nombre cliente</label>
           <input type="text" name="nombre_cliente" class="form-control" id="inputCliente" placeholder="nombre">

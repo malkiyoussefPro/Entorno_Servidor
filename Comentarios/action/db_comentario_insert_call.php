@@ -1,83 +1,35 @@
-
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+if(isset($_POST['insertar'])){
+    // Verificar si la clave 'nombre_Cliente' está definida en $_SESSION
+    $nombre_Cliente = isset($_SESSION['nombre_Cliente']) ? $_SESSION['nombre_Cliente'] : null;
+    // Verificar si la clave 'estado_comentario' está definida en $_POST
+    $estado_Comentario = isset($_POST['estado_comentario']) ? $_POST['estado_comentario'] : null;
+    // Obtener el valor de 'fecha_creacion_comentario' de $_POST
+    $fecha = $_POST['fecha_creacion_comentario'];
+    // Obtener el valor de 'comentarios' de $_POST
+    $comentario = $_POST['comentarios'];
+    // Obtener el valor de 'score' de $_POST
+    $score = $_POST['score'];
 
-?>
-
-<?php
-ob_start();
-?>
-
-<?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-
-?>
-<<<<<<< HEAD
-<?php
-
-    if(isset($_POST['insertar'])){
-     
-      $nombre_Cliente = $_SESSION['nombre_Cliente'];
-      $estado_Comentario = $_POST['estado_comentario'];
-      $fecha = $_POST['fecha_creacion_comentario'];
-      $comentario = $_POST['comentarios'];
-      $score = $_POST['score'];
-      if(!empty($nombre_Cliente) && !empty($estado_Comentario) && !empty($fecha) && !empty($comentario) && !empty($score)){
-
-        $q_insert = $pdo -> prepare('INSERT INTO comentarios_clientes VALUES (null, ?, ?, ?, ?, ?)');
-
-          $q_insert -> execute([ $nombre_Cliente, $estado_Comentario, $fecha, $comentario, $score]);
-          ?>
-          <div class="alert alert-success" role="alert">
-             Comentario añadido con  excitoso!
-          </div>
-        <?php
-          header('Location:/student042/dwes/html/dashboard.php');
-      }
-
-
-?>
-<?php
-
-    if(isset($_POST['insertar'])){
-
-      $estado_comentario = $_POST['estado_comentario'];
-      $id_cliente = $_POST['id_cliente'];
-      $numero_reserva = $_POST['numero_reserva'];
-      $fecha_creacion_comentario = $_POST['fecha_creacion'];
-      $comentarios = $_POST['comentarios'];
-      $score = $_POST['score'];
-
-      if(!empty($estado_comentario) && !empty($id_cliente) && !empty($numero_reserva) && !empty($fecha_creacion_comentario) && !empty($comentarios) && !empty($score)){
-       
-          $q_insert = $pdo -> prepare('INSERT INTO comentarios_clientes VALUES (null, ?, ?, ?, ?, ?)');
-          $q_insert -> execute([$estado_comentario, $id_cliente, $numero_reserva, $fecha_creacion_comentario, $comentarios,$score]);
-          ?>
-          <div class="alert alert-success" role="alert">
-             comentario añadido con excito!
-          </div>
-        <?php
-          header('Location:/student042/dwes/html/dashboard.php');
-        }
-
-      }else{
+    if(!empty($nombre_Cliente) && !empty($estado_Comentario) && !empty($fecha) && !empty($comentario) && !empty($score)){
+        $q_insert = $pdo->prepare('INSERT INTO comentarios_clientes (nombre_cliente, estado_comentario, fecha_creacion_comentario, comentarios, score) VALUES (?, ?, ?, ?, ?)');
+        $q_insert->execute([$nombre_Cliente, $estado_Comentario, $fecha, $comentario, $score]);
         ?>
-         <div class="alert alert-danger" role="alert">
-               Todos los campos son obligatorios !
-          </div>
+        <div class="alert alert-success" role="alert">
+            ¡Comentario añadido con éxito!
+        </div>
+        <?php
+        header('Location:/student042/dwes/html/dashboard.php');
+        exit();
+    } else {
+        ?>
+        <div class="alert alert-danger" role="alert">
+            ¡Todos los campos son obligatorios!
+        </div>
         <?php
     }
-
-       }
-
-
-
-?>
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
+}
 ?>
