@@ -42,7 +42,7 @@
                 <div class="col">
                     <h5>Comentarios</h5>
                     
-                    <a href="\student042\dwes\html\comentarios.php">Para mejorar nuestros servios, Su opinion nos importa, Deja su comentario</a>
+                    <a href="/student042/dwes/html/comentarios.php">Para mejorar nuestros servios, Su opinion nos importa, Deja su comentario</a>
                 </div>
 
             </div>

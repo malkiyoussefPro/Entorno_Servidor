@@ -1,66 +1,24 @@
-<<<<<<< HEAD
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
-if (isset($_GET['id_usuario'])) {
-    $idUsuario = $_GET['id_usuario'];
+// Verificar si se envió el formulario con el ID del comentario y el nuevo estado
+if(isset($_POST['actualizar']) && isset($_POST['id_comentario']) && isset($_POST['nuevo_estado'])) {
+    $id_comentario = $_POST['id_comentario'];
+    $nuevo_estado = $_POST['nuevo_estado'];
 
-    $q_select = $pdo->prepare('SELECT * FROM usuario WHERE id_usuario = ?');
-    $q_select->execute([$idUsuario]);
-    $usuario = $q_select->fetch(PDO::FETCH_ASSOC);
+    // Prepara la consulta para actualizar el estado del comentario
+    $q_update = $pdo->prepare('UPDATE comentarios_clientes SET estado_comentario = ? WHERE id_comentario = ?');
+    $q_update->execute([$nuevo_estado, $id_comentario]);
 
-    if (!$usuario) {
-        echo "Usuario no encontrado.";
-        exit;
-    }
-} else {
-    echo "ID de usuario no proporcionado.";
-    exit;
-}
-
-if (isset($_POST['actualizar'])) {
-    $nombreUsuario = $_POST['nombre_Usuario'];
-    $emailUsuario = $_POST['email_Usuario'];
-    $contraseña = $_POST['contraseña'];
-    $roleUsuario = $_POST['role_usuario'];
-    $fechaCreacion = $_POST['fecha_creacion'];
-
-    if (empty($nombreUsuario) || empty($emailUsuario) || empty($roleUsuario) || empty($fechaCreacion)) {
-        echo "Todos los campos son obligatorios.";
-        exit;
-    }
-
-    $q_update = $pdo->prepare('UPDATE usuario SET nombre_usuario = ?, email_usuario = ?, contraseña_usuario = ?, role_usuario = ?, fecha_creacion_cuenta = ? WHERE id_usuario = ?');
-    $q_update->execute([$nombreUsuario, $emailUsuario, $contraseña, $roleUsuario, $fechaCreacion, $idUsuario]);
-
-    if ($q_update->rowCount() > 0) {
-        echo "Usuario actualizado exitosamente.";
+    // Verifica si se actualizó correctamente el estado del comentario
+    if($q_update->rowCount() > 0) {
+        echo "Estado del comentario actualizado correctamente.";
     } else {
-        echo "No se encontró ningún usuario con el ID proporcionado o no se realizaron cambios.";
+        echo "Error al actualizar el estado del comentario.";
     }
+    header("location: /student042/dwes/html/dashboard.php");
+} else {
+    // Si no se proporcionaron todos los datos necesarios, muestra un mensaje de error
+    echo "Por favor, proporcione el ID del comentario y el nuevo estado.";
 }
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 ?>
-=======
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-<?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-
-?>
-
-
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
-?>
->>>>>>> 9fb999558590860b0dd24bbebc0605497cb7a503

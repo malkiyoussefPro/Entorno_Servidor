@@ -212,15 +212,15 @@
           Comentarios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_insert.php">Añadir Comentario</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_insert.php">Añadir Comentario</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_update.php">Modificar Comentario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_update.php">Modificar Comentario</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_delete.php">Borrar Comentario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_delete.php">Borrar Comentario</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Comentario/formulario_comentario_select.php">Buscar Comentario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_select.php">Buscar Comentario</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Comentario/operaciones.php">Operaciones </a></li> 
+            <li><a class="dropdown-item" href="/student042/dwes/Comentarios/operaciones.php">Operaciones </a></li> 
           </ul>
         </li>
         <ul class="navbar-nav ml-auto">

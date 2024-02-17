@@ -1,18 +1,13 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-    // Si el usuario es un admin, mostrar el select normalmente
-    $disabled = '';
-} else {
-    // Si el usuario no es un admin, deshabilitar el select
-    $disabled = 'disabled';
-}
+$disabled = isset($_SESSION['role']) ? '' : 'disabled';
+
 ?>
 
-<link rel="stylesheet" href="/student042/dwes/css/header.css">
+<link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">
     <form class="myFormComentario" action="/student042/dwes/Comentarios/action/db_comentario_insert_call.php" method="POST">
