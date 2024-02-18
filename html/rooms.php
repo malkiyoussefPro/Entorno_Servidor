@@ -49,6 +49,14 @@ if (isset($_POST['disponibilidad'])) {
 
             // Fetch all data
             $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
+
+            // Guardar los datos en cookies si hay habitaciones disponibles
+            if (!empty($habitaciones_disponibles)) {
+                setcookie('id_cliente', $user_id, time() + (86400 * 30), "/"); // 86400 segundos = 1 día
+                setcookie('id_habitacion', $habitaciones_disponibles[0]['id_habitacion'], time() + (86400 * 30), "/");
+                setcookie('fecha_entrada', $startDate, time() + (86400 * 30), "/");
+                setcookie('fecha_salida', $endDate, time() + (86400 * 30), "/");
+            }
         }
     }
 }
@@ -99,6 +107,10 @@ if (isset($_POST['disponibilidad'])) {
         font-style: italic;
         color: #888;
     }
+    .btn{
+        margin: 15px auto;
+        font-weight:18px;
+    }
 
 </style>
 
@@ -130,7 +142,6 @@ if (isset($_POST['disponibilidad'])) {
             </div>
         </form>
     </div>
-
 </div>
 
 <?php if (!empty($habitaciones_disponibles)) : ?>
@@ -145,7 +156,15 @@ if (isset($_POST['disponibilidad'])) {
                     <p>Imagen no disponible</p>
                 <?php endif; ?>
                 <p>Vista de la habitación: <?php echo $habitacion['ubicacion_habitacion']; ?></p>
-                <a href="#" class="btn btn-warning reservar-btn" data-id="<?php echo $habitacion['id_habitacion']; ?>">Reservar</a>
+                <form class="myFormreserva" action="/student042/dwes/Reservas/action/db_reserva_insert_call.php" method="POST">
+                    <input type="hidden" name="id_cliente" value="<?php echo $user_id; ?>">
+                    <input type="hidden" name="id_habitacion" value="<?php echo $habitacion['id_habitacion']; ?>">
+                    <input type="hidden" name="fecha_entrada" value="<?php echo $startDate; ?>">
+                    <input type="hidden" name="fecha_salida" value="<?php echo $endDate; ?>">
+                  
+                    <button type="submit" name="insertar" class="btn btn-warning reservar-btn">Reservar</button>
+                    
+                </form>
             </div>
         <?php endforeach; ?>
     </div>
