@@ -62,8 +62,9 @@ if (isset($_POST['disponibilidad'])) {
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
-        margin-bottom: 20px;
+        margin: 20px;
         background-color: #f9f9f9;
+        width: 450px;
     }
 
     /* Estilos para el título del tipo de habitación */
@@ -128,9 +129,6 @@ if (isset($_POST['disponibilidad'])) {
                 </div>
             </div>
         </form>
-        <div class="card-body">
-            <a href="#" type="button" class="btn btn-warning" name="reservar" id="reservar">Reservar</a>
-        </div>
     </div>
 
 </div>
@@ -147,7 +145,10 @@ if (isset($_POST['disponibilidad'])) {
                     <p>Imagen no disponible</p>
                 <?php endif; ?>
                 <p>Vista de la habitación: <?php echo $habitacion['ubicacion_habitacion']; ?></p>
+                <a href="#" class="btn btn-warning reservar-btn" data-id="<?php echo $habitacion['id_habitacion']; ?>">Reservar</a>
             </div>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
+
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php'); ?>
