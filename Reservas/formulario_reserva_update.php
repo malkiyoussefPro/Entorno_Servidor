@@ -9,22 +9,7 @@
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
-<?php
 
-// Obtén el ID de la reserva desde la URL
-$idReserva = isset($_GET['id']);
-
-// Consulta la información de la reserva seleccionada
-$q_select = $pdo->prepare('SELECT * FROM reservas_hotel WHERE id_reserva = ?');
-$q_select->execute([$idReserva]);
-$reserva = $q_select->fetch(PDO::FETCH_ASSOC);
-
-// Verifica si la reserva existe
-if(!$reserva) {
-    echo "Reserva no encontrada.";
-    exit;
-}
-?>
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
 <div class="d-flex justify-content-center">

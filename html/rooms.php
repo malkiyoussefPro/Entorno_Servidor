@@ -156,15 +156,9 @@ if (isset($_POST['disponibilidad'])) {
                     <p>Imagen no disponible</p>
                 <?php endif; ?>
                 <p>Vista de la habitación: <?php echo $habitacion['ubicacion_habitacion']; ?></p>
-                <form class="myFormreserva" action="/student042/dwes/Reservas/action/db_reserva_insert_call.php" method="POST">
-                    <input type="hidden" name="id_cliente" value="<?php echo $user_id; ?>">
-                    <input type="hidden" name="id_habitacion" value="<?php echo $habitacion['id_habitacion']; ?>">
-                    <input type="hidden" name="fecha_entrada" value="<?php echo $startDate; ?>">
-                    <input type="hidden" name="fecha_salida" value="<?php echo $endDate; ?>">
-                  
-                    <button type="submit" name="insertar" class="btn btn-warning reservar-btn">Reservar</button>
-                    
-                </form>
+       
+                    <a href="/student042/dwes/Reservas/action/db_reserva_insert_call.php"><button type="submit" name="insertar" class="btn btn-warning reservar-btn">Reservar</button></a>
+               
             </div>
         <?php endforeach; ?>
     </div>

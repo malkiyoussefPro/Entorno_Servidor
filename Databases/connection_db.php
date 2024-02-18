@@ -26,12 +26,5 @@ if (!$pdo) {
 
 //$pdo = new PDO('mysql:host = localhost; dbname = hotel_42', 'root', '');
 //$pdo = new PDO('mysql:host=remotehost.es;dbname=dwesdatabase', 'dwess1234', 'test1234.');
-
-
-
-
-
-
-
 ?>
 

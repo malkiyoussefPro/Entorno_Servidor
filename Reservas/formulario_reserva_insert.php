@@ -40,11 +40,11 @@
             </div>
             <div class="form-group col-md-6 ">
               <label for="inputreserva">Id pago</label>
-              <input type="number" class="form-control" name="id_pago" placeholder="Id habitacion">
+              <input type="number" class="form-control" name="id_pago" placeholder="Id pago">
             </div>
             <div class="form-group col-md-6 ">
               <label for="inputreserva">Numero reserva</label>
-              <input type="number" class="form-control" name="numero_reserva" placeholder="Id habitacion">
+              <input type="number" class="form-control" name="numero_reserva" placeholder="numeroreserva">
             </div>
 
           </div>
