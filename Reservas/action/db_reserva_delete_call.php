@@ -24,7 +24,7 @@ if(isset($_POST['suprimir'])){
     }
 
     // Realiza la eliminación en la base de datos
-    $q_delete = $pdo->prepare('DELETE FROM reservas_hotel WHERE id_reserva = ?');
+    $q_delete = $pdo->prepare('DELETE FROM reservas WHERE id_reserva = ?');
     $q_delete->execute([$idReserva]);
 
     // Verifica si se eliminó algún registro

@@ -31,7 +31,7 @@ if(isset($_POST['actualizar'])){
     }
 
     // Actualiza el registro en la base de datos
-    $q_update = $pdo->prepare('UPDATE reservas_hotel SET id_cliente = ?, id_habitacion = ?, fecha_entrada = ?, fecha_salida = ?, fecha_reserva = ?, id_pago = ?, numero_reserva = ? WHERE id_reserva = ?');
+    $q_update = $pdo->prepare('UPDATE reservas SET id_cliente = ?, id_habitacion = ?, fecha_entrada = ?, fecha_salida = ?, fecha_reserva = ?, id_pago = ?, numero_reserva = ? WHERE id_reserva = ?');
     $q_update->execute([$idCliente, $idHabitacion, $fechaEntrada, $fechaSalida, $fechaReserva, $idPago, $numeroReserva, $idReserva]);
 
     // Verifica si se actualizó algún registro

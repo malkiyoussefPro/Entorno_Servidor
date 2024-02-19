@@ -35,7 +35,7 @@
         $id_personal = $_POST['id_personal'];
 
       // Realizar la consulta para obtener la información del personal
-      $q_select = $pdo->prepare('SELECT * FROM personal_hotel WHERE id_personal = ?');
+      $q_select = $pdo->prepare('SELECT * FROM datos_personal WHERE id_personal = ?');
       $q_select->execute([$id_personal]);
       $personal = $q_select->fetch(PDO::FETCH_ASSOC);
 

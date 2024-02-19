@@ -23,7 +23,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
             $id_comentario = $_POST['id_Comentario'];
 
             // Realiza la consulta para obtener la información del comentario
-            $q_select = $pdo->prepare('SELECT * FROM comentarios_clientes WHERE id_comentario = ?');
+            $q_select = $pdo->prepare('SELECT * FROM comentario_clientes WHERE id_comentario = ?');
             $q_select->execute([$id_comentario]);
             $comentario = $q_select->fetch(PDO::FETCH_ASSOC);
 

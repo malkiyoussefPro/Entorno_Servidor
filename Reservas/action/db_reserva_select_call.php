@@ -30,7 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db
             echo "<tr><td colspan='8'>El ID de reserva proporcionado no es válido.</td></tr>";
         } else {
             // Realiza la consulta en la base de datos
-            $q_select = $pdo->prepare('SELECT * FROM reservas_hotel WHERE id_reserva = ?');
+            $q_select = $pdo->prepare('SELECT * FROM reservas WHERE id_reserva = ?');
             $q_select->execute([$idReserva]);
 
             // Obtiene los resultados de la consulta

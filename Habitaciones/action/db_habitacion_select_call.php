@@ -28,7 +28,7 @@
                 $id_habitacion = $_POST['id_habitacion'];
         
               // Realizar la consulta para obtener la información del habitacion
-              $q_select = $pdo->prepare('SELECT * FROM habitaciones WHERE id_habitacion = ?');
+              $q_select = $pdo->prepare('SELECT * FROM habitaciones_hotel WHERE id_habitacion = ?');
               $q_select->execute([$id_habitacion]);
               $habitacion = $q_select->fetch(PDO::FETCH_ASSOC);
         

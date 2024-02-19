@@ -33,13 +33,13 @@ if (isset($_POST['disponibilidad'])) {
             // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
             $q_select = $pdo->prepare("
                 SELECT *
-                FROM habitaciones
+                FROM habitaciones_hotel
                 WHERE tipo_habitacion = :tipo
                 AND disponibilidad_habitacion = 'disponible'
                 AND estado_habitacion = 'Esta lista'
                 AND id_habitacion NOT IN (
                     SELECT id_habitacion
-                    FROM reservas_hotel
+                    FROM reservas
                     WHERE ('$startDate' BETWEEN fecha_entrada AND fecha_salida)
                     OR ('$endDate' BETWEEN fecha_entrada AND fecha_salida)
                 )

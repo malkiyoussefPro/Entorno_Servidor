@@ -27,7 +27,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
         $id_Servicio = $_POST['id_Servicio'];
 
         // Realiza la consulta para obtener la información del id_Servicio
-        $q_select = $pdo->prepare('SELECT * FROM servicios WHERE id_servicio = ?');
+        $q_select = $pdo->prepare('SELECT * FROM servicios_hotel WHERE id_servicio = ?');
         $q_select->execute([$id_Servicio]);
         $servicio = $q_select->fetch(PDO::FETCH_ASSOC);
 

@@ -77,7 +77,7 @@ if(isset($_COOKIE['id_usuario'])) {
         $numero_reserva = uniqid();
 
         // Insertar la reserva en la base de datos
-        $q_insert = $pdo->prepare('INSERT INTO reservas_hotel (id_cliente, id_habitacion, fecha_entrada, fecha_salida, fecha_reserva, id_pago, numero_reserva) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $q_insert = $pdo->prepare('INSERT INTO reservas (id_cliente, id_habitacion, fecha_entrada, fecha_salida, fecha_reserva, id_pago, numero_reserva) VALUES (?, ?, ?, ?, ?, ?, ?)');
         
         if ($q_insert) {
             $q_insert->execute([$id_cliente, $id_habitacion, $fecha_entrada, $fecha_salida, date('Y-m-d'), $id_pago, $numero_reserva]);
@@ -100,7 +100,7 @@ if(isset($_COOKIE['id_usuario'])) {
 function generarIdPago($pdo) {
     $id_pago = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 12);
 
-    $q_check_id_pago = $pdo->prepare('SELECT COUNT(*) AS total FROM reservas_hotel WHERE id_pago = ?');
+    $q_check_id_pago = $pdo->prepare('SELECT COUNT(*) AS total FROM reservas WHERE id_pago = ?');
     $q_check_id_pago->execute([$id_pago]);
     $result = $q_check_id_pago->fetch(PDO::FETCH_ASSOC);
 

@@ -24,7 +24,7 @@ if(isset($_POST['insertar'])){
     // Verificar que los campos obligatorios no estén vacíos
     if(!empty($fecha) && !empty($comentario) && !empty($score)){
         // Consulta preparada para insertar el comentario en la base de datos
-        $q_insert = $pdo->prepare('INSERT INTO comentarios_clientes (nombre_cliente, estado_comentario, fecha_creacion_comentario, comentarios, score) VALUES (?, ?, ?, ?, ?)');
+        $q_insert = $pdo->prepare('INSERT INTO comentario_clientes (nombre_cliente, estado_comentario, fecha_creacion_comentario, comentarios, score) VALUES (?, ?, ?, ?, ?)');
         
         // Verificar si la preparación de la consulta fue exitosa
         if($q_insert) {

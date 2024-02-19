@@ -14,7 +14,7 @@ if (isset($_POST['insertar'])){
   move_uploaded_file($temporal, $carpeta.'/'.$imagen);
 
   if (!empty($tipo) && !empty($disponibilidad) && !empty($estado) && !empty($vista) && !empty($precio)) {
-    $q_insert = $pdo->prepare('INSERT INTO habitaciones VALUES (null,?,?,?,?,?,?)');
+    $q_insert = $pdo->prepare('INSERT INTO habitaciones_hotel VALUES (null,?,?,?,?,?,?)');
     if ($q_insert->execute([$tipo, $disponibilidad, $estado, $vista, $precio, $ruta])) {
       echo '<div class="alert alert-success" role="alert">Habitación añadida exitosamente!</div>';
     } else {

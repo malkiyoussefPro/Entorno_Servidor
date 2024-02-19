@@ -44,7 +44,7 @@
    
    if( !empty($nombre) && !empty( $fecha_nacimiento) && !empty($puesto) && !empty($domicilio) && !empty($telefono)
     && !empty($email) && !empty($fecha_integracion) && !empty($affiliación)&& !empty($imagen) && !empty($curriculum)){
-      $q_insert = $pdo -> prepare('INSERT INTO  personal_hotel VALUES 
+      $q_insert = $pdo -> prepare('INSERT INTO  datos_personal VALUES 
       (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)');
      
       $q_insert -> execute([ $nombre, $fecha_nacimiento, $puesto, $domicilio, $telefono,

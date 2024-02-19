@@ -11,7 +11,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db
     <div class="comentarios-container">
         <?php 
         // Consulta SQL para seleccionar solo los comentarios revisados con el nombre del cliente y la fecha de creación
-        $q_select = $pdo->prepare('SELECT nombre_cliente, fecha_creacion_comentario, comentarios FROM comentarios_clientes WHERE estado_comentario = ?');
+        $q_select = $pdo->prepare('SELECT nombre_cliente, fecha_creacion_comentario, comentarios FROM comentario_clientes WHERE estado_comentario = ?');
         $q_select->execute(['revisado']);
         $comentarios = $q_select->fetchAll(PDO::FETCH_ASSOC);
 

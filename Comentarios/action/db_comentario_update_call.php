@@ -7,7 +7,7 @@ if(isset($_POST['actualizar']) && isset($_POST['id_comentario']) && isset($_POST
     $nuevo_estado = $_POST['nuevo_estado'];
 
     // Prepara la consulta para actualizar el estado del comentario
-    $q_update = $pdo->prepare('UPDATE comentarios_clientes SET estado_comentario = ? WHERE id_comentario = ?');
+    $q_update = $pdo->prepare('UPDATE comentario_clientes SET estado_comentario = ? WHERE id_comentario = ?');
     $q_update->execute([$nuevo_estado, $id_comentario]);
 
     // Verifica si se actualizó correctamente el estado del comentario

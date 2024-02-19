@@ -27,7 +27,7 @@
 
       if(!empty($departamento) && !empty($descripcion) && !empty($precio) && !empty($fecha)){
         if($mover){
-          $q_insert = $pdo -> prepare('INSERT INTO servicios VALUES (null, ?, ?, ?, ?, ?)');
+          $q_insert = $pdo -> prepare('INSERT INTO servicios_hotel VALUES (null, ?, ?, ?, ?, ?)');
           $q_insert -> execute([$departamento, $descripcion, $ruta, $precio, $fecha]);
           ?>
           <div class="alert alert-success" role="alert">

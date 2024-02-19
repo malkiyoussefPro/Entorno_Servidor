@@ -29,7 +29,7 @@ if (isset($_POST['insertar'])) {
 
   if (!empty($nombre) && !empty($dni) && !empty($fecha) && !empty($telefono)
       && !empty($email) && !empty($direccion) && !empty($codigoPostal) && !empty($ciudad) && !empty($pais)) {
-      $q_insert = $pdo->prepare('INSERT INTO clientes VALUES 
+      $q_insert = $pdo->prepare('INSERT INTO datos_clientes VALUES 
     (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
       $q_insert->execute([$civilidad, $nombre, $dni, $fecha, $telefono, $email, $direccion, $codigoPostal, $ciudad, $pais]);

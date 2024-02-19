@@ -6,7 +6,7 @@ if(isset($_POST['suprimir'])) {
     $id_comentario = $_POST['id_comentario'];
 
     // Prepara la consulta para eliminar el comentario
-    $q_delete = $pdo->prepare('DELETE FROM comentarios_clientes WHERE id_comentario = ?');
+    $q_delete = $pdo->prepare('DELETE FROM comentario_clientes WHERE id_comentario = ?');
     $q_delete->execute([$id_comentario]);
 
     // Verifica si se eliminó correctamente el comentario

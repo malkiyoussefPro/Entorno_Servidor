@@ -34,7 +34,7 @@
         $id_cliente = $_POST['id_cliente'];
 
       // Realizar la consulta para obtener la información del cliente
-      $q_select = $pdo->prepare('SELECT * FROM clientes WHERE id_cliente = ?');
+      $q_select = $pdo->prepare('SELECT * FROM datos_clientes WHERE id_cliente = ?');
       $q_select->execute([$id_cliente]);
       $cliente = $q_select->fetch(PDO::FETCH_ASSOC);
 

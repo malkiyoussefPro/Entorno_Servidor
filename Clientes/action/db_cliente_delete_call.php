@@ -21,7 +21,7 @@ if (isset($_POST['suprimir'])) {
   }
 
   // Realiza la eliminación del servicio
-  $q_delete = $pdo->prepare('DELETE FROM clientes WHERE id_cliente = ?');
+  $q_delete = $pdo->prepare('DELETE FROM datos_clientes WHERE id_cliente = ?');
   $q_delete->execute([$idcliente]);
 
   // Verifica si se eliminó algún registro
