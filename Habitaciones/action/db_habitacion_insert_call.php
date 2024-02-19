@@ -1,6 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
+  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+
 if (isset($_POST['insertar'])){
   $tipo = $_POST['tipo_habitacion'];
   $disponibilidad = $_POST['disponibilidad_habitacion'];

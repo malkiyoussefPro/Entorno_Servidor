@@ -14,7 +14,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <?php
-  $q_select = $pdo -> prepare('SELECT * FROM servicios where id_servicio =13');
+  $q_select = $pdo -> prepare('SELECT * FROM servicios_hotel where id_servicio =3');
   $q_select ->execute();
   if ($q_select->rowCount() > 0) {
 
@@ -63,21 +63,28 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         <hr>
         <div>
           <ul>
-            <li>Caja fuerte</li>
-            <li>Aire acondicionado</li>
-            <li>Acceso a Internet</li>
+                <li>Caja fuerte</li>
+                <li>Aire acondicionado</li>
+                <li>Acceso a Internet</li>
                 <li>Televisión con mando a distancia</li>
                 <li>Secador de pelo</li>
                 <li>Espejo de maquillaje iluminado</li>
-              </ul>
-            </div>
-            <hr>
-        <h6> Descrpción de la habitación</h6>
+          </ul>
+        </div>
           <hr>
-          <p>  Habitaciones Clásicas en las plantas bajas, con vistas sobre la entrada principal.
-            Espaciosas, 28-40 m2, con una gran cama simple. Cuartos de baño en mármol,
-            con luz regulable al antojo del cliente y una espectacular ducha de estilo marroquí.
-          </p>
+          <h6>Spa Tradicional Marroquí</h6>
+        <hr>
+        <p>
+          Sumérgete en la cultura y la relajación con nuestro Spa Tradicional Marroquí. Déjate envolver
+          por los aromas exóticos y la música suave mientras te sumerges en una experiencia de bienestar
+            incomparable. Nuestros terapeutas expertos te guiarán a través de tratamientos ancestrales 
+            que incluyen hammams, masajes con aceites esenciales y exfoliaciones revitalizantes. Disfruta
+            de la calma y la serenidad mientras te transportamos a un oasis de tranquilidad en medio del
+              bullicio diario. Renueva cuerpo y mente con nuestros rituales de spa inspirados en la 
+              antigua tradición marroquí, dejando que te lleven a un estado de total relajación y 
+              renovación.
+        </p>
+
         </div>
       
     </div>

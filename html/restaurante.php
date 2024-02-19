@@ -14,7 +14,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 <link rel="stylesheet" href="/student042/dwes/css/header.css">
 
 <?php
- $q_select = $pdo -> prepare('SELECT * FROM servicios where id_servicio =14');
+ $q_select = $pdo -> prepare('SELECT * FROM servicios_hotel where id_servicio =5');
   $q_select ->execute();
   if ($q_select->rowCount() > 0) {
 
@@ -62,22 +62,29 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
           <h5>Desayuno Simple</h5>
         <hr>
         <div>
-          <ul>
-            <li>Cafe con Leche</li>
-            <li>Espresso</li>
-            <li>Croassant</li>
-            <li>Pan integral Artisanal</li>
-            <li>Miel pura de neustros campos</li>
-            <li>Aceite de Oliva Extra virgen</li>
-            <li>Aceite de Oliva Extra virgen</li>
-            <li>huevos de nuestros campos</li>
-          </ul>
+        <ul>
+          <li>Cuscús con cordero y pasas</li>
+          <li>Tajine de pollo con limón y aceitunas</li>
+          <li>Hummus con pan de pita casero</li>
+          <li>Briwat de almendra y miel</li>
+          <li>Ensalada marroquí de zanahoria rallada con comino y cilantro</li>
+          <li>Té de menta fresca con pastas marroquíes</li>
+        </ul>
+
         </div>
-            <hr>
-        <h6> Descrpción del desayuno</h6>
-          <hr>
-          <p> Vivir una desayuno de  estilo marroquí con ambiante mezclada de los tradicinales folkloricos.
-          </p>
+        <h6>Restaurante Marroquí Tradicional</h6>
+        <hr>
+        <p>
+          Sumérgete en una experiencia culinaria auténtica en nuestro Restaurante Marroquí Tradicional. 
+          Déjate llevar por los sabores exóticos y los aromas tentadores mientras exploras nuestra carta
+           inspirada en la rica tradición culinaria de Marruecos. Desde tagines fragantes hasta couscous
+            elaborados, cada plato está cuidadosamente preparado para ofrecerte una experiencia 
+            gastronómica única. Disfruta de la hospitalidad marroquí mientras te sumerges en un ambiente
+             encantador y acogedor, diseñado para transportarte a las calles de Marrakech. Ven y descubre 
+             el sabor de Marruecos en cada bocado, mientras creas recuerdos inolvidables con amigos 
+             y seres queridos.
+        </p>
+
         </div>
       
     </div>
