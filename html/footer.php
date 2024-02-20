@@ -35,14 +35,24 @@
                 <button type="button" class="btn btn-dark">Dejar comentario</button>
             </a>
         </div>
+        <div class="col">
+            <div class="container-tiempo">
+                <div id="weather-info">
+                    <!-- Aquí se mostrarán los datos del tiempo -->
+                </div>
+                <!-- Div para mostrar el icono del tiempo -->
+                <div id="weather-icon" class="weather-icon"></div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <h6>Todos los derechos reservados 2023-2024</h6>
     </div> 
+    
 </div>
  
         </footer>
-
+        <script src="/student042/dwes/Apis/Weather.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     </body>

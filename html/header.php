@@ -16,10 +16,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/student042/dwes/css/header.css">
   <title>Header Hotel</title>
+  <style>
+  /* Estilos comunes para los iconos */
+  .weather-icon {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px; /* Ajusta el tamaño según sea necesario */
+    background-size: cover;
+    display: inline-block;
+  }
+  .container-tiempo{
+    font-size: 18px;
+    background-color: black;
+    width: 300px;
+    height: 210px;
+    margin: 15px auto;
+    padding: 15px;
+    color: antiquewhite;
+  }
+</style>
 </head>
 
 <body>
-
+   
   <header>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
 
