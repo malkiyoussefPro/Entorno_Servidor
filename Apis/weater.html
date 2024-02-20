@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Información del Tiempo</title>
+
+<style>
+  /* Estilos comunes para los iconos */
+  .weather-icon {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px; /* Ajusta el tamaño según sea necesario */
+    background-size: cover;
+    display: inline-block;
+  }
+</style>
+
+<script>
+window.addEventListener('load', () => {
+  // Configurar la clave de la API de AccuWeather
+  const apiKey = 'HkYDeNVIbswpvyMs9rOKKvi1Bru7i7k3';
+
+  // ID de la ubicación para la que deseas obtener información del tiempo (ejemplo: Marrakech, MA)
+  const locationKey = '154487'; // ID de Marrakech, Marruecos
+
+  // URL de la API de AccuWeather para obtener el pronóstico extendido
+  const apiUrl = `https://dataservice.accuweather.com/forecasts/v1/daily/10day/${locationKey}?apikey=${apiKey}&language=es&metric=true`;
+
+  // Realizar una solicitud a la API de AccuWeather
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error en la solicitud a la API');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Datos del pronóstico recibidos:', data);
+      // Extraer la información del pronóstico de los próximos 10 días
+      const forecastData = data.DailyForecasts;
+
+      // Mostrar el pronóstico del tiempo para los próximos 10 días
+      const weatherForecast = document.getElementById('weather-forecast');
+      weatherForecast.innerHTML = '<h2>Pronóstico del Tiempo para los Próximos 10 Días</h2>';
+      forecastData.forEach((day, index) => {
+        const date = new Date(day.Date);
+        const dayOfWeek = date.toLocaleDateString('es-ES', { weekday: 'long' });
+        const temperatureMin = day.Temperature.Minimum.Value;
+        const temperatureMax = day.Temperature.Maximum.Value;
+        const weatherText = day.Day.IconPhrase;
+        weatherForecast.innerHTML += `
+          <div>
+            <p><strong>${dayOfWeek}</strong></p>
+            <p>Temperatura Mínima: ${temperatureMin}°C</p>
+            <p>Temperatura Máxima: ${temperatureMax}°C</p>
+            <p>Estado del Tiempo: ${weatherText}</p>
+          </div>
+        `;
+      });
+    })
+    .catch(error => {
+      console.error('Error al obtener los datos del pronóstico:', error);
+    });
+});
+</script>
+</head>
+<body>
+<div id="weather-forecast">
+  <!-- Aquí se mostrará el pronóstico del tiempo para los próximos 10 días -->
+</div>
+</body>
+</html>
