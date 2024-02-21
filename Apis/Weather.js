@@ -1,7 +1,7 @@
 
 window.addEventListener('load', () => {
   // Configurar la clave de la API de AccuWeather
-  const apiKey = 'HkYDeNVIbswpvyMs9rOKKvi1Bru7i7k3';
+  const apiKey = '1MgMMLa5Fh16714aQTiAbJUZyHePskPt';
 
   // ID de la ubicación  Marrakech, Marruecos
   const locationKey = '154487'; 
@@ -36,13 +36,14 @@ window.addEventListener('load', () => {
       // Asignar la clase correspondiente al div según el estado del tiempo
       if (weatherText.toLowerCase().includes('soleado')) {
         weatherIcon.style.backgroundImage = "url('/student042/dwes/Apis/iconos_tiempo/sun.png')";
-      } else if (weatherText.toLowerCase().includes('nublado')) {
+      } else if (weatherText.toLowerCase().includes('nublado')|| weatherText.toLowerCase().includes('Mayormente nublado')) {
         weatherIcon.style.backgroundImage = "url('/student042/dwes/Apis/iconos_tiempo/cloud.png')";
       } else if (weatherText.toLowerCase().includes('lluvia')) {
         weatherIcon.style.backgroundImage = "url('/student042/dwes/Apis/iconos_tiempo/rain.png')";
       } else if (weatherText.toLowerCase().includes('ventoso')) {
         weatherIcon.style.backgroundImage = "url('/student042/dwes/Apis/iconos_tiempo/wind.png')";
-      } else {
+      }
+       else {
         // Si el estado del tiempo no coincide con ninguna de las condiciones anteriores, no se muestra ningún icono
         weatherIcon.style.display = "none";
       }
@@ -51,3 +52,4 @@ window.addEventListener('load', () => {
       console.error('Error al obtener los datos del tiempo:', error);
     });
 });
+

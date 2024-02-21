@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<div class="row">
-    <div class="col">
-        <form action="">
-            <label for="">ingrese una ubicación para obtener información meteorológica</label>
-            <input type="text" name="ciudad" id="">
-        </form>
-        <div class="card" style="width: 18rem; margin: 10px">
-            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="...">
-            <div class="card-body">
-            </div>
-            <div>
-                <h5>Ciudad</h5>
-                <div>
-                    condición climática
-                </div>
-                <div>
-                    <span>tiempo</span>
-                    <span>&deg; C</span>
-                </div>
-            </div>
-        </div>
+<?php
 
-    </div>
-</div>
-</body>
-</html>
+  // Configurar la clave de la API de AccuWeather
+  $apiKey = '1MgMMLa5Fh16714aQTiAbJUZyHePskPt';
+
+  // ID de la ubicación  Marrakech, Marruecos
+  $locationKey = '154487'; 
+
+  // URL de la API de AccuWeather para obtener el pronóstico actual
+ // $url = 'https://dataservice.accuweather.com/currentconditions/v1/'.$locationKey.'?apikey='.$apiKey.'&language=es&details=true';
+  $url = 'https://dataservice.accuweather.com/currentconditions/v1/'.$locationKey.'?apikey='.$apiKey.'&language=es&details=true';
+
+$currentconditions_file = $url;
+$currentconditions_json = file_get_contents($currentconditions_file);
+$currentconditions = json_decode($currentconditions_json, true);
+print_r($currentconditions) ;echo' <br> ' . '<br>';
+echo  $currentconditions_json;
+
+?>
