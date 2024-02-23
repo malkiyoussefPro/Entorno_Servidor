@@ -2,11 +2,22 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 // JSON proporcionado
-$json_data = // Ubicacion json
+$url = $_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/current_Condition.json';
 $json_data = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/current_Condition.json');
 
 // Decodificar el JSON
 $data = json_decode($json_data, true);
+
+$fecha = date('Ymd');
+
+$copy =copy($url, $_SERVER['DOCUMENT_ROOT'].'/student042/dwes/apis/accuweather.json'.$fecha);
+
+if($copy){
+    //echo "json copiado";
+}else{
+    //echo "json no copiado";
+}
+
 
 // Insertar los datos en la tabla WeatherData
 foreach ($data as $item) {
@@ -24,7 +35,7 @@ foreach ($data as $item) {
     
 }
 
-echo "Datos insertados correctamente.";
+//echo "Datos insertados correctamente.";
 ?>
 
 <!DOCTYPE html>

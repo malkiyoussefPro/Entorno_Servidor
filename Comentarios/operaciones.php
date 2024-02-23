@@ -21,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
   <tbody>
     <?php
     // Obtén los comentarios de la base de datos y muestra la información en la tabla
-    $q_select_all = $pdo->query('SELECT * FROM comentarios_clientes');
+    $q_select_all = $pdo->query('SELECT * FROM comentario_clientes');
 
     while ($comentario = $q_select_all->fetch(PDO::FETCH_ASSOC)) {
     ?>

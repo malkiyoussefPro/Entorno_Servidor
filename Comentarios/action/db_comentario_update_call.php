@@ -16,7 +16,7 @@ if(isset($_POST['actualizar']) && isset($_POST['id_comentario']) && isset($_POST
     } else {
         echo "Error al actualizar el estado del comentario.";
     }
-    header("location: /student042/dwes/html/dashboard.php");
+    header("location: /student042/dwes/Comentarios/operaciones.php");
 } else {
     // Si no se proporcionaron todos los datos necesarios, muestra un mensaje de error
     echo "Por favor, proporcione el ID del comentario y el nuevo estado.";
