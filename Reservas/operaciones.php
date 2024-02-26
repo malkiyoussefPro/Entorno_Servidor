@@ -33,7 +33,7 @@
         <?php
 
         // Realiza la consulta para obtener todas las reservas
-        $q_select_all = $pdo->prepare('SELECT * FROM reservas_hotel');
+        $q_select_all = $pdo->prepare('SELECT * FROM reservas');
         $q_select_all->execute();
 
         // Obtiene los resultados de la consulta
@@ -45,6 +45,7 @@
           <tr>
       
           <td><?php  echo $reserva['id_reserva']; ?> </td>
+          <td><?php  echo $reserva['id_cliente']; ?> </td>
           <td><?php  echo $reserva['id_habitacion']; ?> </td>
           <td><?php  echo $reserva['fecha_entrada']; ?> </td>
           <td><?php  echo $reserva['fecha_salida']; ?> </td>

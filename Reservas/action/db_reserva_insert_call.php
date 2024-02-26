@@ -83,6 +83,7 @@ if(isset($_COOKIE['id_usuario'])) {
             $q_insert->execute([$id_cliente, $id_habitacion, $fecha_entrada, $fecha_salida, date('Y-m-d'), $id_pago, $numero_reserva]);
             if ($q_insert->rowCount() > 0) {
                 echo "La reserva se ha insertado correctamente.";
+                header('Location:/student042/dwes/html/habitaciones.php');
             } else {
                 echo "Error: No se pudo insertar la reserva en la base de datos.";
             }

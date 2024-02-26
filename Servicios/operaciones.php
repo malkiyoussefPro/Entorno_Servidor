@@ -21,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
     <?php
     // Obtén los usuarios de la base de datos y muestra la información en la tabla
-    $q_select_all = $pdo->query('SELECT * FROM servicios');
+    $q_select_all = $pdo->query('SELECT * FROM servicios_hotel');
 
     while ($servicio = $q_select_all->fetch(PDO::FETCH_ASSOC)) {
     ?>
