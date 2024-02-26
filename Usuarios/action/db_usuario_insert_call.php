@@ -22,6 +22,7 @@ if (isset($_POST['insertar'])) {
       $q_insert = $pdo->prepare('INSERT INTO usuario VALUES (null, ?, ?, ?, ?, ?)');
       $q_insert->execute([$nombre, $email, $contraseña, $role, $fecha]);
       echo '<div class="alert alert-success" role="alert">Usuario añadido con éxito!</div>';
+      header('Location:/student042/dwes/html/dashboard.php');
   } else {
       echo '<div class="alert alert-danger" role="alert">Todos los campos son obligatorios!</div>';
   }

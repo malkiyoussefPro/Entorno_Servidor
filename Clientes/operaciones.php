@@ -31,7 +31,7 @@
 
           <?php
             // Realiza la consulta para obtener todas los servicios
-          $q_select_all = $pdo->prepare('SELECT * FROM clientes');
+          $q_select_all = $pdo->prepare('SELECT * FROM datos_clientes');
           $q_select_all->execute();
 
           // Obtiene los resultados de la consulta

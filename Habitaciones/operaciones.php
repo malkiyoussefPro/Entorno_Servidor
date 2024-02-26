@@ -9,7 +9,7 @@
 
 ?>
 <?php
-$q_select = $pdo->prepare('SELECT * FROM habitaciones');
+$q_select = $pdo->prepare('SELECT * FROM habitaciones_hotel');
 $q_select->execute();
 $habitaciones = $q_select->fetchAll(PDO::FETCH_ASSOC);
 ?>

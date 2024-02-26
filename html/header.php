@@ -19,19 +19,20 @@
   <style>
   /* Estilos comunes para los iconos */
   .weather-icon {
-    width: 100px; /* Ajusta el tamaño según sea necesario */
-    height: 100px; /* Ajusta el tamaño según sea necesario */
+    width: 100px; 
+    height: 100px; 
     background-size: cover;
     display: inline-block;
   }
   .container-tiempo{
     font-size: 18px;
-    background-color: black;
+    background-color: rgb(164, 144, 55);
     width: 300px;
-    height: 210px;
+    height: 230px;
     margin: 15px auto;
     padding: 15px;
-    color: antiquewhite;
+    color: black;
+    border-radius: 15px;
   }
 </style>
 </head>
@@ -90,5 +91,15 @@
       </div>
     </nav>
   </header>
+  <div class="col">
+    <div class="container-tiempo">
+      <h6 style="text-align: center;">Tiempo actual en Marrakech</h6>
+      <div id="weather-info">
+                    <!-- Aquí se mostrarán los datos del tiempo -->
+                </div>
+                <!-- Div para mostrar el icono del tiempo -->
+                <div id="weather-icon" class="weather-icon"></div>
+            </div>
+    </div>
 
  

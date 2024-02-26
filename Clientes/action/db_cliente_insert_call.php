@@ -39,7 +39,7 @@ if (isset($_POST['insertar'])) {
           ¡Cliente añadido exitosamente!
       </div>
       <?php
-      header('Location:/student042/dwes/html/dashboard.php');
+      header('Location:/student042/dwes/Clientes/formulario_cliente_insert.php');
   } else {
       ?>
       <div class="alert alert-danger" role="alert">

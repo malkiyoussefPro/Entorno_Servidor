@@ -10,8 +10,6 @@
 
 ?>
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 
 // Verificar si el cliente ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
