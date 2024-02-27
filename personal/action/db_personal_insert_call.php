@@ -55,7 +55,7 @@
          Personal añadido de una  excitoso!
       </div>
     <?php
-      header('Location:/student042/dwes/html/dashboard.php');
+      header('Location:/student042/dwes/Personal/formulario_personal_insert.php');
   }else{
     ?>
      <div class="alert alert-danger" role="alert">

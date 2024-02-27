@@ -29,7 +29,7 @@
              Servicio añadido con excito!
           </div>
         <?php
-          header('Location:/student042/dwes/html/dashboard.php');
+          header('Location:/student042/dwes/Servicios/formulario_servicio_insert.php');
         }else{
           echo 'Error en el cargamento de la imagen';
         }
