@@ -112,6 +112,63 @@ if (isset($_POST['disponibilidad'])) {
         font-weight:18px;
     }
 
+     /* Estilos para el formulario de pago */
+     .container-formulario-pago {
+        border: 2px solid #000;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 50px auto;
+        max-width: 400px;
+    }
+
+    .container-formulario-pago h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 18px;
+        color: #666;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #6c757d;
+    }
+
+    .btn-pagar {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        color: black;
+        background-color: #ffc107;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+    .btn-pagar:hover {
+        background-color: #ffca2c;
+    }
+
 </style>
 
 <?php echo $error_message; ?>
@@ -163,5 +220,61 @@ if (isset($_POST['disponibilidad'])) {
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
+
+
+
+<!-- Formulario de Pago -->
+<div class="container-formulario-pago">
+    <h2>Formulario de Pago</h2>
+    <form method="post" action="/student042/dwes/Pago/db_pago_insert_call.php">
+        <div class="form-group">
+            <label for="nombre_titular">Nombre del Titular:</label>
+            <input type="text" id="nombre_titular" name="nombre_titular" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="numero_tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numero_tarjeta" name="numero_tarjeta" class="form-control" placeholder="0000 0000 0000 0000">
+        </div>
+        <div class="form-group">
+            <label for="tipo_pago">Tipo de tarjeta:</label>
+            <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" oninput="detectCardType(this.value)">
+        </div>
+        <div class="form-group">
+            <label for="fecha_caducidad">Fecha de Vencimiento:</label>
+            <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cantidad_pagar">Cantidad a Pagar:</label>
+            <input type="text" id="cantidad_pagar" name="cantidad_pagar" required class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    
+function detectCardType(cardNumber) {
+    // Define las expresiones regulares para cada tipo de tarjeta
+    var visaRegex = /^4[0-9]{0,}$/;
+    var mastercardRegex = /^5[1-5][0-9]{0,}$/;
+    var amexRegex = /^3[47][0-9]{0,}$/;
+    var discoverRegex = /^6(?:011|5[0-9]{0,})[0-9]{0,}$/;
+
+    // Comprueba si el número de tarjeta coincide con alguna de las expresiones regulares
+    if (visaRegex.test(cardNumber)) {
+        document.getElementById('card_type').innerHTML = 'Visa';
+    } else if (mastercardRegex.test(cardNumber)) {
+        document.getElementById('card_type').innerHTML = 'Mastercard';
+    } else if (amexRegex.test(cardNumber)) {
+        document.getElementById('card_type').innerHTML = 'American Express';
+    } else if (discoverRegex.test(cardNumber)) {
+        document.getElementById('card_type').innerHTML = 'Discover';
+    } else {
+        document.getElementById('card_type').innerHTML = 'Tipo de tarjeta desconocido';
+    }
+}
+</script>
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php'); ?>
