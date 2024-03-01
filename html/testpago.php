@@ -13,7 +13,7 @@ if (!isset($_SESSION['name'])) {
 $user_name = $_SESSION['name'];
 
 // Consulta para verificar si el usuario está en la tabla de usuarios
-$checkUserQuery = $pdo->prepare("SELECT COUNT(*) AS user_count FROM usuario WHERE nombre_usuario  = :user_name");
+$checkUserQuery = $pdo->prepare("SELECT COUNT(*) AS user_count FROM usuario WHERE nombre_usuario = :user_name");
 $checkUserQuery->bindParam(':user_name', $user_name);
 $checkUserQuery->execute();
 $userExists = $checkUserQuery->fetch(PDO::FETCH_ASSOC)['user_count'];
@@ -53,32 +53,31 @@ if (isset($_POST['disponibilidad'])) {
             $error_message = '<div class="alert alert-danger" role="alert">La fecha de llegada no puede ser posterior a la fecha de salida.</div>';
         } else {
             // Si no hay errores, proceder con la búsqueda de habitaciones disponibles
-            // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
-            $q_select = $pdo->prepare("
-                SELECT *
-                FROM habitaciones_hotel
-                WHERE tipo_habitacion = :tipo
-                AND disponibilidad_habitacion = 'disponible'
-                AND estado_habitacion = 'Esta lista'
-                AND id_habitacion NOT IN (
-                    SELECT id_habitacion
-                    FROM reservas
-                    WHERE ('$startDate' BETWEEN fecha_entrada AND fecha_salida)
-                    OR ('$endDate' BETWEEN fecha_entrada AND fecha_salida)
-                )
-            ");
-            $q_select->bindParam(':tipo', $tipoHabitacion);
-            $q_select->execute();
+            try {
+                // Consulta SQL para seleccionar las habitaciones disponibles según el tipo y las fechas proporcionadas
+                $q_select = $pdo->prepare("
+                    SELECT *
+                    FROM habitaciones_hotel
+                    WHERE tipo_habitacion = :tipo
+                    AND disponibilidad_habitacion = 'disponible'
+                    AND estado_habitacion = 'Esta lista'
+                    AND id_habitacion NOT IN (
+                        SELECT id_habitacion
+                        FROM reservas
+                        WHERE (:startDate BETWEEN fecha_entrada AND fecha_salida)
+                        OR (:endDate BETWEEN fecha_entrada AND fecha_salida)
+                    )
+                ");
+                $q_select->bindParam(':tipo', $tipoHabitacion);
+                $q_select->bindParam(':startDate', $startDate);
+                $q_select->bindParam(':endDate', $endDate);
+                $q_select->execute();
 
-            // Fetch all data
-            $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
-
-            // Guardar los datos en cookies si hay habitaciones disponibles
-            if (!empty($habitaciones_disponibles)) {
-                setcookie('id_cliente', $user_id, time() + (86400 * 30), "/"); // 86400 segundos = 1 día
-                setcookie('id_habitacion', $habitaciones_disponibles[0]['id_habitacion'], time() + (86400 * 30), "/");
-                setcookie('fecha_entrada', $startDate, time() + (86400 * 30), "/");
-                setcookie('fecha_salida', $endDate, time() + (86400 * 30), "/");
+                // Fetch all data
+                $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $e) {
+                // Manejo de excepciones de la base de datos
+                echo '<div class="alert alert-danger" role="alert">Error en la consulta SQL: ' . $e->getMessage() . '</div>';
             }
         }
     }
@@ -238,12 +237,8 @@ if (isset($_POST['disponibilidad'])) {
                     <p>Imagen no disponible</p>
                 <?php endif; ?>
                 <p>Vista de la habitación: <?php echo $habitacion['ubicacion_habitacion']; ?></p>
-       
                 <!-- Agrega el enlace para reservar y muestra el formulario de pago -->
-               
-                <a href="#" class="btn btn-warning reservar-btn" onclick="mostrarFormularioPago()">Reservar</a>
-
-               
+                <a href="#" class="btn btn-warning reservar-btn" onclick="mostrarFormularioPago(<?php echo $habitacion['id_habitacion']; ?>)">Reservar</a>
             </div>
         <?php endforeach; ?>
     </div>
@@ -274,48 +269,115 @@ if (!empty($_COOKIE['id_habitacion']) && !empty($_COOKIE['fecha_entrada']) && !e
     $total = $subtotal + $iva;
 }
 ?>
+<?php
+
+// Verificar si se ha enviado el formulario de pago
+if (isset($_POST['pagar'])) {
+    // Obtener los datos del formulario de pago
+    $id_habitacion = isset($_POST['id_habitacion']) ? $_POST['id_habitacion'] : '';
+
+    $nombreTitular = $_POST['nombre_titular'];
+    $numeroTarjeta = $_POST['numero_tarjeta'];
+    $tipoPago = $_POST['tipo_pago'];
+    $fechaCaducidad = $_POST['fecha_caducidad'];
+    $cantidadPagar = $_POST['cantidad_pagar'];
+
+    // Obtener las fechas de entrada y salida
+    $fechaEntrada = $_COOKIE['fecha_entrada']; // Obtener la fecha de entrada de la cookie, asegúrate de que esté disponible
+    $fechaSalida = $_COOKIE['fecha_salida']; // Obtener la fecha de salida de la cookie, asegúrate de que esté disponible
+
+    try {
+        // Iniciar una transacción
+        $pdo->beginTransaction();
+        // Formatear el total del pago con dos decimales
+        $cantidadPagar = number_format($total, 2);
+        
+        // Generar un número de reserva único (aquí asumimos que estás utilizando algún algoritmo para generar un número único)
+        $numeroReserva = uniqid();
+        
+        // Insertar el pago primero para obtener su ID
+        $insertPago = $pdo->prepare("
+        INSERT INTO pagos (nombre_titular, fechaEmision_pago, tipo_pago, cantidad_pagar) 
+        VALUES (:nombre_titular, NOW(), :tipo_pago, :cantidad_pagar)
+        ");
+        $insertPago->bindParam(':nombre_titular', $nombreTitular);
+        $insertPago->bindParam(':tipo_pago', $tipoPago);
+        $insertPago->bindParam(':cantidad_pagar', $cantidadPagar);
+        $insertPago->execute();
+
+        // Obtener el ID del pago insertado
+        $id_pago = $pdo->lastInsertId();
+
+        // Insertar la reserva con el ID de pago obtenido
+        $insertReserva = $pdo->prepare("
+            INSERT INTO reservas (id_usuario, id_habitacion, fecha_entrada, fecha_salida, fecha_reserva, id_pago, numero_reserva, check_in, check_out) 
+            VALUES (:id_usuario, :id_habitacion, :fecha_entrada, :fecha_salida, NOW(), :id_pago, :numero_reserva, 'Pendiente', 0)
+        ");
+        $insertReserva->bindParam(':id_usuario', $user_id);
+        $insertReserva->bindParam(':id_habitacion', $id_habitacion);
+        $insertReserva->bindParam(':fecha_entrada', $fechaEntrada);
+        $insertReserva->bindParam(':fecha_salida', $fechaSalida);
+        $insertReserva->bindParam(':id_pago', $id_pago);
+        $insertReserva->bindParam(':numero_reserva', $numeroReserva);
+        $insertReserva->execute();
+
+        // Confirmar la transacción
+        $pdo->commit();
+
+        // Redirigir a una página de éxito o mostrar un mensaje de éxito
+        echo '<div class="alert alert-success" role="alert">Reserva y pago realizados con éxito. Número de reserva: '.$numeroReserva.'</div>';
+    } catch (PDOException $e) {
+        // Revertir la transacción en caso de error
+        $pdo->rollBack();
+        // Manejo de excepciones de la base de datos
+        echo '<div class="alert alert-danger" role="alert">Error al realizar la reserva y el pago: ' . $e->getMessage() . '</div>';
+    }
+}
+
+?>
 
 <form method="post" action="">
-   
-   <div id="container-formulario-pago" class="container-formulario-pago">
+    <div id="container-formulario-pago" class="container-formulario-pago">
+    <input type="hidden" name="id_habitacion" value="<?php echo isset($_COOKIE['id_habitacion']) ? $_COOKIE['id_habitacion'] : ''; ?>">
 
-     <!-- Campo oculto para almacenar el ID de la reserva -->
-     <input type="hidden" name="id_reserva" value="<?php echo $idReserva; ?>">
-    
-    <!--formulario de pago -->
-    <div class="form-group">
-        <label for="nombre_titular">Nombre del Titular:</label>
-        <input type="text" id="nombre_titular" name="nombre_titular" required class="form-control">
+        <!--formulario de pago -->
+        <div class="form-group">
+            <label for="nombre_titular">Nombre del Titular:</label>
+            <input type="text" id="nombre_titular" name="nombre_titular" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="numero_tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numero_tarjeta" name="numero_tarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19">
+        </div>
+        <div class="form-group">
+            <label for="tipo_pago">Tipo de tarjeta:</label>
+            <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label for="fecha_caducidad">Fecha de Vencimiento:</label>
+            <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cantidad_pagar">Cantidad a Pagar:</label>
+            <input type="number" id="cantidad_pagar" name="cantidad_pagar" step="any" required class="form-control" value="<?php if (isset($total)) echo $total; ?>">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="numero_tarjeta">Número de Tarjeta:</label>
-        <input type="text" id="numero_tarjeta" name="numero_tarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19">
-    </div>
-    <div class="form-group">
-        <label for="tipo_pago">Tipo de tarjeta:</label>
-        <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
-    </div>
-    <div class="form-group">
-        <label for="fecha_caducidad">Fecha de Vencimiento:</label>
-        <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="cantidad_pagar">Cantidad a Pagar:</label>
-        <input type="text" id="cantidad_pagar" name="cantidad_pagar" required class="form-control" value="<?php if (isset($total)) echo $total; ?>">
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
-    </div>
-   </div>
 </form>
+
+
 
 <script>
     // Función para mostrar el formulario de pago
-    function mostrarFormularioPago() {
+    function mostrarFormularioPago(id_habitacion) {
         var formularioPago = document.getElementById('container-formulario-pago');
         formularioPago.style.display = 'block';
+        // Guardar el ID de la habitación seleccionada en una cookie
+        document.cookie = "id_habitacion=" + id_habitacion + "; path=/";
     }
-    
+
     function detectCardType(cardNumber) {
         // Define las expresiones regulares para cada tipo de tarjeta
         var visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
@@ -336,7 +398,7 @@ if (!empty($_COOKIE['id_habitacion']) && !empty($_COOKIE['fecha_entrada']) && !e
             document.getElementById('tipo_pago').value = 'Tipo de tarjeta desconocido';
         }
     }
-    
+
     // Función para formatear automáticamente el número de tarjeta mientras el usuario lo ingresa
     document.getElementById('numero_tarjeta').addEventListener('input', function(event) {
         var cardNumber = event.target.value.replace(/\D/g, ''); // Elimina todos los caracteres que no sean dígitos
@@ -352,37 +414,37 @@ if (!empty($_COOKIE['id_habitacion']) && !empty($_COOKIE['fecha_entrada']) && !e
         event.target.value = formattedCardNumber.trim().slice(0, 19); // Limita la longitud a 19 caracteres (16 dígitos + 3 espacios)
         detectCardType(cardNumber); // Detecta el tipo de tarjeta
     });
+
     document.getElementById('fecha_caducidad').addEventListener('blur', function() {
-    var fechaInput = this.value;
-    var fechaArray = fechaInput.split('/');
-    var mes = parseInt(fechaArray[0], 10);
-    var anio = parseInt(fechaArray[1], 10);
+        var fechaInput = this.value;
+        var fechaArray = fechaInput.split('/');
+        var mes = parseInt(fechaArray[0], 10);
+        var anio = parseInt(fechaArray[1], 10);
+        
+        var fechaActual = new Date();
+        var mesActual = fechaActual.getMonth() + 1; // Se suma 1 porque los meses en JavaScript van de 0 a 11
+        var anioActual = fechaActual.getFullYear() % 100; // Obtiene los dos últimos dígitos del año actual
     
-    var fechaActual = new Date();
-    var mesActual = fechaActual.getMonth() + 1; // Se suma 1 porque los meses en JavaScript van de 0 a 11
-    var anioActual = fechaActual.getFullYear() % 100; // Obtiene los dos últimos dígitos del año actual
-
-    if (mes < 1 || mes > 12 || anio < anioActual || (anio === anioActual && mes < mesActual)) {
-        alert('La fecha de vencimiento ingresada no es válida!!!! .');
-        this.value = ''; // Limpiar el campo
-        this.focus(); // Colocar el foco en el campo nuevamente
-    }
-});
-document.getElementById('fecha_caducidad').addEventListener('input', function() {
-    var fechaInput = this.value;
-    var fechaArray = fechaInput.split('/');
-
-    // Si se ha ingresado el mes y es válido
-    if (fechaArray.length === 1 && /^[0-9]{1,2}$/.test(fechaInput)) {
-        // Si el mes es válido (entre 1 y 12)
-        var mes = parseInt(fechaInput, 10);
-        if (mes >= 1 && mes <= 12) {
-            this.value = fechaInput + '/';
+        if (mes < 1 || mes > 12 || anio < anioActual || (anio === anioActual && mes < mesActual)) {
+            alert('La fecha de vencimiento ingresada no es válida!!!! .');
+            this.value = ''; // Limpiar el campo
+            this.focus(); // Colocar el foco en el campo nuevamente
         }
-    }
-});
+    });
+
+    document.getElementById('fecha_caducidad').addEventListener('input', function() {
+        var fechaInput = this.value;
+        var fechaArray = fechaInput.split('/');
+    
+        // Si se ha ingresado el mes y es válido
+        if (fechaArray.length === 1 && /^[0-9]{1,2}$/.test(fechaInput)) {
+            // Si el mes es válido (entre 1 y 12)
+            var mes = parseInt(fechaInput, 10);
+            if (mes >= 1 && mes <= 12) {
+                this.value = fechaInput + '/';
+            }
+        }
+    });
 </script>
-
-
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php'); ?>

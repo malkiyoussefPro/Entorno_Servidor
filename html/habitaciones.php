@@ -26,7 +26,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-primary" style="border-radius: 5px;">Habitacón Rason</li>
-            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">779 €</span></li>
+            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">a partir 779 €</span></li>
             <div class="card-body" style="text-align :center">
               <a href="#" class="card-link"></a>
               <button id="btn">Reservar</button>
@@ -76,7 +76,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-primary" style="border-radius: 5px;">Habitacón True</li>
             
-            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">979 €</span></li>
+            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">a partir 879 €</span></li>
           </ul>
         </div>
       </div>
@@ -124,7 +124,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-primary" style="border-radius: 5px;">Suite Royal</li>
-            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">1279 €</span></li>
+            <li class="list-group-item">Tarifa/Noche: <span style="font-weight: bold;">a partir 1019 €</span></li>
           </ul>
         </div>
       </div>
