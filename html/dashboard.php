@@ -111,54 +111,7 @@
             <li><a class="dropdown-item" href="/student042/dwes/Reservas/operaciones.php">Operaciones </a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Belleza
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_insert.php">Añadir Belleza</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_update.php">Modificar Belleza</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_delete.php">Borrar Belleza</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/formulario_belleza_select.php">Buscar Belleza</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Belleza/operaciones.php">Operaciones </a></li>         
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Eventos
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_insert.php">Añadir Evento</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_update.php">Modificar Evento</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_delete.php">Borrar Evento</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/formulario_evento_select.php">Buscar Evento</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Eventos/operaciones.php">Operaciones </a></li> 
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Restaurante
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_insert.php">Añadir Restaurante</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_update.php">Modificar Restaurante</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_delete.php">Borrar Restaurante</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/formulario_restaurante_select.php">Buscar Restaurante</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/Restaurante/operaciones.php">Operaciones </a></li> 
-          </ul>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Servicios
@@ -221,6 +174,20 @@
             <li><a class="dropdown-item" href="/student042/dwes/Comentarios/formulario_comentario_select.php">Buscar Comentario</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/student042/dwes/Comentarios/operaciones.php">Operaciones </a></li> 
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Ayuda !
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/student042/dwes/html/manualTecnico.php">Manual Tecnico</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/html/manualInstalacion.php">Manual Insalación</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/student042/dwes/html/manualUsuario.php">Manual Usuario</a></li>
+            <li><hr class="dropdown-divider"></li>
+          
           </ul>
         </li>
         <ul class="navbar-nav ml-auto">
