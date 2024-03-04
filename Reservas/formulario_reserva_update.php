@@ -22,8 +22,8 @@
               <input type="number" class="form-control" name="id_reserva" placeholder="Id reserva">
             </div>
             <div class="form-group col-md-6 ">
-              <label for="inputreserva">Id cliente</label>
-              <input type="number" class="form-control" name="id_cliente" placeholder="Id cliente">
+              <label for="inputreserva">Nombre cliente</label>
+              <input type="tesxt" class="form-control" name="id_cliente" placeholder="Id cliente">
             </div>
             <div class="form-group col-md-6 ">
               <label for="inputreserva">Id habitacion</label>

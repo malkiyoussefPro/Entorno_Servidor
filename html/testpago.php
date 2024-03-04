@@ -201,14 +201,14 @@ if (isset($_POST['disponibilidad'])) {
         <h1 style="text-align: center;">Reservas</h1>
         <form method="post" action="">
             <div class="row">
-                <div class="col-4">
+            <div class="col-4">
                     <label for="startDate">Llegada</label>
-                    <input id="startDate" class="form-control" type="date" name="startDate" />
-                </div>
-                <div class="col-4">
+                    <input id="startDate" class="form-control" type="date" name="startDate" value="<?php echo isset($startDate) ? htmlspecialchars($startDate) : ''; ?>" />
+            </div>
+            <div class="col-4">
                     <label for="endDate">Salida</label>
-                    <input id="endDate" class="form-control" type="date" name="endDate" />
-                </div>
+                    <input id="endDate" class="form-control" type="date" name="endDate" value="<?php echo isset($endDate) ? htmlspecialchars($endDate) : ''; ?>" />
+            </div>
                 <div class="col-2">
                     <label for="inputTipoHabitacion">Tipo de habitación</label>
                     <select name="tipo_habitacion" id="inputTipoHabitacion" class="form-control">
@@ -267,6 +267,12 @@ if (!empty($_COOKIE['id_habitacion']) && !empty($_COOKIE['fecha_entrada']) && !e
 
     // Calcular el total (subtotal más IVA)
     $total = $subtotal + $iva;
+    echo $total . '</br>';
+
+    // Formatear el total para mostrarlo con dos decimales
+    $totalFormateado = number_format($total);
+    echo $totalFormateado;
+
 }
 ?>
 <?php
@@ -289,16 +295,14 @@ if (isset($_POST['pagar'])) {
     try {
         // Iniciar una transacción
         $pdo->beginTransaction();
-        // Formatear el total del pago con dos decimales
-        $cantidadPagar = number_format($total, 2);
-        
+
         // Generar un número de reserva único (aquí asumimos que estás utilizando algún algoritmo para generar un número único)
         $numeroReserva = uniqid();
-        
+
         // Insertar el pago primero para obtener su ID
         $insertPago = $pdo->prepare("
-        INSERT INTO pagos (nombre_titular, fechaEmision_pago, tipo_pago, cantidad_pagar) 
-        VALUES (:nombre_titular, NOW(), :tipo_pago, :cantidad_pagar)
+            INSERT INTO pagos (nombre_titular, fechaEmision_pago, tipo_pago, cantidad_pagar) 
+            VALUES (:nombre_titular, NOW(), :tipo_pago, :cantidad_pagar)
         ");
         $insertPago->bindParam(':nombre_titular', $nombreTitular);
         $insertPago->bindParam(':tipo_pago', $tipoPago);
@@ -310,10 +314,10 @@ if (isset($_POST['pagar'])) {
 
         // Insertar la reserva con el ID de pago obtenido
         $insertReserva = $pdo->prepare("
-            INSERT INTO reservas (id_usuario, id_habitacion, fecha_entrada, fecha_salida, fecha_reserva, id_pago, numero_reserva, check_in, check_out) 
-            VALUES (:id_usuario, :id_habitacion, :fecha_entrada, :fecha_salida, NOW(), :id_pago, :numero_reserva, 'Pendiente', 0)
+            INSERT INTO reservas (nombre_usuario, id_habitacion, fecha_entrada, fecha_salida, fecha_reserva, id_pago, numero_reserva, check_in, check_out) 
+            VALUES (:nombre_usuario, :id_habitacion, :fecha_entrada, :fecha_salida, NOW(), :id_pago, :numero_reserva, 'Pendiente', 0)
         ");
-        $insertReserva->bindParam(':id_usuario', $user_id);
+        $insertReserva->bindParam(':nombre_usuario', $user_name);
         $insertReserva->bindParam(':id_habitacion', $id_habitacion);
         $insertReserva->bindParam(':fecha_entrada', $fechaEntrada);
         $insertReserva->bindParam(':fecha_salida', $fechaSalida);
@@ -350,17 +354,18 @@ if (isset($_POST['pagar'])) {
             <input type="text" id="numero_tarjeta" name="numero_tarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19">
         </div>
         <div class="form-group">
-            <label for="tipo_pago">Tipo de tarjeta:</label>
-            <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
-        </div>
-        <div class="form-group">
             <label for="fecha_caducidad">Fecha de Vencimiento:</label>
             <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA" class="form-control">
         </div>
         <div class="form-group">
-            <label for="cantidad_pagar">Cantidad a Pagar:</label>
-            <input type="number" id="cantidad_pagar" name="cantidad_pagar" step="any" required class="form-control" value="<?php if (isset($total)) echo $total; ?>">
+            <label for="tipo_pago">Tipo de tarjeta:</label>
+            <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
         </div>
+        <div class="form-group">
+            <label for="cantidad_pagar">Cantidad a Pagar:</label>
+            <input type="text" id="cantidad_pagar" name="cantidad_pagar" required class="form-control" value="<?php if (isset($totalFormateado)) echo $totalFormateado; ?>">
+        </div>
+
         <div class="form-group">
             <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
         </div>
