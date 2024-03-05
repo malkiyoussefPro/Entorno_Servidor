@@ -12,12 +12,6 @@ $fecha = date('Ymd');
 
 $copy =copy($url, $_SERVER['DOCUMENT_ROOT'].'/student042/dwes/apis/accuweather.json'.$fecha);
 
-if($copy){
-    //echo "json copiado";
-}else{
-    //echo "json no copiado";
-}
-
 
 // Insertar los datos en la tabla WeatherData
 foreach ($data as $item) {

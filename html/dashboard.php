@@ -181,11 +181,11 @@
           Ayuda !
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/student042/dwes/html/manualTecnico.php">Manual Tecnico</a></li>
+          <li><a class="dropdown-item" href="/student042/dwes/manuales/manualTecnico.php">Manual Tecnico</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/html/manualInstalacion.php">Manual Insalación</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/manuales/manualInstalacion.php">Manual Insalación</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/student042/dwes/html/manualUsuario.php">Manual Usuario</a></li>
+            <li><a class="dropdown-item" href="/student042/dwes/manuales/manualUsuario.php">Manual Usuario</a></li>
             <li><hr class="dropdown-divider"></li>
           
           </ul>
