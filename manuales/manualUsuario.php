@@ -21,154 +21,245 @@ button{
 
 <center><h1>MANUAL TECNICO</h1>
 
+<hr>
 <h3 style="color: orangered; margin: 15px">PARTE ADMIN</h3></center>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Usuario
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Usuario</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Usuario</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Usuario</a></li>
-  </ul>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      Usuario
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li><strong>1- Añadir Usuario</strong> </li>
+            <li><strong>2- Modificar Usuario</strong> </li>
+            <li><strong>3- Buscar Usuario</strong> </li>
+            <li><strong>4- Borrar Usuario</strong> </li>
+            <li><strong>5- Operaciones</strong> </li>
+          </ul> 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Personal
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li><strong>1- Añadir Personal</strong> </li>
+            <li><strong>2- Modificar Personal</strong> </li>
+            <li><strong>3- Buscar Personal</strong> </li>
+            <li><strong>4- Borrar Personal</strong> </li>
+            <li><strong>5- Operaciones</strong> </li>
+          </ul> 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      Cliente
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li><strong>1- Añadir Cliente</strong> </li>
+            <li><strong>2- Modificar Cliente</strong> </li>
+            <li><strong>3- Buscar Cliente</strong> </li>
+            <li><strong>4- Borrar Cliente</strong> </li>
+            <li><strong>5- Operaciones</strong> </li>
+          </ul>
+      </div>
+    </div>
+  </div>
 </div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Personal
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Personal</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Personal</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Personal</a></li>
-  </ul>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      Habitacion
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+            <li><strong>1- Añadir Habitacion</strong> </li>
+            <li><strong>2- Modificar Habitacion</strong> </li>
+            <li><strong>3- Buscar Habitacion</strong> </li>
+            <li><strong>4- Borrar Habitacion</strong> </li>
+            <li><strong>5- Operaciones</strong> </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Reserva
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li><strong>1- Añadir Reserva</strong> </li>
+            <li><strong>2- Modificar Reserva</strong> </li>
+            <li><strong>3- Buscar Reserva</strong> </li>
+            <li><strong>4- Borrar Reserva</strong> </li>
+            <li><strong>5- Operaciones</strong> </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      Comentarios
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+          <li><strong>1- Añadir Comentarios</strong> </li>
+          <li><strong>2- Modificar Comentarios</strong> </li>
+          <li><strong>3- Buscar Comentarios</strong> </li>
+          <li><strong>4- Borrar Comentarios</strong> </li>
+          <li><strong>5- Operaciones</strong> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Cliente
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Cliente</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Cliente</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Cliente</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Habitacion
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Habitacion</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Habitacion</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Habitacion</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Reserva
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Reserva</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Reserva</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Reserva</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Servicios
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Servicios</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Servicios</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Servicios</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Comentarios
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Comentarios</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Comentarios</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Comentarios</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Facturas
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Agregar Facturas</a></li>
-    <li><a class="dropdown-item" href="#">Modificar Facturas</a></li>
-    <li><a class="dropdown-item" href="#">Borrar Facturas</a></li>
-  </ul>
-</div>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Reserva
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <ul>
+        <li><strong>1- Añadir Reserva</strong> </li>
+        <li><strong>2- Modificar Reserva</strong> </li>
+        <li><strong>3- Buscar Reserva</strong> </li>
+        <li><strong>4- Borrar Reserva</strong> </li>
+        <li><strong>5- Operaciones</strong> </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Facturas
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <ul>
+        <li><strong>1- Añadir Facturas</strong> </li>
+        <li><strong>2- Modificar Facturas</strong> </li>
+        <li><strong>3- Buscar Facturas</strong> </li>
+        <li><strong>4- Borrar Facturas</strong> </li>
+        <li><strong>5- Operaciones</strong> </li>
+      </ul>
+      </div>
+    </div>
+  </div>
 
 <hr>
 <center><h3 style="color: orangered; margin: 15px">PARTE USUARIO</h3></center>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Inicio
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Inicio</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Habitacion
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Habitacion</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Restaurante
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Restaurante</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Belleza
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Belleza</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Evento
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Evento</a></li>
-  </ul>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  Login
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Login</a></li>
-    <li><a class="dropdown-item" href="#">Log Out</a></li>
 
-  </ul>
-</div>
+
+
+
+
+<hr>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Inicio
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Habitacion
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Restaurante
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Belleza
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Evento
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Login
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+
 
 <?php
 
