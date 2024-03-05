@@ -10,6 +10,13 @@
 
 ?>
 
+ <center>
+ <div class="form-group">
+      <label for="inputpersonal">Buscar personal</label>
+      <input type="text" name="nombre_personal" class="form-control" id="inputpersonal" placeholder="Buscar">
+  </div>
+ </center>
+
   <table class="table">
   <thead>
     <tr>

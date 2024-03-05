@@ -13,15 +13,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
 
-<style>
-button{
-    margin: 15px;
-}
-</style>
+
 
 <center><h1>MANUAL TECNICO</h1>
 
-<hr>
 <h3 style="color: orangered; margin: 15px">PARTE ADMIN</h3></center>
 
 <div class="accordion" id="accordionExample">
@@ -174,14 +169,14 @@ button{
     </div>
   </div>
 
-<hr>
+
 <center><h3 style="color: orangered; margin: 15px">PARTE USUARIO</h3></center>
 
 
 
 
 
-<hr>
+
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -194,7 +189,7 @@ button{
       </div>
     </div>
   </div>
-  <hr>
+  
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -207,7 +202,7 @@ button{
       </div>
     </div>
   </div>
-  <hr>
+  
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -220,7 +215,7 @@ button{
       </div>
     </div>
   </div>
-  <hr>
+  
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -233,7 +228,7 @@ button{
       </div>
     </div>
   </div>
-  <hr>
+  
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -246,7 +241,7 @@ button{
       </div>
     </div>
   </div>
-  <hr>
+  
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">

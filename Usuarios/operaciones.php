@@ -4,7 +4,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 ?>
-
+ <center>
+ <div class="form-group">
+      <label for="inputpersonal">Buscar Usuario</label>
+      <input type="text" name="nombre_usuario" class="form-control" id="inputUsuario" placeholder="Buscar">
+  </div>
+ </center>
 <h1 style="margin: 5px ; padding: 5px; text-align: center">Información Usuarios</h1>
 <table class="table">
   <thead>

@@ -10,7 +10,12 @@
 
 ?>
 
-
+<center>
+ <div class="form-group">
+      <label for="inputpersonal">Buscar Reserva</label>
+      <input type="text" name="nombre_reserva" class="form-control" id="inputReserva" placeholder="Buscar">
+  </div>
+ </center>
 
 <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
 
