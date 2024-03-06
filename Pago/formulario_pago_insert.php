@@ -13,46 +13,45 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
-<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center">
 
-  <form class="myFormservicio " action="/student042/dwes/Servicios/action/db_servicio_insert_call.php" method="POST" enctype="multipart/form-data">
+  <form method="post" action="/student042/dwes/Pago//student042/dwes/Pago/clientes.php.php">
+    <div id="container-formulario-pago" class="container-formulario-pago">
+   
 
-      <h2>Formulario insertar servicio </h2>
-      <div class="container">
-      <div class="form-group col-md-4">
-          <label for="inputState">Departamento servicio </label>
-          <select id="inputState" class="form-control" name="departamento">
-              <option selected>Seleccionar...</option>
-              <option>Restaurante</option>
-              <option>Evento</option>
-              <option>Belleza</option>
-          </select>
-      </div>
+        <!--formulario de pago -->
+        <h3>Confirmación pago</h3>
         <div class="form-group">
-          <label for="inputservicio ">Description servicio </label>
-          <input type="text" name="descripcion" class="form-control" id="inputservicio " placeholder="nombre">
-        </div>
-          <div class="mb-3">
-        <label for="formFile" class="form-label">Imagen servicio</label>
-        <input class="form-control" type="file" id="formFile" name="imagen">
-        </div>
-          <div class="form-group">
-          <label for="inputservicio ">precio </label>
-          <input type="number" name="precio" class="form-control" id="inputservicio " placeholder="precio">
+            <label for="nombre_titular">Nombre del Titular:</label>
+            <input type="text" id="nombre_titular" name="nombre_titular" required class="form-control">
         </div>
         <div class="form-group">
-          <label for="inputFecha">Fecha creación servicio</label>
-          <input type="date" name="fecha_creacion" class="form-control" id="inputFecha" placeholder="fecha">
+            <label for="numero_tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numero_tarjeta" name="numero_tarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19">
         </div>
-        
-       
+        <div class="form-group">
+            <label for="fecha_caducidad">Fecha de Vencimiento:</label>
+            <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA" class="form-control">
         </div>
-        <div class="d-flex justify-content-center">
-          <button type="submit" name="insertar" id="btn" class="btn mt-2">Insertar</button>
+        <div class="form-group">
+            <label for="tipo_pago">Tipo de tarjeta:</label>
+            <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
         </div>
-      </div>
-    </form>
-    
+        <div class="form-group">
+            <label for="cantidad_pagar">Cantidad a Pagar:</label>
+            <input type="text" id="cantidad_pagar" name="cantidad_pagar" required class="form-control" value="<?php if (isset($total)) echo $total; ?>">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
+        </div>
+    </div>
+</form>
+
+
+
+<script src="/javascript/pago.js"></script>
+      
   </div>
 
 <?php

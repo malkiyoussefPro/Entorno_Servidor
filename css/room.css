@@ -1,0 +1,105 @@
+   /* Estilos para el contenedor de las habitaciones */
+   .habitacion {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    width: 450px;
+}
+
+/* Estilos para el título del tipo de habitación */
+.habitacion h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilos para el precio de la habitación */
+.habitacion p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilos para la imagen de la habitación */
+.habitacion img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Estilos para el texto cuando no hay imagen disponible */
+.habitacion p:empty {
+    color: #999;
+    font-style: italic;
+}
+
+/* Estilos para la vista de la habitación */
+.habitacion .vista {
+    font-style: italic;
+    color: #888;
+}
+
+.btn{
+    margin: 15px auto;
+    font-weight:18px;
+}
+
+/* Estilos para el formulario de pago */
+.container-formulario-pago {
+    border: 2px solid #000;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 400px;
+    display: none; /* Oculta el formulario de pago inicialmente */
+}
+
+.container-formulario-pago h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #666;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #6c757d;
+}
+
+.btn-pagar {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.btn-pagar:hover {
+    background-color: #ffca2c;
+}
