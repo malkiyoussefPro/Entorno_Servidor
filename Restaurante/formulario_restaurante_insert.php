@@ -21,7 +21,7 @@
 
 <form class="myFormCliente" action="" method="POST">
 
-    <h1>Reservar Servicio de Evento</h1>
+    <h1>Reservar una Mesa</h1>
       <div class="container">
         <div class="form-group">
         <label for="nombre_cliente">Nombre:</label>

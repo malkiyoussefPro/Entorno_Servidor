@@ -15,7 +15,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 <form action="/student042/dwes/html/rooms.php" method="POST">
 
     
-<div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
+<div class="row d-flex justify-content-start m-2" style="background:white; border-radius:5px">
         <p style="text-align:center; font-size:24px">Habitaciones Simple</p>
         <div class="col-3">
         <div class="card">
@@ -64,7 +64,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
     </div>
     
     
-    <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
+    <div class="row d-flex justify-content-start m-2" style="background:white; border-radius:5px">
     <p style="text-align:center; font-size:24px">Habitaciones doble</p>
       <div class="col-3">
         <div class="card">
@@ -113,7 +113,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
       
     </div>
 
-    <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
+    <div class="row d-flex justify-content-start m-2" style="background:white; border-radius:5px">
     <p style="text-align:center; font-size:24px">Habitaciones lujo</p>
       <div class="col-3">
         <div class="card">
