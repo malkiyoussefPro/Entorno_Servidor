@@ -30,7 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
   
 ?>
 
-<form action="" method="POST">
+<form action="/student042/dwes/Belleza/formulario_belleza_insert.php" method="POST">
 
     
 <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">
