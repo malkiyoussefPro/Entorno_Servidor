@@ -6,10 +6,10 @@
         <div class="col" class="servicios">
             <h5>Nuestros Servicios</h5>
             <ul>
-                <li><a href="/student042/dwes/html/habitaciones.php" class="link-hover">Reservar su Estancia</a></li>
-                <li><a href="/student042/dwes/html/restaurante.php" class="link-hover">Reservar su Mesa</a></li>
-                <li><a href="/student042/dwes/html/belleza.php" class="link-hover">Reservar su Belleza</a></li>
-                <li><a href="/student042/dwes/html/eventos.php" class="link-hover">Reservar su Evento</a></li>
+                <li><a href="/student042/dwes/html/habitaciones.php" class="link-hover" style="color: black;">Reservar su Estancia</a></li>
+                <li><a href="/student042/dwes/html/restaurante.php" class="link-hover" style="color: black;">Reservar su Mesa</a></li>
+                <li><a href="/student042/dwes/html/belleza.php" class="link-hover" style="color: black;">Reservar su Belleza</a></li>
+                <li><a href="/student042/dwes/html/eventos.php" class="link-hover" style="color: black;">Reservar su Evento</a></li>
             </ul>
         </div>
         <div class="col">
@@ -21,7 +21,7 @@
                 <i class="fas fa-phone"></i> 0034-965965965
             </p>
             <p>
-                <i class="fas fa-envelope"></i> <a href="mailto:info@hoteloasis.com">info@hoteloasis.com</a>
+                <i class="fas fa-envelope"></i> <a href="mailto:info@hoteloasis.com" style="color: black;">info@hoteloasis.com</a>
             </p>
         </div>
         <div class="col">

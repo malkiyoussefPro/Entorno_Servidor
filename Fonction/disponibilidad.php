@@ -1,5 +1,11 @@
 <?php
+
 function verificarDisponibilidad($pdo) {
+    // Inicializar variables de fecha y tipo de habitación
+    $startDate = '';
+    $endDate = '';
+    $tipoHabitacion = isset($_POST['tipo_habitacion']) ? $_POST['tipo_habitacion'] : '';
+
     // Inicializar el mensaje de error
     $error_message = '';
 
@@ -11,7 +17,6 @@ function verificarDisponibilidad($pdo) {
         // Obtener las fechas proporcionadas por el usuario
         $startDate = isset($_POST['startDate']) ? $_POST['startDate'] : '';
         $endDate = isset($_POST['endDate']) ? $_POST['endDate'] : '';
-        $tipoHabitacion = isset($_POST['tipo_habitacion']) ? $_POST['tipo_habitacion'] : '';
 
         // Verificar si algún campo está vacío
         if (empty($startDate) || empty($endDate) || empty($tipoHabitacion)) {
@@ -41,27 +46,30 @@ function verificarDisponibilidad($pdo) {
                         FROM reservas
                         WHERE (:startDate BETWEEN fecha_entrada AND fecha_salida)
                         OR (:endDate BETWEEN fecha_entrada AND fecha_salida)
-                        )
-                        ");
-                        $q_select->bindParam(':tipo', $tipoHabitacion);
-                        $q_select->bindParam(':startDate', $startDate);
-                        $q_select->bindParam(':endDate', $endDate);
-                        $q_select->execute();
+                    )
+                    ");
+                    $q_select->bindParam(':tipo', $tipoHabitacion);
+                    $q_select->bindParam(':startDate', $startDate);
+                    $q_select->bindParam(':endDate', $endDate);
+                    $q_select->execute();
 
-                        // Fetch all data
-                        $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
-                    } catch (PDOException $e) {
-                        // Manejo de excepciones de la base de datos
-                        $error_message = '<div class="alert alert-danger" role="alert">Error en la consulta SQL: ' . $e->getMessage() . '</div>';
-                    }
+                    // Fetch all data
+                    $habitaciones_disponibles = $q_select->fetchAll(PDO::FETCH_ASSOC);
+                } catch (PDOException $e) {
+                    // Manejo de excepciones de la base de datos
+                    $error_message = '<div class="alert alert-danger" role="alert">Error en la consulta SQL: ' . $e->getMessage() . '</div>';
                 }
             }
         }
-
-        // Devolver un array con el mensaje de error y las habitaciones disponibles
-        return array(
-            'error_message' => $error_message,
-            'habitaciones_disponibles' => $habitaciones_disponibles
-        );
     }
+
+    // Devolver un array con el mensaje de error y las habitaciones disponibles
+    return array(
+        'error_message' => $error_message,
+        'habitaciones_disponibles' => $habitaciones_disponibles
+    );
+}
+
+
+
 ?>

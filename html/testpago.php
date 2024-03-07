@@ -2,13 +2,12 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Fonction/verificarUsuario.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Fonction/verificarUsuario.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Fonction/calcularrserva.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Fonction/disponibilidad.php');
-//require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/tst.php');
 
 // Llamar a la función para verificar al usuario y obtener el nombre de usuario
 $user_id = verificarUsuario($pdo);
+
 
 // Llamar a la función para verificar la disponibilidad
 $resultado_verificacion = verificarDisponibilidad($pdo);
@@ -19,23 +18,22 @@ $habitaciones_disponibles = $resultado_verificacion['habitaciones_disponibles'];
 
 ?>
 
-
 <link rel="stylesheet" href="/student042/dwes/css/room.css">
 
 <?php echo $error_message; ?>
-<div class="container m-5" style="border: 2px solid black; background : white ;border-radius: 10px;">
+<div class="container m-5" style="border: 2px solid black; background: white; border-radius: 10px;">
     <div class="row d-flex justify-content-around m-2">
         <h1 style="text-align: center;">Reservas</h1>
         <form method="post" action="">
             <div class="row">
-            <div class="col-4">
+                <div class="col-4">
                     <label for="startDate">Llegada</label>
-                    <input id="startDate" class="form-control" type="date" name="startDate" value="<?php echo isset($startDate) ? htmlspecialchars($startDate) : ''; ?>" />
-            </div>
-            <div class="col-4">
+                    <input id="startDate" class="form-control" type="date" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>" />
+                </div>
+                <div class="col-4">
                     <label for="endDate">Salida</label>
-                    <input id="endDate" class="form-control" type="date" name="endDate" value="<?php echo isset($endDate) ? htmlspecialchars($endDate) : ''; ?>" />
-            </div>
+                    <input id="endDate" class="form-control" type="date" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>" />
+                </div>
                 <div class="col-2">
                     <label for="inputTipoHabitacion">Tipo de habitación</label>
                     <select name="tipo_habitacion" id="inputTipoHabitacion" class="form-control">
@@ -73,31 +71,20 @@ $habitaciones_disponibles = $resultado_verificacion['habitaciones_disponibles'];
 
 <?php
 // Obtener el ID de la habitación de la URL
-if(isset($_GET['id_habitacion'])) {
+if (isset($_GET['id_habitacion'])) {
     $id_habitacion = $_GET['id_habitacion'];
-    
+
     // Establecer una cookie con el ID de la habitación
     setcookie('id_habitacion', $id_habitacion, time() + (86400 * 30), "/"); // Cookie válida por 30 días (86400 segundos * 30)
 } else {
     // Si no se proporciona el ID de la habitación
-
-    echo 'id habitacion no esta guardado en cookies';
+    //echo '<div class="alert alert-danger" role="alert">ID de habitación no guardado en cookies.</div>';
 }
 ?>
 
-
-
 <form method="post" action="/student042/dwes/Pago/db_pago_insert_callphp">
     <div id="container-formulario-pago" class="container-formulario-pago">
-   
         <input type="hidden" id="id_habitacion" name="id_habitacion">
-
-        <!-- Menú desplegable oculto -->
-        <select name="tipo_habitacion" id="inputTipoHabitacion" class="form-control" onchange="actualizarIdHabitacion()" style="display: none;">
-            <?php foreach ($habitaciones_disponibles as $habitacion) : ?>
-                <option value="<?php echo $habitacion['id_habitacion']; ?>"><?php echo $habitacion['tipo_habitacion']; ?></option>
-            <?php endforeach; ?>
-        </select>
         <!--formulario de pago -->
         <h3>Confirmación pago</h3>
         <div class="form-group">
@@ -116,8 +103,7 @@ if(isset($_GET['id_habitacion'])) {
             <label for="tipo_pago">Tipo de tarjeta:</label>
             <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
         </div>
-
-                <?php
+        <?php
         // Llamar a la función para calcular el precio total de la reserva
         $totalReserva = calcularPrecioTotalReserva($pdo);
 
@@ -130,7 +116,6 @@ if(isset($_GET['id_habitacion'])) {
             echo '<input type="text" id="cantidad_pagar" name="cantidad_pagar" required class="form-control" value="No se pudo calcular el precio total de la reserva.">';
         }
         ?>
-
         <div class="form-group">
             <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
         </div>
@@ -138,9 +123,6 @@ if(isset($_GET['id_habitacion'])) {
 </form>
 
 <script src="/student042/dwes/javascript/pago.js"></script>
-
-
-
 <script>
     function actualizarIdHabitacion() {
         var idHabitacion = document.getElementById("inputTipoHabitacion").value;
@@ -162,6 +144,20 @@ if(isset($_GET['id_habitacion'])) {
             }
         };
         xhr.send("id_habitacion=" + idHabitacion + "&startDate=" + startDate + "&endDate=" + endDate);
+    }
+
+    function mostrarFormularioPago(idHabitacion) {
+        // Muestra el formulario de pago
+        document.getElementById("container-formulario-pago").style.display = "block";
+
+        // Actualiza el valor del campo oculto "id_habitacion"
+        document.getElementById("id_habitacion").value = idHabitacion;
+
+        // Actualiza la parte de la URL después del símbolo #
+        window.location.hash = idHabitacion;
+
+        // Actualiza el precio total de la reserva
+        actualizarPrecioTotal();
     }
 </script>
 

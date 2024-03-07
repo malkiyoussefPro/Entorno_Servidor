@@ -34,7 +34,7 @@ if(isset($_POST['registrarse'])){
 
 ?>
 
-<!-- Resto de tu código HTML -->
+
 
   <link rel="stylesheet" href="/student042/dwes/css/iniciar_session.css">
     <div class="d-flex justify-content-center">

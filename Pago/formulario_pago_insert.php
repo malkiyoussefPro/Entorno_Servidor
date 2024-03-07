@@ -50,7 +50,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
 
 
-<script src="/javascript/pago.js"></script>
+    <script src="/javascript/pago.js"></script>
       
   </div>
 

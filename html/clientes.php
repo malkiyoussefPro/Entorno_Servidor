@@ -10,6 +10,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
     
 ?>
+
+<link rel="stylesheet" href="/student042/dwes/css/iniciar_session.css">
+
   <div class="container mt-5">
     <center>
     <div class="d-flex justify-content-center">
