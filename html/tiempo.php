@@ -10,7 +10,7 @@ $data = json_decode($json_data, true);
 
 $fecha = date('Ymd');
 
-$copy =copy($url, $_SERVER['DOCUMENT_ROOT'].'/student042/dwes/apis/accuweather.json'.$fecha);
+$copy =copy($url, $_SERVER['DOCUMENT_ROOT'].'/student042/dwes/apis/accuweather_'.$fecha.'.json');
 
 
 // Insertar los datos en la tabla WeatherData

@@ -1,22 +1,16 @@
-
 <?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-<?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 ?>
 
 <center>
- <div class="form-group">
-      <label for="inputpersonal">Buscar Reserva</label>
-      <input type="text" name="nombre_reserva" class="form-control" id="inputReserva" placeholder="Buscar">
-  </div>
-  
- </center>
+    <div class="form-group">
+        <label for="inputpersonal">Buscar Reserva</label>
+        <input type="text" name="numero_reserva" class="form-control" id="inputReserva" placeholder="Buscar">
+    </div>
+
+    <div id="resultadoBusqueda"></div>
+</center>
 
 <link rel="stylesheet" href="/student042/dwes/css/dashboard.css">
 
@@ -66,10 +60,10 @@
           <td><?php  echo $reserva['check_out']; ?> </td>
                    
       <td>   
-        <a href="db_reserva_checkin.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Check In </a>  
+        <a href="/student042/dwes/Reservas/formulario_reserva_update.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Check In </a>  
       </td>
       <td>      
-      <a href="db_reserva_checkout.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-warning btn-sm  m-1"> CheckOut</a>  
+      <a href="/student042/dwes/Reservas/formulario_reserva_update.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-warning btn-sm  m-1"> CheckOut</a>  
       </td>
    
       </tr>
@@ -78,8 +72,45 @@
        ?>
     </tbody>
 </table>
+
 <?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('inputReserva').addEventListener('input', function() {
+        var numeroReserva = this.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/student042/dwes/Reservas/ajax_get_form_reserva_select.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    document.getElementById('resultadoBusqueda').innerHTML = xhr.responseText;
+                } else {
+                    console.error('Error en la solicitud: ' + xhr.statusText);
+                }
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Error de red');
+        };
+        xhr.send('numero_reserva=' + encodeURIComponent(numeroReserva));
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -38,7 +38,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         <img src="imagenes/Deluxe_Agdal_Room_S.jpg" class="img-thumbnail" alt="..." width="500px">
       </div>
       <div class="col" id="text_habitacion">
-          <h5>Habitacion Simple</h5>
+          <h5 style="color:orange;">Habitacion Simple</h5>
           <hr>
         <h6>Huespedes 2 </h6>
         <hr>
@@ -65,7 +65,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
     
     
     <div class="row d-flex justify-content-start m-2" style="background:white; border-radius:5px">
-    <p style="text-align:center; font-size:24px">Habitaciones doble</p>
+    <p style="text-align:center; font-size:24px ">Habitaciones doble</p>
       <div class="col-3">
         <div class="card">
           <img src="imagenes/36_S.jpg" class="card-img-top" alt="...">
@@ -89,6 +89,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         </div>
         <div class="col" id="text_habitacion">
         <hr>
+        <h5 style="color:orange;">Habitacion Doble</h5>
         <h6>Huespedes 4 </h6>
         <hr>
         <div>
@@ -137,6 +138,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
         </div>
         <div class="col" id="text_habitacion">
           <hr>
+          <h5 style="color:orange;">Habitacion Lujo</h5>
         <h6>Huespedes 6 </h6>
         <hr>
         <div>
