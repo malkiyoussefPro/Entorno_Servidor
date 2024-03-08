@@ -1,12 +1,22 @@
-
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+$idServicio = isset($_GET['id_servicio']) ? $_GET['id_servicio'] : null; // Obtener el id_servicio de la URL
 
-?>
-<?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+if (!$idServicio) {
+    echo "ID de servicio no proporcionado.";
+    exit;
+}
+
+$q_select = $pdo->prepare('SELECT * FROM servicios_hotel WHERE id_servicio = ?');
+$q_select->execute([$idServicio]);
+$servicio = $q_select->fetch(PDO::FETCH_ASSOC);
+
+if (!$servicio) {
+    echo "Servicio no encontrado.";
+    exit;
+}
 
 ?>
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">

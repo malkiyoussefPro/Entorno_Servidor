@@ -1,7 +1,7 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+
 
 ?>
 <h1 style="margin: 5px ; padding: 5px; text-align: center">Información Servicio</h1>
@@ -25,18 +25,19 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
     while ($servicio = $q_select_all->fetch(PDO::FETCH_ASSOC)) {
     ?>
-            <td><?php  echo $servicio['id_servicio']; ?> </td>
-            <td><?php  echo $servicio['departamento']; ?> </td>
-            <td><?php  echo $servicio['descripción']; ?> </td>
-            <td><?php  echo $servicio['imagen_servicio']; ?> </td>
-            <td><?php  echo $servicio['precio']; ?> </td>
-            <td><?php  echo $servicio['fecha_creacion_servicio']; ?> </td>
+    <tr>  
+    <td><?php echo htmlspecialchars($servicio['id_servicio']); ?></td>
+            <td><?php echo htmlspecialchars($servicio['departamento']); ?></td>
+            <td><?php echo htmlspecialchars($servicio['descripción']); ?></td>
+            <td><?php echo htmlspecialchars($servicio['imagen_servicio']); ?></td>
+            <td><?php echo htmlspecialchars($servicio['precio']); ?></td>
+            <td><?php echo htmlspecialchars($servicio['fecha_creacion_servicio']); ?></td>
             <td>     
             <a href="formulario_servicio_insert.php?id_servicio=<?php echo $servicio['id_servicio']; ?>" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>  
           </td>
-          <td>      
+          <td>           
             <a href="formulario_servicio_select.php?id_servicio=<?php echo $servicio['id_servicio']; ?>" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
-          </td>
+         </td>
           <td>      
             <a href="formulario_servicio_update.php?id_servicio=<?php echo $servicio['id_servicio']; ?>" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
           </td>
