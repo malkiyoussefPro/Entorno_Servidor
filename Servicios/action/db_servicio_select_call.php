@@ -39,7 +39,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
             echo "<td>" . htmlspecialchars($servicio['precio']) . "</td>";
             echo "<td>" . htmlspecialchars($servicio['fecha_creacion_servicio']) . "</td>";
             echo "<td>";
-            echo "<a href='/student042/dwes/Servicios/operaciones.php?id_servicio=" . $servicio['id_servicio'] . "' name='insertar' id='btn_formulario' class='btn btn-dark btn-sm m-1'>Operaciones</a>";  
+            echo "<a href='/student042/dwes/Servicios/operaciones.php?id_servicio=" . $servicio['id_servicio'] . "' name='insertar' id='btn_formulario' class='btn btn-info btn-sm m-1'>Operaciones</a>";  
   
             echo "</td>";
             echo "</tr>";

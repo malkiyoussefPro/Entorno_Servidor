@@ -8,6 +8,22 @@
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 
+  $idUsuario = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : null; // Obtener el id_usuario de la URL
+
+if (!$idUsuario) {
+    echo "ID de usuario no proporcionado.";
+    exit;
+}
+
+$q_select = $pdo->prepare('SELECT * FROM usuario WHERE id_usuario = ?');
+$q_select->execute([$idUsuario]);
+$usuario = $q_select->fetch(PDO::FETCH_ASSOC);
+
+if (!$usuario) {
+    echo "Usuario no encontrado.";
+    exit;
+}
+
 ?>
 <link rel="stylesheet" href="student042/dwes/css/dashboard.css">
 
@@ -18,7 +34,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputUsuario">Id Usuario</label>
-                    <input type="number" name="id_Usuario" class="form-control" id="inputUsuario" placeholder="Id Usuario">
+                    <input type="number" name="id_Usuario" class="form-control" id="inputUsuario" placeholder="Id Usuario" value="<?php echo $usuario['id_usuario']; ?>">
                 </div>
             </div>
             <div class="d-flex justify-content-center m-2">
