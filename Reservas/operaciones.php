@@ -77,29 +77,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 ?>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('inputReserva').addEventListener('input', function() {
-        var numeroReserva = this.value;
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/student042/dwes/Reservas/ajax_get_form_reserva_select.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    document.getElementById('resultadoBusqueda').innerHTML = xhr.responseText;
-                } else {
-                    console.error('Error en la solicitud: ' + xhr.statusText);
-                }
-            }
-        };
-        xhr.onerror = function() {
-            console.error('Error de red');
-        };
-        xhr.send('numero_reserva=' + encodeURIComponent(numeroReserva));
-    });
-});
-</script>
+
 
 
 

@@ -8,7 +8,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
  <div class="form-group">
       <label for="inputpersonal">Buscar Usuario</label>
       <input type="text" name="nombre_usuario" class="form-control" id="inputUsuario" placeholder="Buscar">
-  </div>
+      <div id="resultadoBusqueda"></div>
+    </div>
  </center>
 <h1 style="margin: 5px ; padding: 5px; text-align: center">Información Usuarios</h1>
 <table class="table">
@@ -61,3 +62,26 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 
 ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('inputUsuario').addEventListener('input', function() {
+        var nombre_usuario = this.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/student042/dwes/Usuarios/ajax_get_form_usuario_select.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    document.getElementById('resultadoBusqueda').innerHTML = xhr.responseText;
+                } else {
+                    console.error('Error en la solicitud: ' + xhr.statusText);
+                }
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Error de red');
+        };
+        xhr.send('nombre_usuario=' + encodeURIComponent(nombre_usuario));
+    });
+});
+</script>
