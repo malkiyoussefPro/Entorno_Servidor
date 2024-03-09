@@ -1,3 +1,6 @@
+
+
+
 <?php
 // Incluir el archivo de conexión a la base de datos
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
@@ -50,11 +53,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<?php
+// Verificar si se ha enviado el formulario de reserva
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $nombre_cliente = htmlspecialchars($_POST['nombre_cliente']);
+  $email_cliente = htmlspecialchars($_POST['email_cliente']);
+  $telefono_cliente = htmlspecialchars($_POST['telefono_cliente']);
+  $servicio = htmlspecialchars($_POST['servicio']);
+  $fecha_llegada = htmlspecialchars($_POST['fecha_llegada']);
+  $hora_reserva = htmlspecialchars($_POST['hora_reserva']);
+  ?>
+
+<div id="confirmacion-pago" style="display: none;">
+    <h2>¡Reserva realizada con éxito!</h2>
+    <p>Su reserva ha sido confirmada. A continuación, se muestra la información de su reserva:</p>
+    <ul>
+        <li><strong>Nombre del titular:</strong> <?php echo $nombre_cliente; ?></li>
+        <li><strong>Email:</strong> <?php echo $email_cliente; ?></li>
+        <li><strong>Teléfono:</strong> <?php echo $telefono_cliente; ?></li>
+        <li><strong>Servicio:</strong> <?php echo $servicio; ?></li>
+        <li><strong>Fecha de llegada:</strong> <?php echo $fecha_llegada; ?></li>
+        <li><strong>Hora de reserva:</strong> <?php echo $hora_reserva; ?></li>
+        <!-- Agregar más detalles si es necesario -->
+    </ul>
+    <p>Se ha enviado una confirmación a su correo electrónico.</p>
+    <p><a href="generar_pdf.php" id="descargar-pdf">Descargar PDF</a></p>
+</div>
+
+<?php } ?>
+
+<script>
+    // Mostrar el div de confirmación después de realizar la reserva
+    document.getElementById('confirmacion-pago').style.display = 'block';
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <form method="post" action="">
     <div id="container-formulario-pago" class="container-formulario-pago">
-    <input type="hidden" name="id_habitacion" value="<?php echo isset($_COOKIE['id_habitacion']) ? $_COOKIE['id_habitacion'] : ''; ?>">
-
+    
         <!--formulario de pago -->
         <div class="form-group">
             <label for="nombre_titular">Nombre del Titular:</label>
@@ -82,6 +137,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
