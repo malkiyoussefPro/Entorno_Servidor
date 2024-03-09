@@ -19,7 +19,7 @@
     <center>
     <div class="d-flex justify-content-center">
 
-<form class="myFormCliente" action="" method="POST">
+<form class="myFormCliente" action="/student042/dwes/Restaurante/action/db_restaurante_insert_call.php" method="POST">
 
     <h1>Reservar una Mesa</h1>
       <div class="container">
