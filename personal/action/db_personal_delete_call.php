@@ -27,6 +27,7 @@ if (isset($_POST['suprimir'])) {
   // Verifica si se eliminó algún registro
   if ($q_delete->rowCount() > 0) {
       echo "Personal eliminado con éxito.";
+      header("Location:/student042/dwes/Personal/operaciones.php");
   } else {
       echo "No se encontró ningún personal con el ID proporcionado o no se realizó la eliminación.";
   }

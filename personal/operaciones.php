@@ -14,7 +14,8 @@
  <div class="form-group">
       <label for="inputpersonal">Buscar personal</label>
       <input type="text" name="nombre_personal" class="form-control" id="inputpersonal" placeholder="Buscar">
-  </div>
+      <div id="resultadoBusqueda"></div>
+ </div>
  </center>
 
   <table class="table">
@@ -65,16 +66,18 @@ foreach ($personales as $personal) {
                 <td>
                 
       <td>      
-        <a href="/student042/dwes/Personal/formulario_personal_insert.php" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>  
+        <a href="/student042/dwes/Personal/formulario_personal_insert.php?id_personal=<?php echo $personal['id_personal']; ?>" name="insertar" id="btn_formulario" class="btn btn-success btn-sm m-1"> Insertar</a>  
       </td>
-      <td>      
-        <a href="/student042/dwes/Personal/formulario_personal_select.php" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
+      <td>  
+      <a href="/student042/dwes/Personal/formulario_personal_select.php?id_personal=<?php echo $personal['id_personal']; ?>" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>  
       </td>
-      <td>      
-        <a href="/student042/dwes/Personal/formulario_personal_update.php" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
+      <td>   
+      <a href="/student042/dwes/Personal/formulario_personal_update.php?id_personal=<?php echo $personal['id_personal']; ?>" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>  
+
       </td>
-      <td>      
-        <a href="/student042/dwes/Personal/formulario_personal_delete.php" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm  m-1"> Suprimir </a>  
+      <td>  
+      <a href="/student042/dwes/Personal/formulario_personal_delete.php?id_personal=<?php echo $personal['id_personal']; ?>" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm m-1"> Suprimir</a>  
+
       </td>
     </tr>
     <?php
@@ -89,3 +92,26 @@ foreach ($personales as $personal) {
 
 ?>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('inputpersonal').addEventListener('input', function() {
+        var nombre_personal = this.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/student042/dwes/Personal/ajax_get_form_personal_select.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    document.getElementById('resultadoBusqueda').innerHTML = xhr.responseText;
+                } else {
+                    console.error('Error en la solicitud: ' + xhr.statusText);
+                }
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Error de red');
+        };
+        xhr.send('nombre_personal=' + encodeURIComponent(nombre_personal));
+    });
+});
+</script>

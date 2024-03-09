@@ -43,29 +43,22 @@
             ?>
             <tr>
                 <td><?php echo $personal['id_personal']; ?></td>
-                <td><?php echo $personal['nombreCompleto_personal']; ?></td>
-                <td><?php echo $personal['fechaNacimiento_personal']; ?></td>
+                <td><?php echo $personal['nombre_personal']; ?></td>
+                <td><?php echo $personal['fecha_nacimiento']; ?></td>
                 <td><?php echo $personal['puesto_personal']; ?></td>
                 <td><?php echo $personal['domicilio_personal']; ?></td>
-                <td><?php echo $personal['tel_personal']; ?></td>
+                <td><?php echo $personal['telefono_personal']; ?></td>
                 <td><?php echo $personal['email_personal']; ?></td>
-                <td><?php echo $personal['fechaIntegracion_personal']; ?></td>
-                <td><?php echo $personal['afiliacionSS_personal']; ?></td>
+                <td><?php echo $personal['fecha_integracion']; ?></td>
+                <td><?php echo $personal['affiliacion_ss']; ?></td>
                 <td><?php echo $personal['imagen_personal']; ?></td>
                 <td><?php echo $personal['curriculum']; ?></td>
                 <td><?php echo $personal['fecha_despedida']; ?></td>
                 <td>
-                    <a href="/student042/dwes/Personal/formulario_personal_insert.php" name="insertar" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Insertar </a>
+                    <a href="/student042/dwes/Personal/operaciones.php" name="insertar" id="btn_formulario" class="btn btn-dark btn-sm  m-1"> Operaciones </a>
                 </td>
-                <td>
-                    <a href="/student042/dwes/Personal/formulario_personal_select.php" name="buscar" id="btn_formulario" class="btn btn-primary btn-sm m-1"> Buscar</a>
-                </td>
-                <td>
-                    <a href="/student042/dwes/Personal/formulario_personal_update.php" name="actulizar" id="btn_formulario" class="btn btn-warning btn-sm m-1"> Actualizar</a>
-                </td>
-                <td>
-                    <a href="/student042/dwes/Personal/formulario_personal_delete.php" name="suprimir" id="btn_formulario" class="btn btn-danger btn-sm  m-1"> Suprimir </a>
-                </td>
+                
+          
             </tr>
             <?php
         } else {

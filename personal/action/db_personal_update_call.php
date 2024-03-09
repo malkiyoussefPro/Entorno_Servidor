@@ -1,114 +1,84 @@
 <?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
-?>
+try {
+    // Verificar si se ha enviado el formulario de actualización
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Verificar si se ha proporcionado un ID de personal
+        if (isset($_POST['id_personal'])) {
+            // Obtener los datos del formulario
+            $id_personal = $_POST['id_personal'];
+            $nombre_personal = isset($_POST['nombre_personal']) ? $_POST['nombre_personal'] : '';
+            $fecha_nacimiento = isset($_POST['fecha_nacimiento']) ? $_POST['fecha_nacimiento'] : '';
+            $puesto_personal = isset($_POST['puesto_personal']) ? $_POST['puesto_personal'] : '';
+            $domicilio_personal = isset($_POST['domicilio_personal']) ? $_POST['domicilio_personal'] : '';
+            $telefono_personal = isset($_POST['telefono_personal']) ? $_POST['telefono_personal'] : '';
+            $email_personal = isset($_POST['email_personal']) ? $_POST['email_personal'] : '';
+            $fecha_integracion = isset($_POST['fecha_integracion']) ? $_POST['fecha_integracion'] : '';
+            $affiliacion_ss = isset($_POST['affiliacion_personal']) ? $_POST['affiliacion_personal'] : '';
+            $fecha_despedida = isset($_POST['fecha_Despedida']) ? $_POST['fecha_Despedida'] : '';
 
-<?php
+            // Procesar la imagen personal si se ha subido
+            if (isset($_FILES['imagen_personal']) && $_FILES['imagen_personal']['size'] > 0) {
+                $imagenPersonal = $_FILES['imagen_personal']['name'];
+                $imagenTemp = $_FILES['imagen_personal']['tmp_name'];
+                $rutaImagen = "/student042/dwes/html/imagenes/$imagenPersonal";
+                $moverImagen = move_uploaded_file($imagenTemp, $_SERVER['DOCUMENT_ROOT'] . $rutaImagen);
 
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+                // Verificar si la imagen se ha movido correctamente
+                if (!$moverImagen) {
+                    throw new Exception("Error al mover la imagen personal.");
+                }
+            } else {
+                // Si no se envió una nueva imagen, mantenemos la imagen existente
+                $q_select_imagen_personal = $pdo->prepare('SELECT imagen_personal FROM datos_personal WHERE id_personal = ?');
+                $q_select_imagen_personal->execute([$id_personal]);
+                $imagen_personal = $q_select_imagen_personal->fetchColumn();
+                $rutaImagen = $imagen_personal ? $imagen_personal : '';
+            }
 
-?>
+            // Verificamos si se envió un nuevo currículum
+            if (isset($_FILES['curriculum']) && $_FILES['curriculum']['size'] > 0) {
+                $curriculum = $_FILES['curriculum']['name'];
+                $temporalCurriculum = $_FILES['curriculum']['tmp_name'];
+                $rutaCurriculum = "/student042/dwes/html/curriculum/$curriculum";
+                $moverCurriculum = move_uploaded_file($temporalCurriculum, $_SERVER['DOCUMENT_ROOT'] . $rutaCurriculum);
 
-<link rel="stylesheet" href="student042/dwes/css/dashboard.css">
+                // Verificar si el currículum se ha movido correctamente
+                if (!$moverCurriculum) {
+                    throw new Exception("Error al mover el currículum.");
+                }
+            } else {
+                // Si no se envió un nuevo currículum, mantenemos el currículum existente
+                $q_select_curriculum = $pdo->prepare('SELECT curriculum FROM datos_personal WHERE id_personal = ?');
+                $q_select_curriculum->execute([$id_personal]);
+                $curriculum_existente = $q_select_curriculum->fetchColumn();
+                $rutaCurriculum = $curriculum_existente ? $curriculum_existente : '';
+            }
 
-<div class="d-flex justify-content-center">
+            // Preparar la consulta SQL para actualizar los datos del personal
+            $query = "UPDATE datos_personal SET nombre_personal=?, fecha_nacimiento=?, puesto_personal=?, domicilio_personal=?, telefono_personal=?, email_personal=?, fecha_integracion=?, affiliacion_ss=?, imagen_personal=?, curriculum=?, fecha_despedida=? WHERE id_personal=?";
 
-<form class="myFormpersonal" action="/student042/dwes/Personal/action/db_personal_update_call.php" method="POST">
+            // Preparar la declaración
+            $stmt = $pdo->prepare($query);
 
-      <h2>Formulario insertar personal</h2>
-      <div class="container">
-        
-        <div class="form-group">
-          <label for="inputpersonal">Nombre personal</label>
-          <input type="text" name="nombre_personal" class="form-control" id="inputpersonal" placeholder="nombre">
-        </div>
+            // Ejecutar la declaración
+            $stmt->execute([$nombre_personal, $fecha_nacimiento, $puesto_personal, $domicilio_personal, $telefono_personal, $email_personal, $fecha_integracion, $affiliacion_ss, $rutaImagen, $rutaCurriculum, $fecha_despedida, $id_personal]);
 
-        <div class="form-group">
-          <label for="inputFecha">Fecha nacimiento</label>
-          <input type="date" name="fecha_personal" class="form-control" id="inputFecha" placeholder="fecha">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">Puesto</label>
-            <select id="inputState" class="form-control">
-              <option selected>Seleccionar...</option>
-              <option>Director</option>
-              <option>Admin</option>
-              <option>Responsable R-Humano </option>
-              <option>Administrativo/a</option>
-              <option>Responsable Belleza</option>
-              <option>Masagista</option>
-              <option>Responsable Evento</option>
-              <option>Responsable Restaurante</option>
-              <option>Entrenador</option>
-              <option>Animador</option>
-              <option>Cocinero</option>
-              <option>Barista</option>
-              <option>Pastelero</option>
-              <option>Ayudante cocinero</option>
-              <option>Ayudante pastelero</option>
-              <option>Camarero/a</option>
-              <option>Responsable Mantenimiento</option>
-              <option>Tecnico mantenimiento</option>
-              <option>Ayudante mantenimiento</option>
-              <option>Gobernanta</option>
-              <option>Camarero/a de Piso</option>
-              <option>Responsable Recepción</option>
-              <option>Recepcionista</option>
-              <option>Ayudante Recepción</option>
-
-            </select>
-          </div>
-        <div class="form-group">
-          <label for="inputAddress">Dirección</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputTelefono">telefono</label>
-          <input type="text" name="telefono_personal" class="form-control" id="inputTelefono" placeholder="fecha">
-        </div>
-        <div class="form-group">
-          <label for="inputEmail4">Email</label>
-          <input type="email" name="email_personal" class="form-control" id="inputEmail4" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="inputFecha">Fecha Integracion</label>
-          <input type="date" name="fecha_Integracion" class="form-control" id="inputFecha" placeholder="fecha">
-        </div>
-        <div class="form-group col-md-2">
-            <label for="inputZip">Código Postal</label>
-            <input type="text" name="codigoPostal_personal" class="form-control" id="inputZip" placeholder="Código Postal">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">Affiliación SS</label>
-            <input type="text" name="affiliación_personal" class="form-control" id="inputCity" placeholder="Mao, Islas Baleares">
-          </div>
-          <div class="mb-3">
-        <label for="formFile" class="form-label">Imagen Personal</label>
-        <input class="form-control" type="file" id="formFile" name="imagen_Personal">
-        </div>
-        <div class="mb-3">
-        <label for="formFile" class="form-label">Curriculum</label>
-        <input class="form-control" type="file" id="formFile" name="curriculum">
-        </div>
-        <div class="form-group">
-          <label for="inputFecha">Fecha Despedida</label>
-          <input type="date" name="fecha_Despedida" class="form-control" id="inputFecha" placeholder="fecha">
-        </div>
-       
-        </div>
-        <div class="d-flex justify-content-center">
-          <button type="submit" id="btn" class="btn mt-2">Insertar</button>
-        </div>
-      </div>
-    </form>
-    
-  </div>
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
+            // Verificar si la actualización fue exitosa
+            if ($stmt->rowCount() > 0) {
+                echo "Los datos del personal se han actualizado correctamente.";
+                header("Location:/student042/dwes/Personal/operaciones.php");
+            } else {
+                throw new Exception("Error al actualizar los datos del personal.");
+            }
+        } else {
+            throw new Exception("ID de personal no proporcionado.");
+        }
+    } else {
+        throw new Exception("No se ha enviado el formulario de actualización.");
+    }
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 ?>

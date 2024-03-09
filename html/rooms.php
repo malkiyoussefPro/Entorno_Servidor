@@ -27,6 +27,11 @@ if ($userExists == 0) {
 // Asignar el valor de $_SESSION['name'] a $user_id
 $user_id = $_SESSION['name'];
 
+
+
+
+
+
 // Definir una variable para almacenar el mensaje de error
 $error_message = '';
 $habitaciones_disponibles = array(); // Inicializa el array de habitaciones disponibles
@@ -192,6 +197,34 @@ if (isset($_POST['disponibilidad'])) {
     .btn-pagar:hover {
         background-color: #ffca2c;
     }
+    .container-reserva {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.container-reserva h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.reserva-info {
+    margin-bottom: 10px;
+}
+
+.reserva-info strong {
+    font-weight: bold;
+    color: #555;
+}
+
+.reserva-info span {
+    color: #777;
+}
+
 
 </style>
 
@@ -243,6 +276,9 @@ if (isset($_POST['disponibilidad'])) {
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
+
+
+
 
 <?php
 // Calcular el precio total de la reserva, incluido el IVA del 10%
@@ -339,6 +375,32 @@ if (isset($_POST['pagar'])) {
 }
 
 ?>
+
+
+
+<?php
+// Verificar si se ha enviado el formulario de disponibilidad y hay habitaciones disponibles
+if (isset($_POST['disponibilidad']) && !empty($habitaciones_disponibles)) {
+    // Mostrar el resumen de la reserva
+    echo '<div class="container-reserva">';
+    echo '<h3>Resumen de la Reserva</h3>';
+    echo '<div class="reserva-info"><strong>Cliente:</strong> <span>' . $user_name . '</span></div>';
+    echo '<div class="reserva-info"><strong>Fecha de Llegada:</strong> <span>' . $startDate . '</span></div>';
+    echo '<div class="reserva-info"><strong>Fecha de Salida:</strong> <span>' . $endDate . '</span></div>';
+    echo '<div class="reserva-info"><strong>Tipo de Habitación:</strong> <span>' . $tipoHabitacion . '</span></div>';
+
+    // Verificar si el totalFormateado está definido antes de mostrarlo
+    if (isset($totalFormateado)) {
+        echo '<div class="reserva-info"><strong>Total antes de procesar el pago:</strong> <span>' . $totalFormateado . '</span></div>';
+    } else {
+        echo '<div class="reserva-info"><strong>Total antes de procesar el pago:</strong> <span>No disponible</span></div>';
+    }
+
+    echo '</div>';
+}
+?>
+
+
 
 <form method="post" action="">
     <div id="container-formulario-pago" class="container-formulario-pago">

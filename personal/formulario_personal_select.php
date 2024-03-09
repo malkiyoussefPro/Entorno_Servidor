@@ -7,6 +7,21 @@
 <?php
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
+  $id_personal = isset($_GET['id_personal']) ? $_GET['id_personal'] : null; // Obtener el id_personal de la URL
+
+if (!$id_personal) {
+    echo "ID de personal no proporcionado.";
+    exit;
+}
+
+$q_select = $pdo->prepare('SELECT * FROM datos_personal WHERE id_personal = ?');
+$q_select->execute([$id_personal]);
+$personal = $q_select->fetch(PDO::FETCH_ASSOC);
+
+if (!$personal) {
+    echo "Personal no encontrado.";
+    exit;
+}
 
 ?>
 
@@ -21,7 +36,7 @@
       <div class="form-row" >
         <div class="form-group col-md-6 ">
           <label for="inputpersonal">Id personal</label>
-          <input type="number" name="id_personal" class="form-control" id="inputpersonal" placeholder="Id personal">
+          <input type="number" name="id_personal" class="form-control" id="inputpersonal" placeholder="Id personal" value="<?php echo $personal['id_personal']; ?>">
         </div>
       </div>
       <div class="d-flex justify-content-center m-2">

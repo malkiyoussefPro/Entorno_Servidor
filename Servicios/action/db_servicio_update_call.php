@@ -1,18 +1,5 @@
 <?php
-            
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-
-?>
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
-
-?>
-
-
-<?php
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 
 if (isset($_POST['actualizar'])) {
     $idServicio = $_POST['id_servicio'];
@@ -45,16 +32,10 @@ if (isset($_POST['actualizar'])) {
 
     if ($q_update->rowCount() > 0) {
         echo "Servicio actualizado exitosamente.";
+        header("Location:/student042/dwes/Servicios/operaciones.php");
+        exit; // Aseguramos que el script se detenga después de redirigir
     } else {
         echo "No se encontró ningún servicio con el ID proporcionado o no se realizaron cambios.";
     }
 }
-?>
-
-
-
-<?php
-
-  require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
 ?>
