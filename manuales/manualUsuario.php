@@ -29,11 +29,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
           <ul>
-            <li><strong>1- Añadir Usuario</strong> </li>
+            <li><strong>1- Añadir Usuario</strong> 
+          </li>
+          <h6>Formulario para insertar nuevo usuario:</h6>
+          <img src="/student042/dwes/html/imagenes/imagManual/insertarUsuario.png" style="width:350px ;height: 350px;" >
             <li><strong>2- Modificar Usuario</strong> </li>
+            <h6>Formulario para modificar  usuario:</h6>
+          <img src="/student042/dwes/html/imagenes/imagManual/insertarUsuario.png" style="width:350px ;height: 350px;" >
             <li><strong>3- Buscar Usuario</strong> </li>
+            <h6>Formulario para buscar  usuario:</h6>
+            <img src="/student042/dwes/html/imagenes/imagManual/buscarUsuario2.png" style="width:350px ;height: 350px;" >
             <li><strong>4- Borrar Usuario</strong> </li>
+            <h6>Formulario para suprimir  usuario:</h6>
+          <img src="/student042/dwes/html/imagenes/imagManual/insertarUsuario.png" style="width:350px ;height: 350px;" >
             <li><strong>5- Operaciones</strong> </li>
+            <h6>Apartado de realizar varias operaciones para el usuario:</h6>
+          <img src="/student042/dwes/html/imagenes/imagManual/operacionesUsuario.png" style="width:200px ;height: 200px;" >
           </ul> 
       </div>
     </div>

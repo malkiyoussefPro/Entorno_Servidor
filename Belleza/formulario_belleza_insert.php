@@ -12,7 +12,47 @@
 
 <link rel="stylesheet" href="/student042/dwes/css/iniciar_session.css">
 
+<style>
+  .confirmation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.confirmation-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.confirmation-info {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.confirmation-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.confirmation-info li {
+    margin-bottom: 10px;
+}
+
+.confirmation-info li strong {
+    font-weight: bold;
+}
+
+.confirmation-info li span {
+    font-weight: normal;
+    color: #888;
+}
+
+</style>
 
 
 <div class="container mt-5">

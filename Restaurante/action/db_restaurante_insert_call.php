@@ -38,20 +38,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Mostrar confirmación de reserva
         ?>
-        <div id="confirmacion-pago" style="display: block;">
-            <h2>¡Reserva realizada con éxito!</h2>
-            <p>Su reserva ha sido confirmada. A continuación, se muestra la información de su reserva:</p>
-            <ul>
-                <li><strong>Nombre del titular:</strong> <?php echo $nombre_cliente; ?></li>
-                <li><strong>Email:</strong> <?php echo $email_cliente; ?></li>
-                <li><strong>Teléfono:</strong> <?php echo $telefono_cliente; ?></li>
-                <li><strong>Servicio:</strong> <?php echo $servicio; ?></li>
-                <li><strong>Fecha de llegada:</strong> <?php echo $fecha_llegada; ?></li>
-                <li><strong>Hora de reserva:</strong> <?php echo $hora_reserva; ?></li>
-                
-            </ul>
-            <!-- Enlace para descargar PDF u otras acciones -->
-            <p><a href="/student042/dwes/Restaurante/generar_pdf.php" id="descargar-pdf">Descargar PDF</a></p>
+        
+
+            <?php
+            
+            require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+
+            require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/header.php');
+
+            ?>
+  
+            <div class="confirmation-container">
+                    <h2 class="confirmation-heading">¡Reserva realizada con éxito!</h2>
+                    <p class="confirmation-info">Su reserva ha sido confirmada. A continuación, se muestra la información de su reserva:</p>
+                <ul class="confirmation-info">
+                    <li><strong>Nombre del titular:</strong> <?php echo $nombre_cliente; ?></li>
+                    <li><strong>Email:</strong> <?php echo $email_cliente; ?></li>
+                    <li><strong>Teléfono:</strong> <?php echo $telefono_cliente; ?></li>
+                    <li><strong>Servicio:</strong> <?php echo $servicio; ?></li>
+                    <li><strong>Fecha de llegada:</strong> <?php echo $fecha_llegada; ?></li>
+                    <li><strong>Hora de reserva:</strong> <?php echo $hora_reserva; ?></li>
+                </ul>
+           
+            <!-- Enlace para volver a la pagina inicial -->
+            <p><a href="/student042/dwes/index.php" id="paginainicial">pagina inicial</a></p>
+
+            <?php
+
+                require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
+            ?>
         </div>
         <?php
     } catch (PDOException $e) {
