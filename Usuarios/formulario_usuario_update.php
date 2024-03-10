@@ -67,10 +67,13 @@ if (!$usuario) {
     <div class="d-flex justify-content-center">
       <button type="submit" name="actualizar" id="btn" class="btn mt-2">Actualizar</button>
     </div>
+    <div class="d-flex justify-content-center">
+       <a href="/student042/dwes/Servicios/operaciones.php" type="button" class="btn btn-dark mt-2">Cancelar</a>
+    </div>
 
-  </form>
-  
-</div>
+    </form>
+    
+  </div>
     
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');

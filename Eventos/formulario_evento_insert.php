@@ -19,7 +19,7 @@
     <center>
     <div class="d-flex justify-content-center">
 
-<form class="myFormCliente" action="" method="POST">
+    <form class="myFormCliente" action="/student042/dwes/Eventos/action/db_evento_insert_call.php" method="POST">
 
     <h1>Reservar Servicio de Evento</h1>
       <div class="container">
@@ -40,9 +40,9 @@
         <div class="col-2">
         <label for="servicio">Servicio:</label>
             <select name="servicio" id="servicio" class="form-control">
-            <option value="Matrimonio">Matrimonio</option>
-            <option value="Conferencia">Conferencia</option>
-            <option value="Excursión">Excursión</option>
+            <option value="boda">boda</option>
+            <option value="sala conferencia">sala conferencia</option>
+            <option value="excursion">excursion</option>
           </select>
         </div>
         

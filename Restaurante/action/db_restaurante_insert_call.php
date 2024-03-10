@@ -1,10 +1,5 @@
-
-
-
 <?php
-// Incluir el archivo de conexión a la base de datos
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
-
 // Verificar si se ha enviado el formulario de reserva
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibir datos del formulario de reserva
@@ -41,9 +36,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Confirmar la transacción
         $pdo->commit();
 
-        // Redirigir a una página de confirmación o mostrar un mensaje de éxito
-        header("Location: /student042/dwes/html/restaurante.php");
-        exit(); // Finalizar el script para evitar ejecuciones adicionales
+        // Mostrar confirmación de reserva
+        ?>
+        <div id="confirmacion-pago" style="display: block;">
+            <h2>¡Reserva realizada con éxito!</h2>
+            <p>Su reserva ha sido confirmada. A continuación, se muestra la información de su reserva:</p>
+            <ul>
+                <li><strong>Nombre del titular:</strong> <?php echo $nombre_cliente; ?></li>
+                <li><strong>Email:</strong> <?php echo $email_cliente; ?></li>
+                <li><strong>Teléfono:</strong> <?php echo $telefono_cliente; ?></li>
+                <li><strong>Servicio:</strong> <?php echo $servicio; ?></li>
+                <li><strong>Fecha de llegada:</strong> <?php echo $fecha_llegada; ?></li>
+                <li><strong>Hora de reserva:</strong> <?php echo $hora_reserva; ?></li>
+                
+            </ul>
+            <!-- Enlace para descargar PDF u otras acciones -->
+            <p><a href="/student042/dwes/Restaurante/generar_pdf.php" id="descargar-pdf">Descargar PDF</a></p>
+        </div>
+        <?php
     } catch (PDOException $e) {
         // Cancelar la transacción en caso de error
         $pdo->rollBack();
@@ -52,184 +62,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<?php
-// Verificar si se ha enviado el formulario de reserva
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $nombre_cliente = htmlspecialchars($_POST['nombre_cliente']);
-  $email_cliente = htmlspecialchars($_POST['email_cliente']);
-  $telefono_cliente = htmlspecialchars($_POST['telefono_cliente']);
-  $servicio = htmlspecialchars($_POST['servicio']);
-  $fecha_llegada = htmlspecialchars($_POST['fecha_llegada']);
-  $hora_reserva = htmlspecialchars($_POST['hora_reserva']);
-  ?>
-
-<div id="confirmacion-pago" style="display: none;">
-    <h2>¡Reserva realizada con éxito!</h2>
-    <p>Su reserva ha sido confirmada. A continuación, se muestra la información de su reserva:</p>
-    <ul>
-        <li><strong>Nombre del titular:</strong> <?php echo $nombre_cliente; ?></li>
-        <li><strong>Email:</strong> <?php echo $email_cliente; ?></li>
-        <li><strong>Teléfono:</strong> <?php echo $telefono_cliente; ?></li>
-        <li><strong>Servicio:</strong> <?php echo $servicio; ?></li>
-        <li><strong>Fecha de llegada:</strong> <?php echo $fecha_llegada; ?></li>
-        <li><strong>Hora de reserva:</strong> <?php echo $hora_reserva; ?></li>
-        <!-- Agregar más detalles si es necesario -->
-    </ul>
-    <p>Se ha enviado una confirmación a su correo electrónico.</p>
-    <p><a href="generar_pdf.php" id="descargar-pdf">Descargar PDF</a></p>
-</div>
-
-<?php } ?>
-
-<script>
-    // Mostrar el div de confirmación después de realizar la reserva
-    document.getElementById('confirmacion-pago').style.display = 'block';
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<form method="post" action="">
-    <div id="container-formulario-pago" class="container-formulario-pago">
-    
-        <!--formulario de pago -->
-        <div class="form-group">
-            <label for="nombre_titular">Nombre del Titular:</label>
-            <input type="text" id="nombre_titular" name="nombre_titular" required class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="numero_tarjeta">Número de Tarjeta:</label>
-            <input type="text" id="numero_tarjeta" name="numero_tarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19">
-        </div>
-        <div class="form-group">
-            <label for="fecha_caducidad">Fecha de Vencimiento:</label>
-            <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="tipo_pago">Tipo de tarjeta:</label>
-            <input type="text" id="tipo_pago" name="tipo_pago" class="form-control" readonly>
-        </div>
-        <div class="form-group">
-            <label for="cantidad_pagar">Cantidad a Pagar:</label>
-            <input type="text" id="cantidad_pagar" name="cantidad_pagar" required class="form-control" value="<?php if (isset($totalFormateado)) echo $totalFormateado; ?>">
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn-pagar" id="pagar" name="pagar">Pagar</button>
-        </div>
-    </div>
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-    // Función para mostrar el formulario de pago
-    function mostrarFormularioPago(id_habitacion) {
-        var formularioPago = document.getElementById('container-formulario-pago');
-        formularioPago.style.display = 'block';
-        // Guardar el ID de la habitación seleccionada en una cookie
-        document.cookie = "id_habitacion=" + id_habitacion + "; path=/";
-    }
-
-    function detectCardType(cardNumber) {
-        // Define las expresiones regulares para cada tipo de tarjeta
-        var visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
-        var mastercardRegex = /^5[1-5][0-9]{14}$/;
-        var amexRegex = /^3[47][0-9]{13}$/;
-        var discoverRegex = /^6(?:011|5[0-9]{2})[0-9]{12}$/;
-
-        // Comprueba si el número de tarjeta coincide con alguna de las expresiones regulares y actualiza el campo de tipo de tarjeta
-        if (visaRegex.test(cardNumber)) {
-            document.getElementById('tipo_pago').value = 'Visa';
-        } else if (mastercardRegex.test(cardNumber)) {
-            document.getElementById('tipo_pago').value = 'Mastercard';
-        } else if (amexRegex.test(cardNumber)) {
-            document.getElementById('tipo_pago').value = 'American Express';
-        } else if (discoverRegex.test(cardNumber)) {
-            document.getElementById('tipo_pago').value = 'Discover';
-        } else {
-            document.getElementById('tipo_pago').value = 'Tipo de tarjeta desconocido';
-        }
-    }
-
-    // Función para formatear automáticamente el número de tarjeta mientras el usuario lo ingresa
-    document.getElementById('numero_tarjeta').addEventListener('input', function(event) {
-        var cardNumber = event.target.value.replace(/\D/g, ''); // Elimina todos los caracteres que no sean dígitos
-        var formattedCardNumber = '';
-        
-        for (var i = 0; i < cardNumber.length; i++) {
-            if (i > 0 && i % 4 === 0) {
-                formattedCardNumber += ' '; // Inserta un espacio cada 4 dígitos
-            }
-            formattedCardNumber += cardNumber.charAt(i);
-        }
-        
-        event.target.value = formattedCardNumber.trim().slice(0, 19); // Limita la longitud a 19 caracteres (16 dígitos + 3 espacios)
-        detectCardType(cardNumber); // Detecta el tipo de tarjeta
-    });
-
-    document.getElementById('fecha_caducidad').addEventListener('blur', function() {
-        var fechaInput = this.value;
-        var fechaArray = fechaInput.split('/');
-        var mes = parseInt(fechaArray[0], 10);
-        var anio = parseInt(fechaArray[1], 10);
-        
-        var fechaActual = new Date();
-        var mesActual = fechaActual.getMonth() + 1; // Se suma 1 porque los meses en JavaScript van de 0 a 11
-        var anioActual = fechaActual.getFullYear() % 100; // Obtiene los dos últimos dígitos del año actual
-    
-        if (mes < 1 || mes > 12 || anio < anioActual || (anio === anioActual && mes < mesActual)) {
-            alert('La fecha de vencimiento ingresada no es válida!!!! .');
-            this.value = ''; // Limpiar el campo
-            this.focus(); // Colocar el foco en el campo nuevamente
-        }
-    });
-
-    document.getElementById('fecha_caducidad').addEventListener('input', function() {
-        var fechaInput = this.value;
-        var fechaArray = fechaInput.split('/');
-    
-        // Si se ha ingresado el mes y es válido
-        if (fechaArray.length === 1 && /^[0-9]{1,2}$/.test(fechaInput)) {
-            // Si el mes es válido (entre 1 y 12)
-            var mes = parseInt(fechaInput, 10);
-            if (mes >= 1 && mes <= 12) {
-                this.value = fechaInput + '/';
-            }
-        }
-    });
-</script>

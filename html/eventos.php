@@ -35,7 +35,9 @@ try{
   
 ?>
 
-<form action="/student042/dwes/Evento/formulario_evento_insert.php" method="POST">
+<form action="/student042/dwes/Eventos/formulario_evento_insert.php" method="POST">
+
+
 
     
 <div class="row d-flex justify-content-start m-2" style="background:#f5e1ce; border-radius:5px">

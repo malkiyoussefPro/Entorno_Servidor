@@ -19,7 +19,7 @@
     <center>
     <div class="d-flex justify-content-center">
 
-<form class="myFormCliente" action="" method="POST">
+<form class="myFormCliente" action="/student042/dwes/Belleza/action/db_belleza_insert_call.php" method="POST">
 
     <h1>Reservar Servicio de Evento</h1>
       <div class="container">
@@ -39,9 +39,9 @@
         <div class="col-2">
         <label for="servicio">Servicio:</label>
             <select name="servicio" id="servicio" class="form-control">
-              <option value="Spa">Spa</option>
-              <option value="Yakuzi">Yakuzi</option>
-              <option value="Sauna">Sauna</option>
+              <option value="spa">spa</option>
+              <option value="yakuzi">yakuzi</option>
+              <option value="hammam marroqui">hammam marroqui</option>
             </select>
         </div>
 
