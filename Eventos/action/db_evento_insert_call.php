@@ -1,3 +1,64 @@
+
+<style>
+  .confirmation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.confirmation-info {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.confirmation-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.confirmation-info li {
+    margin-bottom: 10px;
+}
+
+.confirmation-info li strong {
+    font-weight: bold;
+}
+
+.confirmation-info li span {
+    font-weight: normal;
+    color: #888;
+}
+
+   /* Estilos para el botón */
+   .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff; /* Color de fondo del botón */
+        color: #fff; /* Color del texto del botón */
+        text-decoration: none; /* Eliminar subrayado del texto */
+        border: none; /* Eliminar borde del botón */
+        border-radius: 5px; /* Añadir esquinas redondeadas */
+        cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    }
+
+    /* Estilos para el botón al pasar el ratón por encima */
+    .button:hover {
+        background-color: #0056b3; /* Cambiar color de fondo al pasar por encima */
+        color: #333;
+    }
+
+</style>
+
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
 // Verificar si se ha enviado el formulario de reserva
@@ -59,14 +120,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ul>
            
             <!-- Enlace para volver a la pagina inicial -->
-            <p><a href="/student042/dwes/index.php" id="paginainicial">pagina inicial</a></p>
+            <a href="/student042/dwes/index.php" class="button">Página Inicial</a>
 
-            <?php
-
-                require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
-
-            ?>
         </div>
+        
         <?php
     } catch (PDOException $e) {
         // Cancelar la transacción en caso de error
@@ -75,4 +132,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error al realizar la reserva: " . $e->getMessage();
     }
 }
+?>
+
+<?php
+
+    require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
+
 ?>

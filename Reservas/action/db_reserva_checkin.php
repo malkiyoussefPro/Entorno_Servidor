@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $q_update_checkin = $pdo->prepare('UPDATE reservas SET check_in = :check_in WHERE id_reserva = :id_reserva');
         
         // Parámetros de la consulta
-        $check_in_estado = 'Completado'; // Se asume que el check-in se ha completado
+        $check_in_estado = 'Completado';
         $q_update_checkin->bindParam(':check_in', $check_in_estado);
         $q_update_checkin->bindParam(':id_reserva', $id_reserva);
 
