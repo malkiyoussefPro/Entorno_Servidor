@@ -28,7 +28,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
             <th scope="col">Id Servicio</th>
             <th scope="col">Check In</th>
             <th scope="col">Checkout</th>
-            <th scope="col">operaciones</th>
+            <th scope="col">Operaciones</th>
         </tr>
     </thead>
     <tbody>
@@ -46,28 +46,28 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
         foreach ($reservas as $reserva) {
           ?>
           <tr>
-      
-          <td><?php  echo $reserva['id_reserva']; ?> </td>
-          <td><?php  echo $reserva['nombre_usuario']; ?> </td>
-          <td><?php  echo $reserva['id_habitacion']; ?> </td>
-          <td><?php  echo $reserva['fecha_entrada']; ?> </td>
-          <td><?php  echo $reserva['fecha_salida']; ?> </td>
-          <td><?php  echo $reserva['fecha_reserva']; ?> </td>
-          <td><?php  echo $reserva['id_pago']; ?> </td>
-          <td><?php  echo $reserva['numero_reserva']; ?> </td>
-          <td><?php  echo $reserva['id_servicio']; ?> </td>
-          <td><?php  echo $reserva['check_in']; ?> </td>
-          <td><?php  echo $reserva['check_out']; ?> </td>
-                   
-      <td>   
-        <a href="/student042/dwes/Reservas/formulario_reserva_update.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-success btn-sm  m-1"> Check In </a>  
-      </td>
-      <td>      
-      <a href="/student042/dwes/Reservas/formulario_reserva_update.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-warning btn-sm  m-1"> CheckOut</a>  
-      </td>
-   
-      </tr>
-      <?php
+              <td><?php echo $reserva['id_reserva']; ?></td>
+              <td><?php echo $reserva['nombre_usuario']; ?></td>
+              <td><?php echo $reserva['id_habitacion']; ?></td>
+              <td><?php echo $reserva['fecha_entrada']; ?></td>
+              <td><?php echo $reserva['fecha_salida']; ?></td>
+              <td><?php echo $reserva['fecha_reserva']; ?></td>
+              <td><?php echo $reserva['id_pago']; ?></td>
+              <td><?php echo $reserva['numero_reserva']; ?></td>
+              <td><?php echo $reserva['id_servicio']; ?></td>
+              <td><?php echo $reserva['check_in']; ?></td>
+              <td><?php echo $reserva['check_out']; ?></td>
+              <td>
+                  <?php if ($reserva['check_in'] == 'Completado') : ?>
+                      <a href="/student042/dwes/Restaurante/formulario_restaurante_insert.php" class="btn btn-primary btn-sm">Restaurante</a>
+                      <a href="/student042/dwes/Eventos/formulario_evento_insert.php" class="btn btn-primary btn-sm">Evento</a>
+                      <a href="/student042/dwes/Belleza/formulario_belleza_insert.php" class="btn btn-primary btn-sm">Belleza</a>
+                  <?php endif; ?>
+                  <a href="/student042/dwes/Reservas/formulario_reserva_update.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-success btn-sm  m-1">Check In</a>
+                  <a href="/student042/dwes/Reservas/formulario_reserva_update.php?id_reserva=<?php echo $reserva['id_reserva']; ?>" name="checkin" id="btn_formulario" class="btn btn-warning btn-sm  m-1">Check Out</a>
+              </td>
+          </tr>
+          <?php
         }
        ?>
     </tbody>
@@ -76,19 +76,3 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/dashboard.php');
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/html/footer.php');
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,7 @@
 <?php
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/student042/dwes/Databases/connection_db.php');
+
 // Verifica si se ha enviado el formulario de check-in
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica si se ha recibido el ID de la reserva
@@ -17,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ejecuta la consulta de actualización
         if ($q_update_checkin->execute()) {
             echo "Check-in realizado con éxito para la reserva con ID: " . $id_reserva;
+            header('Location:/student042/dwes/Reservas/operaciones.php');
         } else {
             echo "Error al realizar el check-in para la reserva con ID: " . $id_reserva;
         }
